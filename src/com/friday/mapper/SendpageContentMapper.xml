@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.friday.inter.SendpageContentMapper">
+    <!--送货单的数据库mappter-->
+    <resultMap id="BaseResultMap" type="com.friday.model.sendpage.SendpageContent">
+        <id column="c_id" property="cId" jdbcType="INTEGER"/>
+        <result column="c_number" property="cNumber" jdbcType="VARCHAR"/>
+        <result column="c_date" property="cDate" jdbcType="VARCHAR"/>
+        <result column="c_category" property="cCategory" jdbcType="VARCHAR"/>
+        <result column="c_items_id" property="cItemsId" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+c_id,
+c_number,
+c_date,
+c_category,
+c_items_id
+</sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from sendpagecontent
+        where c_id = #{cId,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sendpagecontent
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sendpagecontent
+    where c_id = #{cId,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.friday.model.sendpage.SendpageContent">
+    insert into sendpagecontent (
+    c_id,
+    c_number,
+    c_date,
+    c_category,
+    c_items_id
+)
+    values (#{cId,jdbcType=INTEGER}, #{cNumber,jdbcType=VARCHAR}, #{cDate,jdbcType=VARCHAR},
+      #{cCategory,jdbcType=VARCHAR}, #{cItemsId,jdbcType=INTEGER})
+  </insert>
+    <insert id="insertSelective" parameterType="com.friday.model.sendpage.SendpageContent">
+        insert into sendpagecontent
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="cId != null">
+                c_id,
+            </if>
+            <if test="cNumber != null">
+                c_number,
+            </if>
+            <if test="cDate != null">
+                c_date,
+            </if>
+            <if test="cCategory != null">
+                c_category,
+            </if>
+            <if test="cItemsId != null">
+                c_items_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="cId != null">
+                #{cId,jdbcType=INTEGER},
+            </if>
+            <if test="cNumber != null">
+                #{cNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="cDate != null">
+                #{cDate,jdbcType=VARCHAR},
+            </if>
+            <if test="cCategory != null">
+                #{cCategory,jdbcType=VARCHAR},
+            </if>
+            <if test="cItemsId != null">
+                #{cItemsId,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.friday.model.sendpage.SendpageContent">
+        update sendpagecontent
+        <set>
+            <if test="cId != null">
+                c_id = #{cId,jdbcType=INTEGER},
+            </if>
+            <if test="cNumber != null">
+                c_number = #{cNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="cDate != null">
+                c_date = #{cDate,jdbcType=VARCHAR},
+            </if>
+            <if test="cCategory != null">
+                #{cCategory,jdbcType=VARCHAR},
+            </if>
+            <if test="cItemsId != null">
+                #{cItemsId,jdbcType=INTEGER},
+            </if>
+        </set>
+        where c_id = #{cId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.friday.model.sendpage.SendpageContent">
+    update sendpagecontent
+    set c_id = #{cId,jdbcType=INTEGER},
+      c_number = #{cNumber,jdbcType=VARCHAR},
+      c_date = #{iDate,jdbcType=VARCHAR},
+      c_category = #{cCategory,jdbcType=VARCHAR},
+      c_items_id = #{cItemsId,jdbcType=INTEGER}
+    where c_id = #{cId,jdbcType=INTEGER}
+  </update>
+</mapper>

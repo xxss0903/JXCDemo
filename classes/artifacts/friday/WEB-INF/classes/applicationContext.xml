@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/" p:suffix=".jsp">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+	</bean>
+
+	<!-- Spring MVC mapping -->
+	<!-- DYH -->
+	<bean id="addUserController" class="com.friday.controller.AddUserController" />
+	<bean id="loginController" class="com.friday.controller.LoginController" />
+	<bean id="logoutController" class="com.friday.controller.LogoutController" />
+	<bean id="getProductController" class="com.friday.controller.GetProductController" />
+	<bean id="orderProductController" class="com.friday.controller.OrderProductController" />
+	<bean id="queryOrderController" class="com.friday.controller.QueryOrderController"></bean>
+	<bean id="stockInController" class="com.friday.controller.StockInController"></bean>
+	<bean id="goodsBackController" class="com.friday.controller.GoodsBackController"></bean>
+	<bean id="getOutProductController" class="com.friday.controller.StockOutGetProductController"></bean>
+	<bean id="stockOutController" class="com.friday.controller.StockOutController"></bean>
+	<bean id="sellLoadController" class="com.friday.controller.SellLoadController"></bean>
+	<bean id="sellController" class="com.friday.controller.SellController"></bean>
+	<bean id="rkQueryController" class="com.friday.controller.RKQueryController"></bean>
+	<bean id="thQueryController" class="com.friday.controller.THQueryController"></bean>
+	<bean id="stockOutQueryLoadController" class="com.friday.controller.QueryStockOutLoadController"></bean>
+	<bean id="stockOutQueryController" class="com.friday.controller.QueryStockOutController"></bean>
+	<bean id="sellQueryLoadController" class="com.friday.controller.SellQueryLoadController"></bean>
+	<bean id="sellQueryController" class="com.friday.controller.SellQueryController"></bean>
+	<bean id="queryDetailController" class="com.friday.controller.QueryDetailController"></bean>
+	<bean id="queryCustomerController" class="com.friday.controller.QueryCustomerController"></bean>
+	<bean id="modifyCustomerLoadController" class="com.friday.controller.ModifyCustomerLoadController"></bean>
+	<bean id="modifyCustomerController" class="com.friday.controller.ModifuCustomerController"></bean>
+	<bean id="deleteCustomerController" class="com.friday.controller.DeleteCustomerController"></bean>
+	<bean id="addCustomerController" class="com.friday.controller.AddCustomerController"></bean>
+	
+	<!-- CXW -->
+	<bean id="stockLoadController" class="com.friday.controller.StockLoadController"/>
+	<bean id="stockQueryController" class="com.friday.controller.StockQueryController"/>
+	<bean id="stockWarnController" class="com.friday.controller.StockWarnController"/>
+	<bean id="shopShowController" class="com.friday.controller.ShopShowController"/>
+	<bean id="shopDeleteController" class="com.friday.controller.ShopDeleteController"/>
+	<bean id="shopAddController" class="com.friday.controller.ShopAddController"/>
+	
+	
+	<!-- CSY -->
+	<bean id="modifyPwdController" class="com.friday.controller.ModifyPwdController" />
+	<bean id="addStaffController" class="com.friday.controller.AddStaffController" />
+	<bean id="addproducttypeController" class="com.friday.controller.AddProductTypeController" />
+	<bean id="checktypeController" class="com.friday.controller.AjaxTypeController" />
+	<bean id="queryProductTypeController" class="com.friday.controller.QueryProductTypeController" />
+	<bean id="deleteProductTypeController" class="com.friday.controller.DeleteProductTypeController" />
+	<bean id="showmodifyPTypeController" class="com.friday.controller.ShowMPTypeController" />
+	<bean id="remindbirthdayController" class="com.friday.controller.RemindBirthdayController" />
+	<bean id="queryProductsController" class="com.friday.controller.QueryProductsController" />
+	<bean id="deleteProductController" class="com.friday.controller.DeleteProductController" />
+	<bean id="getAddProductController" class="com.friday.controller.GetAddProductController" />
+	<bean id="addProductController" class="com.friday.controller.AddProductController" />
+	<bean id="queryAllStaffsController" class="com.friday.controller.QueryAllStaffsController" />
+	<bean id="deleteStaffController" class="com.friday.controller.DeleteStaffController" />
+	
+	
+	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+			<!-- DYH -->
+				<prop key="/adduser.do">addUserController</prop>
+				<prop key="/login.do">loginController</prop>
+				<prop key="/logout.do">logoutController</prop>
+				<prop key="/getproduct.do">getProductController</prop>
+				<prop key="/orderproduct.do">orderProductController</prop>
+				<prop key="/queryorder.do">queryOrderController</prop>
+				<prop key="/stockin.do">stockInController</prop>
+				<prop key="/goodsback.do">goodsBackController</prop>
+				<prop key="/getoutproduct.do">getOutProductController</prop>
+				<prop key="/stockout.do">stockOutController</prop>
+				<prop key="/sellload.do">sellLoadController</prop>
+				<prop key="/sell.do">sellController</prop>
+				<prop key="/rkquery.do">rkQueryController</prop>
+				<prop key="/thquery.do">thQueryController</prop>
+				<prop key="/stockoutqueryload.do">stockOutQueryLoadController</prop>
+				<prop key="/querystockout.do">stockOutQueryController</prop>
+				<prop key="/sellqueryload.do">sellQueryLoadController</prop>
+				<prop key="/sellquery.do">sellQueryController</prop>
+				<prop key="/querydetail.do">queryDetailController</prop>
+				<prop key="/customerquery.do">queryCustomerController</prop>
+				<prop key="/modifycustomerload.do">modifyCustomerLoadController</prop>
+				<prop key="/modifycustomer.do">modifyCustomerController</prop>
+				<prop key="/addcustomer.do">addCustomerController</prop>
+				<prop key="/deletecustomer.do">deleteCustomerController</prop>
+				
+			<!-- CXW -->
+				<prop key="/stockquery.do">stockQueryController</prop>
+				<prop key="/stockload.do">stockLoadController</prop>
+				<prop key="/stockwarn.do">stockWarnController</prop>
+				<prop key="/shopmanagement.do">shopShowController</prop>
+				<prop key="/shopDelete.do">shopDeleteController </prop>
+				<prop key="/shopAdd.do">shopAddController </prop>
+				
+				
+			<!-- CSY -->
+				<prop key="/modifypwd.do">modifyPwdController</prop>
+				<prop key="/addstaff.do">addStaffController</prop>
+				<prop key="addproducttype.do">addproducttypeController</prop>
+				<prop key="checktype.do">checktypeController</prop>
+				<prop key="queryalltype.do">queryProductTypeController</prop>
+				<prop key="deletetype.do">deleteProductTypeController</prop>
+				<prop key="showmodifytype.do">showmodifyPTypeController</prop>
+				<prop key="remindbirthday.do">remindbirthdayController</prop>
+				<prop key="queryproducts.do">queryProductsController</prop>
+				<prop key="deleteproduct.do">deleteProductController</prop>
+				<prop key="getaddproduct.do">getAddProductController</prop>
+				<prop key="addproduct.do">addProductController</prop>
+				<prop key="querystaffs.do">queryAllStaffsController</prop>
+				<prop key="deletestaff.do">deleteStaffController</prop>
+				
+				
+			</props>
+		</property>
+	</bean>
+</beans>
