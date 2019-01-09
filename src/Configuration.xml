@@ -42,7 +42,14 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="com/friday/mapper/ShopMapper.xml" />
 		<mapper resource="com/friday/mapper/StockMapper.xml" />
 		<mapper resource="com/friday/mapper/UserMapper.xml" />
+
 		<mapper resource="com/friday/mapper/SendpageMapper.xml"/>
 		<mapper resource="com/friday/mapper/SendpageContentMapper.xml"/>
+		<mapper resource="com/friday/mapper/SendpageCompanyMapper.xml"/>
+		<mapper resource="com/friday/mapper/SendpageKpMapper.xml"/>
+		<mapper resource="com/friday/mapper/SendpageItemMapper.xml"/>
+		<mapper resource="com/friday/mapper/SendpageItemsMapper.xml"/>
+		<mapper resource="com/friday/mapper/SendpageProducerMapper.xml"/>
+		<mapper resource="com/friday/mapper/SendpageExpressMapper.xml"/>
 	</mappers>
 </configuration>

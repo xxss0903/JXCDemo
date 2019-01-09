@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.friday.inter.SendpageCompanyMapper">
+    <!--送货单的数据库mappter-->
+    <resultMap id="BaseResultMap" type="com.friday.model.sendpage.SendpageCompany">
+        <id column="t_id" property="tId" jdbcType="INTEGER"/>
+        <result column="t_company" property="tCompany" jdbcType="VARCHAR"/>
+        <result column="t_xy" property="tXy" jdbcType="VARCHAR"/>
+        <result column="t_kh_bank" property="tKhBank" jdbcType="VARCHAR"/>
+        <result column="t_baccount" property="tBaccount" jdbcType="VARCHAR"/>
+        <result column="t_address" property="tAddress" jdbcType="VARCHAR"/>
+        <result column="t_phone" property="tPhone" jdbcType="VARCHAR"/>
+        <result column="t_fax_phone" property="tFaxPhone" jdbcType="VARCHAR"/>
+        <result column="t_mail" property="tMail" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+t_id,
+t_company,
+t_xy,
+t_kh_bank,
+t_baccount,
+t_address,
+t_phone,
+t_fax_phone,
+t_mail
+</sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from sendpagecompany
+        where t_id = #{tId,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sendpagecompany
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sendpagecompany
+    where t_id = #{tId,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.friday.model.sendpage.SendpageContent">
+    insert into sendpagecompany (
+t_id,
+t_company,
+t_xy,
+t_kh_bank,
+t_baccount,
+t_address,
+t_phone,
+t_fax_phone,
+t_mail
+)
+    values (#{tId,jdbcType=INTEGER}, #{tCompany,jdbcType=VARCHAR}, #{tXy,jdbcType=VARCHAR},
+      #{tKhBank,jdbcType=VARCHAR}, #{tBaccount,jdbcType=VARCHAR}, #{tAddress,jdbcType=VARCHAR}, 
+      #{tPhone,jdbcType=VARCHAR},
+      #{tFaxPhone,jdbcType=VARCHAR}, #{tMail,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.friday.model.sendpage.SendpageContent">
+        insert into sendpagecompany
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="tId != null">
+                t_id,
+            </if>
+            <if test="tCompany != null">
+                t_company,
+            </if>
+            <if test="tXy != null">
+                t_xy,
+            </if>
+            <if test="tKhBank != null">
+                t_kh_bank,
+            </if>
+            <if test="tBaccount != null">
+                t_baccount,
+            </if>
+            <if test="tAddress != null">
+                t_address,
+            </if>
+            <if test="tPhone != null">
+                t_phone,
+            </if>
+            <if test="tFaxPhone != null">
+                t_fax_phone,
+            </if>
+            <if test="tMail != null">
+                t_mail,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="tId != null">
+                #{tId,jdbcType=INTEGER},
+            </if>
+            <if test="tCompany != null">
+                #{tCompany,jdbcType=VARCHAR},
+            </if>
+            <if test="tXy != null">
+                #{tXy,jdbcType=VARCHAR},
+            </if>
+            <if test="tKhBank != null">
+                #{tKhBank,jdbcType=VARCHAR},
+            </if>
+            <if test="tBaccount != null">
+                #{tBaccount,jdbcType=VARCHAR},
+            </if>
+            <if test="tAddress != null">
+                #{tAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="tPhone != null">
+                #{tPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="tFaxPhone != null">
+                #{tFaxPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="tMail != null">
+                #{tMail,jdbcType=VARCHAR}
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.friday.model.sendpage.SendpageContent">
+        update sendpagecompany
+        <set>
+            <if test="tId != null">
+                t_id = #{tId,jdbcType=INTEGER},
+            </if>
+            <if test="tCompany != null">
+                t_company = #{tCompany,jdbcType=VARCHAR},
+            </if>
+            <if test="tXy != null">
+                t_xy=#{tXy,jdbcType=VARCHAR},
+            </if>
+            <if test="tKhBank != null">
+                t_kh_bank=#{tKhBank,jdbcType=VARCHAR},
+            </if>
+            <if test="tBaccount != null">
+                t_baccount=#{tBaccount,jdbcType=VARCHAR},
+            </if>
+            <if test="tAddress != null">
+                t_address=#{tAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="tPhone != null">
+                t_phone=#{tPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="tFaxPhone != null">
+                t_fax_phone=#{tFaxPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="tMail != null">
+                t_mail=#{tMail,jdbcType=VARCHAR}
+            </if>
+        </set>
+        where t_id = #{tId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.friday.model.sendpage.SendpageContent">
+    update sendpagecompany
+    set t_id = #{tId,jdbcType=INTEGER},
+      t_company = #{tCompany,jdbcType=VARCHAR},
+      t_xy=#{tXy,jdbcType=VARCHAR},
+      t_kh_bank=#{tKhBank,jdbcType=VARCHAR},
+      t_baccount=#{tBaccount,jdbcType=VARCHAR},
+      t_address=#{tAddress,jdbcType=VARCHAR},
+      t_phone=#{tPhone,jdbcType=VARCHAR},
+      t_fax_phone=#{tFaxPhone,jdbcType=VARCHAR},
+      t_mail=#{tMail,jdbcType=VARCHAR}
+    where t_id = #{tId,jdbcType=INTEGER}
+  </update>
+</mapper>

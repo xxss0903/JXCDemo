@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.friday.inter.SendpageExpressMapper">
+    <!--送货单的数据库mappter-->
+    <resultMap id="BaseResultMap" type="com.friday.model.sendpage.SendpageExpress">
+        <id column="e_id" property="eId" jdbcType="INTEGER"/>
+        <result column="e_address" property="eAddress" jdbcType="VARCHAR"/>
+        <result column="e_person" property="ePerson" jdbcType="VARCHAR"/>
+        <result column="e_phone" property="ePhone" jdbcType="VARCHAR"/>
+        <result column="s_id" property="sId" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+e_id,
+e_address,
+e_person,
+e_phone,
+s_id
+</sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from sendpageexpress
+        where e_id = #{eId,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sendpageexpress
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sendpageexpress
+    where e_id = #{eId,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.friday.model.sendpage.SendpageContent">
+    insert into sendpageexpress (
+e_id,
+e_address,
+e_person,
+e_phone,
+s_id
+)
+    values (#{eId,jdbcType=INTEGER}, #{eAddress,jdbcType=VARCHAR}, #{ePerson,jdbcType=VARCHAR},
+      #{ePhone,jdbcType=VARCHAR}, #{sId,jdbcType=INTEGER})
+  </insert>
+    <insert id="insertSelective" parameterType="com.friday.model.sendpage.SendpageContent">
+        insert into sendpageexpress
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="eId != null">
+                e_id,
+            </if>
+            <if test="eAddress != null">
+                e_address,
+            </if>
+            <if test="ePerson != null">
+                e_person,
+            </if>
+            <if test="ePhone != null">
+                e_phone,
+            </if>
+            <if test="sId != null">
+                s_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="eId != null">
+                #{eId,jdbcType=INTEGER},
+            </if>
+            <if test="eAddress != null">
+                #{eAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="ePerson != null">
+                #{ePerson,jdbcType=VARCHAR},
+            </if>
+            <if test="ePhone != null">
+                #{ePhone,jdbcType=VARCHAR},
+            </if>
+            <if test="sId != null">
+                #{sId,jdbcType=INTEGER}
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.friday.model.sendpage.SendpageContent">
+        update sendpageexpress
+        <set>
+            <if test="eId != null">
+                e_id=#{eId,jdbcType=INTEGER},
+            </if>
+            <if test="eAddress != null">
+                e_address=#{eAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="ePerson != null">
+                e_person=#{ePerson,jdbcType=VARCHAR},
+            </if>
+            <if test="ePhone != null">
+                e_phone=#{ePhone,jdbcType=VARCHAR},
+            </if>
+            <if test="sId != null">
+                s_id=#{sId,jdbcType=INTEGER}
+            </if>
+        </set>
+        where e_id = #{cId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.friday.model.sendpage.SendpageContent">
+    update sendpageexpress
+    set e_id=#{eId,jdbcType=INTEGER},
+      e_address=#{eAddress,jdbcType=VARCHAR},
+      e_person=#{ePerson,jdbcType=VARCHAR},
+      e_phone=#{ePhone,jdbcType=VARCHAR},
+      s_id=#{sId,jdbcType=INTEGER}
+    where e_id=#{eId,jdbcType=INTEGER}
+  </update>
+</mapper>

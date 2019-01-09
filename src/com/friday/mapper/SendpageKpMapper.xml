@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.friday.inter.SendpageKpMapper">
+    <!--送货单的数据库mappter-->
+    <resultMap id="BaseResultMap" type="com.friday.model.sendpage.SendpageKp">
+        <id column="k_id" property="kId" jdbcType="INTEGER"/>
+        <result column="k_date" property="kDate" jdbcType="VARCHAR"/>
+        <result column="k_sk_date" property="kSkDate" jdbcType="VARCHAR"/>
+        <result column="k_sk_type" property="kSkType" jdbcType="INTEGER"/>
+        <result column="k_amount" property="kAmount" jdbcType="FLOAT"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+k_id,
+k_date,
+k_sk_date,
+k_sk_type,
+k_amount
+</sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from sendpagekaipiao
+        where k_id = #{kId,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sendpagekaipiao
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sendpagekaipiao
+    where k_id = #{kId,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.friday.model.sendpage.SendpageContent">
+    insert into sendpagekaipiao (
+k_id,
+k_date,
+k_sk_date,
+k_sk_type,
+k_amount
+)
+    values (#{cId,jdbcType=INTEGER}, #{cNumber,jdbcType=VARCHAR}, #{cDate,jdbcType=VARCHAR},
+      #{cCategory,jdbcType=VARCHAR}, #{cItemsId,jdbcType=INTEGER})
+  </insert>
+    <insert id="insertSelective" parameterType="com.friday.model.sendpage.SendpageContent">
+        insert into sendpagekaipiao
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="kId != null">
+                k_id,
+            </if>
+            <if test="kDate != null">
+                k_date,
+            </if>
+            <if test="kSkDate != null">
+                k_sk_date,
+            </if>
+            <if test="kSkType != null">
+                k_sk_type,
+            </if>
+            <if test="kAmount != null">
+                k_amount,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="kId != null">
+                #{kId,jdbcType=INTEGER},
+            </if>
+            <if test="kDate != null">
+                #{kDate,jdbcType=VARCHAR},
+            </if>
+            <if test="kSkDate != null">
+                #{kSkDate,jdbcType=VARCHAR},
+            </if>
+            <if test="kSkType != null">
+                #{kSkType,jdbcType=INTEGER},
+            </if>
+            <if test="kAmount != null">
+                #{kAmount,jdbcType=FLOAT}
+            </if>
+        </trim>
+   </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.friday.model.sendpage.SendpageContent">
+        update sendpagekaipiao
+        <set>
+            <if test="kId != null">
+                k_id=#{kId,jdbcType=INTEGER},
+            </if>
+            <if test="kDate != null">
+                k_date=#{kDate,jdbcType=VARCHAR},
+            </if>
+            <if test="kSkDate != null">
+                k_sk_date=#{kSkDate,jdbcType=VARCHAR},
+            </if>
+            <if test="kSkType != null">
+                k_sk_type=#{kSkType,jdbcType=INTEGER},
+            </if>
+            <if test="kAmount != null">
+                k_amount=#{kAmount,jdbcType=FLOAT}
+            </if>
+        </set>
+        where k_id = #{kId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.friday.model.sendpage.SendpageContent">
+    update sendpagekaipiao
+    set k_id=#{kId,jdbcType=INTEGER},
+      k_date=#{kDate,jdbcType=VARCHAR},
+      k_sk_date=#{kSkDate,jdbcType=VARCHAR},
+      k_sk_type=#{kSkType,jdbcType=INTEGER},
+      k_amount=#{kAmount,jdbcType=FLOAT}
+    where k_id = #{kId,jdbcType=INTEGER}
+  </update>
+</mapper>

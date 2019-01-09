@@ -11,7 +11,7 @@
         <result column="s_kp_id" property="sKpId" jdbcType="INTEGER"/>
         <result column="s_company_id" property="sCompanyId" jdbcType="INTEGER"/>
         <result column="s_total_price" property="sTotalPrice" jdbcType="FLOAT"/>
-        <result column="s_express_id" property="sExprexxId" jdbcType="INTEGER"/>
+        <result column="s_express_id" property="sExpressId" jdbcType="INTEGER"/>
         <result column="s_producer_id" property="sProducerId" jdbcType="INTEGER"/>
     </resultMap>
     <sql id="Base_Column_List">s_id, s_title, s_date,s_number, s_content_id,
@@ -36,7 +36,7 @@
       s_kp_id, s_company_id, s_total_price, s_express_id, s_producer_id)
     values (#{sId,jdbcType=INTEGER}, #{sTitle,jdbcType=VARCHAR}, #{sDate,jdbcType=TIMESTAMP},
       #{sNumber,jdbcType=VARCHAR}, #{sContentId,jdbcType=INTEGER}, #{sKpId,jdbcType=INTEGER},
-      #{sCompanyId,jdbcType=INTEGER}, #{sTotalPrice,jdbcType=FLOAT}, #{sExprexxId,jdbcType=INTEGER},
+      #{sCompanyId,jdbcType=INTEGER}, #{sTotalPrice,jdbcType=FLOAT}, #{sExpressId,jdbcType=INTEGER},
       #{sProducerId,jdbcType=INTEGER})
   </insert>
     <insert id="insertSelective" parameterType="com.friday.model.sendpage.Sendpage">
@@ -54,6 +54,24 @@
             <if test="sNumber != null">
                 s_number,
             </if>
+            <if test="sContentId != null">
+                s_content_id,
+            </if>
+            <if test="sKpId != null">
+                s_kp_id,
+            </if>
+            <if test="sCompanyId != null">
+                s_company_id,
+            </if>
+            <if test="sTotalPrice != null">
+                s_total_price,
+            </if>
+            <if test="sExpressId != null">
+                s_express_id,
+            </if>
+            <if test="sProducerId != null">
+                s_producer_id,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="sId != null">
@@ -67,6 +85,24 @@
             </if>
             <if test="sNumber != null">
                 #{sNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="sContentId != null">
+                #{sContentId,jdbcType=INTEGER},
+            </if>
+            <if test="sKpId != null">
+                #{sKpId,jdbcType=INTEGER},
+            </if>
+            <if test="sCompanyId != null">
+                #{sCompanyId,jdbcType=INTEGER},
+            </if>
+            <if test="sTotalPrice != null">
+                #{sTotalPrice,jdbcType=FLOAT},
+            </if>
+            <if test="sExpressId != null">
+                #{sExpressId,jdbcType=INTEGER},
+            </if>
+            <if test="sProducerId != null">
+                #{sProducerId,jdbcType=INTEGER},
             </if>
         </trim>
     </insert>
@@ -82,6 +118,27 @@
             <if test="sDate != null">
                 s_date = #{sDate,jdbcType=TIMESTAMP},
             </if>
+            <if test="sNumber != null">
+                s_number = #{sNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="sContentId != null">
+                s_content_id = #{sContentId,jdbcType=INTEGER},
+            </if>
+            <if test="sKpId != null">
+                s_kp_id#{sKpId,jdbcType=INTEGER},
+            </if>
+            <if test="sCompanyId != null">
+                s_company_id = #{sCompanyId,jdbcType=INTEGER},
+            </if>
+            <if test="sTotalPrice != null">
+                s_total_price = #{sTotalPrice,jdbcType=FLOAT},
+            </if>
+            <if test="sExpressId != null">
+                s_express_id = #{sExpressId,jdbcType=INTEGER},
+            </if>
+            <if test="sProducerId != null">
+                s_producer_id = #{sProducerId,jdbcType=INTEGER},
+            </if>
         </set>
         where s_id = #{sId,jdbcType=INTEGER}
     </update>
@@ -90,6 +147,13 @@
     set s_id = #{sId,jdbcType=INTEGER},
       s_title = #{sTitle,jdbcType=VARCHAR},
       s_date = #{iDate,jdbcType=TIMESTAMP}
+      s_number = #{iDate,jdbcType=VARCHAR}
+      s_content_id = #{iDate,jdbcType=INTEGER}
+      s_kp_id = #{iDate,jdbcType=INTEGER}
+      s_company_id = #{iDate,jdbcType=INTEGER}
+      s_total_price = #{iDate,jdbcType=FLOAT}
+      s_express_id = #{iDate,jdbcType=INTEGER}
+      s_producer_id = #{iDate,jdbcType=INTEGER}
     where s_id = #{sId,jdbcType=INTEGER}
   </update>
 </mapper>

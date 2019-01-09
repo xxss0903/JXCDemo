@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.friday.inter.SendpageProducerMapper">
+    <!--送货单的数据库mappter-->
+    <resultMap id="BaseResultMap" type="com.friday.model.sendpage.SendpageProducer">
+        <id column="p_id" property="pId" jdbcType="INTEGER"/>
+        <result column="p_company" property="pCompany" jdbcType="VARCHAR"/>
+        <result column="p_address" property="pAddress" jdbcType="VARCHAR"/>
+        <result column="p_tax_number" property="pTaxNumber" jdbcType="VARCHAR"/>
+        <result column="p_kh_bank" property="pKhBank" jdbcType="VARCHAR"/>
+        <result column="p_bank_card" property="pBankCard" jdbcType="VARCHAR"/>
+        <result column="p_bank_number" property="pBankNumber" jdbcType="VARCHAR"/>
+        <result column="p_phone1" property="pPhone1" jdbcType="VARCHAR"/>
+        <result column="p_phone2" property="pPhone2" jdbcType="VARCHAR"/>
+        <result column="p_contact_person" property="pContactPerson" jdbcType="VARCHAR"/>
+        <result column="p_contact_phone" property="pContactPhone" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+p_id,
+p_company,
+p_address,
+p_tax_number,
+p_kh_bank,
+p_bank_card,
+p_bank_number,
+p_phone1,
+p_phone2,
+p_contact_person,
+p_contact_phone
+</sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from sendpageproducer
+        where p_id = #{tId,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sendpageproducer
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sendpageproducer
+    where p_id = #{tId,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.friday.model.sendpage.SendpageProducer">
+    insert into sendpageproducer (
+p_id,
+p_company,
+p_address,
+p_tax_number,
+p_kh_bank,
+p_bank_card,
+p_bank_number,
+p_phone1,
+p_phone2,
+p_contact_person,
+p_contact_phone
+)
+    values (#{pId,jdbcType=INTEGER}, #{pCompany,jdbcType=VARCHAR}, #{pAddress,jdbcType=VARCHAR},
+      #{pTaxNumber,jdbcType=VARCHAR}, #{pKhBank,jdbcType=VARCHAR}, #{pBankCard,jdbcType=VARCHAR}, 
+      #{pBankNumber,jdbcType=VARCHAR},
+      #{pPhone1,jdbcType=VARCHAR},
+      #{pPhone2,jdbcType=VARCHAR},
+      #{pContactPerson,jdbcType=VARCHAR},
+      #{pContactPhone,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.friday.model.sendpage.SendpageProducer">
+        insert into sendpageproducer
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pId != null">
+                p_id,
+            </if>
+            <if test="pCompany != null">
+                p_company,
+            </if>
+            <if test="pAddress != null">
+                p_address,
+            </if>
+            <if test="pTaxNumber != null">
+                p_tax_number,
+            </if>
+            <if test="pKhBank != null">
+                p_kh_bank,
+            </if>
+            <if test="pBankCard != null">
+                p_bank_card,
+            </if>
+            <if test="pBankNumber != null">
+                p_bank_number,
+            </if>
+            <if test="pPhone1 != null">
+                p_phone1,
+            </if>
+            <if test="pPhone2 != null">
+                p_phone2,
+            </if>
+            <if test="pContactPerson != null">
+                p_contact_person,
+            </if>
+            <if test="pContactPhone != null">
+                p_contact_phone,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="pId != null">
+                #{pId,jdbcType=INTEGER},
+            </if>
+            <if test="pCompany != null">
+                #{pCompany,jdbcType=VARCHAR},
+            </if>
+            <if test="pAddress != null">
+                #{pAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="pTaxNumber != null">
+                #{pTaxNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="pKhBank != null">
+                #{pKhBank,jdbcType=VARCHAR},
+            </if>
+            <if test="pBankCard != null">
+                #{pBankCard,jdbcType=VARCHAR},
+            </if>
+            <if test="pBankNumber != null">
+                #{pBankNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="pPhone1 != null">
+                #{pPhone1,jdbcType=VARCHAR},
+            </if>
+            <if test="pPhone2 != null">
+                #{pPhone2,jdbcType=VARCHAR}
+            </if>
+            <if test="pContactPerson != null">
+                #{pContactPerson,jdbcType=VARCHAR}
+            </if>
+            <if test="pContactPhone != null">
+                #{pContactPhone,jdbcType=VARCHAR}
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.friday.model.sendpage.SendpageProducer">
+        update sendpageproducer
+        <set>
+            <if test="pId != null">
+                p_id=#{pId,jdbcType=INTEGER},
+            </if>
+            <if test="pCompany != null">
+                p_company=#{pCompany,jdbcType=VARCHAR},
+            </if>
+            <if test="pAddress != null">
+                p_address=#{pAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="pTaxNumber != null">
+                p_tax_number=#{pTaxNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="pKhBank != null">
+                p_kh_bank=#{pKhBank,jdbcType=VARCHAR},
+            </if>
+            <if test="pBankCard != null">
+                p_bank_card=#{pBankCard,jdbcType=VARCHAR},
+            </if>
+            <if test="pBankNumber != null">
+                p_bank_number=#{pBankNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="pPhone1 != null">
+                p_phone1=#{pPhone1,jdbcType=VARCHAR},
+            </if>
+            <if test="pPhone2 != null">
+                p_phone2=#{pPhone2,jdbcType=VARCHAR},
+            </if>
+            <if test="pContactPerson != null">
+                p_contact_person=#{pContactPerson,jdbcType=VARCHAR},
+            </if>
+            <if test="pContactPhone != null">
+                p_contact_phone=#{pContactPhone,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where p_id = #{pId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.friday.model.sendpage.SendpageProducer">
+    update sendpageproducer
+    set p_id=#{pId,jdbcType=INTEGER},
+      p_company=#{pCompany,jdbcType=VARCHAR},
+      p_address=#{pAddress,jdbcType=VARCHAR},
+      p_tax_number=#{pTaxNumber,jdbcType=VARCHAR},
+      p_kh_bank=#{pKhBank,jdbcType=VARCHAR},
+      p_bank_card=#{pBankCard,jdbcType=VARCHAR},
+      p_bank_number=#{pBankNumber,jdbcType=VARCHAR},
+      p_phone1=#{pPhone1,jdbcType=VARCHAR},
+      p_phone2=#{pPhone2,jdbcType=VARCHAR},
+      p_contact_person=#{pContactPerson,jdbcType=VARCHAR},
+      p_contact_phone=#{pContactPhone,jdbcType=VARCHAR}
+    where p_id = #{pId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -23,14 +23,14 @@ public class Sendpage {
     // 开票总价
     private Float sTotalPrice;
     // 快递id
-    private Integer sExprexxId;
+    private Integer sExpressId;
     // 生产商id
     private Integer sProducerId;
 
     private SendpageCompany sCompany;
     private SendpageExpress sExpress;
     private SendpageProducer sProducer;
-    private SendpageKPContent sKp;
+    private SendpageKp sKp;
     private SendpageContent sContent;
 
     public SendpageCompany getsCompany() {
@@ -57,11 +57,11 @@ public class Sendpage {
         this.sProducer = sProducer;
     }
 
-    public SendpageKPContent getsKp() {
+    public SendpageKp getsKp() {
         return sKp;
     }
 
-    public void setsKp(SendpageKPContent sKp) {
+    public void setsKp(SendpageKp sKp) {
         this.sKp = sKp;
     }
 
@@ -140,11 +140,11 @@ public class Sendpage {
     }
 
     public Integer getsExprexxId() {
-        return sExprexxId;
+        return sExpressId;
     }
 
-    public void setsExprexxId(Integer sExprexxId) {
-        this.sExprexxId = sExprexxId;
+    public void setsExprexxId(Integer sExpressId) {
+        this.sExpressId = sExpressId;
     }
 
     public Integer getsProducerId() {
@@ -163,7 +163,7 @@ public class Sendpage {
     //    // 送货内容
 //    private SendpageContent sSendContent;
 //    // 开票数据
-//    private SendpageKPContent sKPContent;
+//    private SendpageKp sKPContent;
 //    // 开票公司
 //    private SendpageCompany sCompany;
 //    // 制作商

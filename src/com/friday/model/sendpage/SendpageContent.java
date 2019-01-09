@@ -39,7 +39,13 @@ public class SendpageContent {
     }
 
     public void setcCategory(String cCategory) {
-        this.cCategory = cCategory;
+        if (cCategory != null) {
+            if (cCategory.equals("1")) {
+                this.cCategory = SendpageCategoryEnum.BIAOQIAN.getName();
+            }
+        } else {
+            this.cCategory = SendpageCategoryEnum.BIAOQIAN.getName();
+        }
     }
 
     public Integer getcItemsId() {

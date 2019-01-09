@@ -81,8 +81,8 @@ $(function($) {
     <td align="center">${sendpage.sTitle}</td>
     <td align="center">${sendpage.sNumber}</td>
     <td align="center">${sendpage.sContent.cCategory}</td>
-    <td align="center">${sendpage.sCompanyId}</td>
-    <td align="center">${sendpage.sProducerId}</td>
+    <td align="center">${sendpage.sCompany.tCompany}</td>
+    <td align="center">${sendpage.sProducer.pCompany}</td>
     <td align="center">${sendpage.sDate.toLocaleString()}</td>
     <%--<td align="center"><a href="modifycustomerload.do?cid=${customer.cId }" ><img src="images/user_edit.png" title="" border="0" /></a></td>--%>
     <%--<td align="center"><a href="deletecustomer.do?cid=${customer.cId }" class="ask"><img src="images/trash.png" title="" border="0" /></a></td>--%>
