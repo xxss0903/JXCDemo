@@ -64,45 +64,11 @@ $(function($) {
 <div align="center" style="color:  red">
 	${success}
 </div>
-<form action="orderproduct.do" method="post">      
+<form action="addsendpage.do" method="post">
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
 	<tr>
-		<td colspan="4" align="left"><strong>订购产品</strong></td>
+		<td colspan="4" align="left"><strong>添加送货单</strong></td>
 	</tr>
-	<c:forEach items="${products }" var="productType">
-		<tr>
-	    	<td colspan="4" align="center"><strong></strong>${productType.key }</td>
-	  	</tr>
-	  <tr>
-	    <td width="26" align="ceter">名称</td>
-	    <td width="61" align="center">规格</td>
-	    <td width="61" align="center">单价</td>
-	    <td width="104" align="center">订购数量</td>
-	  </tr>
-	  <c:forEach items="${productType.value }" var="product">
-	  <tr>
-	    <td width="102" align="center"><input type="text" size="10" value="${product.pName }" readonly/></td>
-	    <td width="104" align="center"><input type="text" size="6" value="${product.pStyle }" readonly/></td>
-	    <td width="104" align="center"><input type="text" size="6" value="${product.pPrice }" readonly/></td>
-	    <td width="106" align="center"><input name="${product.pId }" type="text" size="9" onkeyup="this.value=this.value.replace(/\D/g,'')"/></td>
-	  </tr>
-	  </c:forEach>
-  </c:forEach>
-  <tr>
-    <td align="right"><strong>订购时间</strong></td>
-    <td colspan="4"><input name="orderTime" type="text" id="textfield21" size="27" onclick="WdatePicker()"/>
-      &nbsp;&nbsp;＊点击文本框获取时间</td>
-  </tr>
-  <tr>
-    <td align="right"><strong>备注</strong></td>
-    <td colspan="3"><textarea name="remark" cols="60" id="textfield23"></textarea></td>
-  </tr>
-  <tr>
-    <td colspan="4" align="center">
-    	<input type="submit" id="button" value="确认提交" />&nbsp;&nbsp;&nbsp;&nbsp;
-       	<input type="reset" id="button2" value="重新填写" />
-    </td>
-  </tr>
 </table>
 </form>
 </body>

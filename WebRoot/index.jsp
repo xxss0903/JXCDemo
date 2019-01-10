@@ -148,9 +148,9 @@
                     <div class="submenu">
                         <ul>
                             <%--jsp表示添加和有页面操作的，do表示查询更改的--%>
-                            <li><a onclick="clickA(this)" alt="add_send_page.jsp">添加送货单</a></li>
-                            <li><a  onclick="clickA(this)" alt="sendpagehistory.do">查看历史</a></li>
-                            <li><a  onclick="clickA(this)" alt="print_send_page.jsp">打印送货单</a></li>
+                            <li><a onclick="clickA(this)" alt="sendpage_add.do">添加送货单</a></li>
+                            <li><a  onclick="clickA(this)" alt="sendpage_history.do">查看历史</a></li>
+                            <li><a  onclick="clickA(this)" alt="sendpage_print.do">打印送货单</a></li>
                             <li></li>
                         </ul>
                     </div>

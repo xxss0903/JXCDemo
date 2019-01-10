@@ -65,7 +65,7 @@ $(function($) {
 		<td colspan="6" align="left"><strong>送货单管理</strong></td>
 	</tr>
   <tr>
-    <td colspan="6" align="right"><a href="add_send_page.jsp">新增送货单</a></td>
+    <td colspan="6" align="right"><a href="sendpage_add.jsp">新增送货单</a></td>
   </tr>
        <%--送货单列表，显示单号，标题，公司，生产商。简略的送货单消息，点击这一栏就进入详细的送货单信息界面--%>
   <tr align="center">
@@ -89,5 +89,84 @@ $(function($) {
   </tr>
  </c:forEach>
 </table>
+
+   <table border="1" class="sendpage_table" style="border-collapse:separate; border-spacing:0px 10px;">
+       <!-- 标题 -->
+       <tr class="title">
+           <th colspan="8">送货单标题</th>
+       </tr>
+       <!-- 送货内容 -->
+       <tr class="content">
+       <tr>
+           <th class="content_title" width="80">编号</th>
+           <th class="content_title"  width="80">日期</th>
+           <th class="content_title"  width="80">类别</th>
+           <th  class="content_title" width="80">品名</th>
+           <th  class="content_title" width="80">数量</th>
+           <th  class="content_title" width="80">单价</th>
+           <th class="content_title"  width="80">金额</th>
+           <th  class="content_title" width="80">备注</th>
+       </tr>
+       <tr class="content_items">
+           <td  class="content_title" width="80">编号1</td>
+           <td  class="content_title" width="80">2018-1-21</td>
+           <td  class="content_title" width="80">标签类别</td>
+           <td class="content_title"  width="80">墨盒</td>
+           <td  class="content_title" width="80">200</td>
+           <td class="content_title"  width="80">20.2</td>
+           <td class="content_title"  width="80">800</td>
+           <td class="content_title"  width="80">这是一个测试信息看看能多长</td>
+       </tr>
+       </tr>
+       <!-- 开票信息 -->
+       <tr class="kaipiao">
+           <td colspan="8" align="center">
+               <ul style="list-style: none">
+                   <li class="kaipiao_content">开票日期:2018-12-12 开票金额:6666元</li>
+                   <li class="kaipiao_content">收款日期:2018-12-23 收款方式:公司账号</li>
+               </ul>
+           </td>
+       </tr>
+       <!-- 送货公司信息 -->
+       <tr class="company">
+           <td colspan="8" align="center">
+               <ul style="list-style: none">
+                   <li class="kaipiao_content">统一社会信用代码:</li>
+                   <li class="kaipiao_content">开户行:</li>
+                   <li class="kaipiao_content">账号:</li>
+                   <li class="kaipiao_content">地址:</li>
+                   <li class="kaipiao_content">电话:</li>
+                   <li class="kaipiao_content">邮编:</li>
+               </ul>
+           </td>
+       </tr>
+       <!-- 快递信息 -->
+       <tr class="express">
+           <td colspan="8" align="center">
+               <ul  style="list-style: none">
+                   <li class="express_content">快递信息:</li>
+                   <li class="express_content">联系人:</li>
+               </ul>
+           </td>
+       </tr>
+       <!-- 生产商信息 -->
+       <tr class="producer">
+           <td colspan="8" align="center">
+               <ul style="list-style: none">
+                   <li class="producer_content">生产制作单位信息:</li>
+                   <li class="producer_content">单位:</li>
+                   <li class="producer_content">地址:</li>
+                   <li class="producer_content">税号:</li>
+                   <li class="producer_content">开户行:</li>
+                   <li class="producer_content">账号:</li>
+                   <li class="producer_content">联系电话:</li>
+                   <li class="producer_content">业务联系人:</li>
+               </ul>
+           </td>
+       </tr>
+   </table>
+
+
+
 </body>
 </html>

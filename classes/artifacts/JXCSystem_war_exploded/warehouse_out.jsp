@@ -59,10 +59,12 @@ $(function($) {
 </script>
 <script language="JavaScript">
 	function queryDetail(did) {
+	    // 發起一個新的請求獲取詳情
 		var xmlHttp=new XMLHttpRequest();
-		xmlHttp.open("GET", "querydetail.do?did="+did+"&table=out", true);				
+		xmlHttp.open("GET", "querydetail.do?did="+did+"&table=out", true);
 		xmlHttp.onreadystatechange=function() {
 		if (xmlHttp.readyState==4)
+		    // 將查詢返回的view添加到這個result裏面
 			result.innerHTML = xmlHttp.responseText;
 		else
 			result.innerHTML = "正在查询，请稍等";
@@ -143,6 +145,7 @@ $(function($) {
 		 </tr>
 	</tfoot>
     <tbody>
+	<%--${参数}获取页面传递过来的参数的数据--%>
     <c:forEach items="${result }" var="order">
     	<tr>
             <td align="center"><a href="javascript:queryDetail('${order.oId}')">${order.oId }</a></td>

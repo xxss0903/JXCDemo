@@ -60,36 +60,7 @@ $(function($) {
 
 </head>
 <body bgcolor="transparent" style='background:transparent'>
-   <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
-   <tr>
-		<td colspan="6" align="left"><strong>送货单管理</strong></td>
-	</tr>
-  <tr>
-    <td colspan="6" align="right"><a href="sendpage_add.jsp">新增送货单</a></td>
-  </tr>
-       <%--送货单列表，显示单号，标题，公司，生产商。简略的送货单消息，点击这一栏就进入详细的送货单信息界面--%>
-  <tr align="center">
-    <td align="center">标题</td>
-    <td align="center">编号</td>
-    <td align="center">类别</td>
-    <td align="center">公司</td>
-    <td align="center">生产商</td>
-    <td align="center">日期</td>
-  </tr>
- <c:forEach items="${result}" var="sendpage">
-  <tr>
-    <td align="center">${sendpage.sTitle}</td>
-    <td align="center">${sendpage.sNumber}</td>
-    <td align="center">${sendpage.sContent.cCategory}</td>
-    <td align="center">${sendpage.sCompany.tCompany}</td>
-    <td align="center">${sendpage.sProducer.pCompany}</td>
-    <td align="center">${sendpage.sDate.toLocaleString()}</td>
-    <%--<td align="center"><a href="modifycustomerload.do?cid=${customer.cId }" ><img src="images/user_edit.png" title="" border="0" /></a></td>--%>
-    <%--<td align="center"><a href="deletecustomer.do?cid=${customer.cId }" class="ask"><img src="images/trash.png" title="" border="0" /></a></td>--%>
-  </tr>
- </c:forEach>
-</table>
-
+<h1>打印送货单</h1>
    <table border="1" class="sendpage_table" style="border-collapse:separate; border-spacing:0px 10px;">
        <!-- 标题 -->
        <tr class="title">
@@ -165,8 +136,5 @@ $(function($) {
            </td>
        </tr>
    </table>
-
-
-
 </body>
 </html>

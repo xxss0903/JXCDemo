@@ -67,6 +67,8 @@
 
     <!--送货单管理-->
     <bean id="sendpageHistoryController" class="com.friday.controller.SendPageHistoryController"/>
+    <bean id="sendpageAddController" class="com.friday.controller.SendPageAddController"/>
+    <bean id="sendpagePrintController" class="com.friday.controller.SendPagePrintController"/>
 
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
@@ -98,7 +100,9 @@
                 <prop key="/deletecustomer.do">deleteCustomerController</prop>
 
                 <!--送货单管理-->
-                <prop key="/sendpagehistory.do">sendpageHistoryController</prop>
+                <prop key="/sendpage_history.do">sendpageHistoryController</prop>
+                <prop key="/sendpage_add.do">sendpageAddController</prop>
+                <prop key="/sendpage_print.do">sendpagePrintController</prop>
 
                 <!-- CXW -->
                 <prop key="/stockquery.do">stockQueryController</prop>
