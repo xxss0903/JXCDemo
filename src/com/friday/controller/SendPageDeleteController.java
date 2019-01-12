@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * 送货单controller
  */
-public class SendPagePrintController implements Controller {
+public class SendPageDeleteController implements Controller {
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
         System.out.println("打印送货单历史");

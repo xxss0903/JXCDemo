@@ -14,10 +14,10 @@ import java.util.Map;
 /**
  * 送货单controller
  */
-public class SendPagePrintController implements Controller {
+public class SendPageEditController implements Controller {
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        System.out.println("打印送货单历史");
+        System.out.println("编辑送货单历史");
         Map<String, Object> model = new HashMap<String, Object>();
         SendpageServiceImpl sendpageService = new SendpageServiceImpl();
 
@@ -39,6 +39,6 @@ public class SendPagePrintController implements Controller {
             }
         }
 
-        return new ModelAndView("sendpage_print", model);
+        return new ModelAndView("sendpage_edit", model);
     }
 }

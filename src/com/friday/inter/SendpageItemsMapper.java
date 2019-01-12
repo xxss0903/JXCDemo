@@ -21,4 +21,6 @@ public interface SendpageItemsMapper {
 
     List<SendpageItems> selectAll();
 
+    List<SendpageItems> selectAllBySendpageId(Integer sId);
+
 }

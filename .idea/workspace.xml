@@ -7,16 +7,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="812bf83f-032f-438a-942b-325612458047" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WebRoot/sendpage_print.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPageAddController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPagePrintController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/sendpage_category.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/sendpage_edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/sendpage_express.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/sendpage_kaipiao.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebRoot/sendpage_producer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPageCategoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPageCompanyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPageDeleteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPageEditController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPageExpressController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPageKaipiaoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPageProducerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/friday/inter/SendpageCategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/friday/mapper/SendpageCategoryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageEnums.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/add_send_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/sendpage_add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/JS/formcheck.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/JS/formcheck.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/add_manager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/add_manager.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/sendpage_add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/sendpage_add.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebRoot/sendpage_management.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/sendpage_management.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/warehouse_out.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/warehouse_out.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/sendpage_print.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/sendpage_print.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/JS/formcheck.js" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/JS/formcheck.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/add_manager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/add_manager.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/sendpage_management.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/sendpage_management.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Configuration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Configuration.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/friday/controller/SendPagePrintController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPagePrintController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/friday/inter/SendpageItemsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/inter/SendpageItemsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/friday/mapper/SendpageItemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/mapper/SendpageItemMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/friday/mapper/SendpageItemsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/mapper/SendpageItemsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageCategoryEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageKp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageKp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/friday/service/SendpageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/service/SendpageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/friday/service/impl/SendpageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/service/impl/SendpageServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,122 +94,160 @@
           <entry key="project.open.time.58" value="1" />
           <entry key="project.open.time.62" value="1" />
           <entry key="project.open.time.68" value="1" />
+          <entry key="project.open.time.79" value="1" />
           <entry key="project.open.time.80" value="1" />
           <entry key="project.open.time.84" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.open.time.87" value="1" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="8" />
+          <entry key="class" value="9" />
           <entry key="css" value="1" />
           <entry key="dtd" value="2" />
+          <entry key="gif" value="20" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="159" />
-          <entry key="jsp" value="56" />
+          <entry key="java" value="220" />
+          <entry key="jpg" value="8" />
+          <entry key="js" value="1" />
+          <entry key="jsp" value="90" />
           <entry key="md" value="1" />
+          <entry key="png" value="20" />
           <entry key="properties" value="3" />
           <entry key="springBeans" value="1" />
           <entry key="sql" value="6" />
-          <entry key="xml" value="121" />
+          <entry key="xml" value="141" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="8" />
+          <entry key="CLASS" value="9" />
           <entry key="CSS" value="1" />
           <entry key="DTD" value="2" />
           <entry key="Eclipse" value="1" />
-          <entry key="JAVA" value="159" />
-          <entry key="JSP" value="56" />
+          <entry key="Image" value="48" />
+          <entry key="JAVA" value="220" />
+          <entry key="JSP" value="90" />
+          <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="3" />
           <entry key="SQL" value="1" />
           <entry key="Scratch" value="5" />
-          <entry key="XML" value="121" />
+          <entry key="XML" value="141" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
           <entry key="gitignore" value="14" />
-          <entry key="java" value="4765" />
-          <entry key="jsp" value="767" />
+          <entry key="java" value="7114" />
+          <entry key="js" value="213" />
+          <entry key="jsp" value="2541" />
           <entry key="properties" value="8" />
           <entry key="sql" value="93" />
           <entry key="txt" value="104" />
-          <entry key="xml" value="3118" />
+          <entry key="xml" value="3477" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4765" />
-          <entry key="JSP" value="767" />
+          <entry key="JAVA" value="7114" />
+          <entry key="JSP" value="2541" />
+          <entry key="JavaScript" value="213" />
           <entry key="PLAIN_TEXT" value="119" />
           <entry key="Properties" value="8" />
-          <entry key="SQL" value="69" />
+          <entry key="SQL" value="71" />
           <entry key="Scratch" value="90" />
-          <entry key="XML" value="3052" />
+          <entry key="XML" value="3409" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_add.jsp">
+        <entry file="file://$PROJECT_DIR$/src/com/friday/mapper/SendpageCategoryMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
+            <state relative-caret-position="75">
+              <caret line="3" column="75" lean-forward="true" selection-start-line="3" selection-start-column="75" selection-end-line="3" selection-end-column="75" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_print.jsp">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/friday/utils/SessionUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+            <state relative-caret-position="250">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Configuration.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="711">
+              <caret line="53" column="66" selection-start-line="53" selection-start-column="66" selection-end-line="53" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageCategory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding>
-                <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#170#171#0" expanded="true" />
+                <element signature="e#196#197#0" expanded="true" />
+                <element signature="e#235#236#0" expanded="true" />
+                <element signature="e#265#266#0" expanded="true" />
+                <element signature="e#297#298#0" expanded="true" />
+                <element signature="e#325#326#0" expanded="true" />
+                <element signature="e#367#368#0" expanded="true" />
+                <element signature="e#401#402#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
+        <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SendPageCategoryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="70" column="77" lean-forward="true" selection-start-line="70" selection-start-column="77" selection-end-line="70" selection-end-column="77" />
+            <state relative-caret-position="350">
+              <caret line="23" column="41" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SendPagePrintController.java">
+        <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_producer.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+            <state relative-caret-position="372">
+              <caret line="71" column="34" lean-forward="true" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_category.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SendPageAddController.java">
+        <entry file="file://$PROJECT_DIR$/src/com/friday/inter/SendpageCategoryMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="21" column="67" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_management.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1335">
-              <caret line="76" column="24" lean-forward="true" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+            <state relative-caret-position="175">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -196,36 +264,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>insertSelective</find>
-      <find>sExprexxId</find>
-      <find>sendpagecontent</find>
-      <find>sendpageexpress</find>
-      <find>SendpageContent</find>
-      <find>SendpageCompany</find>
-      <find>SendpageProducer</find>
-      <find>SendpageItems</find>
-      <find>sendpage</find>
-      <find>SendpageExpress</find>
-      <find>SendpageItem</find>
-      <find>Sendpage</find>
-      <find>SendpageExpressMapper</find>
-      <find>SendpageProducerMapper</find>
-      <find>t_id</find>
-      <find>Powered by Friday</find>
-      <find>详情:</find>
-      <find>出库记录查询</find>
-      <find>detail</find>
-      <find>queryDetail</find>
-      <find>querydetail.do</find>
-      <find>warehouse_out</find>
       <find>打印送货单</find>
-      <find>print_send_page</find>
-      <find>add_send_page</find>
-      <find>sendpagehistory</find>
+      <find>address</find>
+      <find>form</find>
+      <find>myform</find>
+      <find>搜索</find>
+      <find>查询</find>
+      <find>textfield</find>
+      <find>onsubmit</find>
+      <find>姓名不能为空</find>
+      <find>sendpageid</find>
+      <find>sendpage</find>
+      <find>addstaffformcheck</find>
+      <find>formcheck</find>
+      <find>formcheck.js</find>
+      <find>note</find>
+      <find>getAllSendpage</find>
       <find>查看历史</find>
-      <find>sendpage_history</find>
-      <find>result</find>
+      <find>修改</find>
+      <find>d</find>
+      <find>添加送货单</find>
+      <find>sendpage_edit</find>
+      <find>sendpage_add</find>
+      <find>查看送货单</find>
+      <find>sendpage_company</find>
       <find>sendpage_print</find>
+      <find>SendpageItem</find>
+      <find>sendpageitem</find>
+      <find>iName</find>
+      <find>i_name</find>
+      <find>SendpageCategoryMapper</find>
     </findStrings>
     <replaceStrings>
       <replace>SendpageContent</replace>
@@ -245,6 +313,10 @@
       <replace>SendpageCompany</replace>
       <replace>SendpageKp</replace>
       <replace>sendpage_history</replace>
+      <replace>SendpageCategory</replace>
+      <replace>sendpagecategory</replace>
+      <replace>cName</replace>
+      <replace>c_name</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -253,57 +325,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/friday/mapper/SendpageMapper.xml" />
-        <option value="$PROJECT_DIR$/src/com/friday/controller/QueryCustomerController.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/inter/SendpageMapper.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/com/friday/controller/SendPageHistoryController.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/inter/SendpageContentMapper.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/service/SendpageService.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/service/impl/SendpageContentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/mapper/SendpageContentMapper.xml" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/friday/mapper/SendpageContentMapper.xml" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageCategoryEnum.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/mapper/SendpageMapper.xml" />
-        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/Sendpage.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageCompany.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/mapper/SendpageCompanyMapper.xml" />
-        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageKPContent.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageKp.java" />
         <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageExpress.java" />
         <option value="$PROJECT_DIR$/src/com/friday/mapper/SendpageKpMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageProducer.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageContent.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageItems.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/mapper/SendpageItemsMapper.xml" />
-        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageItem.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/mapper/SendpageItemMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/friday/inter/SendpageCompanyMapper.java" />
         <option value="$PROJECT_DIR$/src/com/friday/inter/SendpageProducerMapper.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/inter/SendpageItemsMapper.java" />
         <option value="$PROJECT_DIR$/src/com/friday/inter/SendpageItemMapper.java" />
         <option value="$PROJECT_DIR$/src/com/friday/inter/SendpageExpressMapper.java" />
         <option value="$PROJECT_DIR$/src/com/friday/inter/SendpageKpMapper.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/service/impl/SendpageServiceImpl.java" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/classes/Configuration.xml" />
         <option value="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/friday/mapper/SendpageExpressMapper.xml" />
         <option value="$PROJECT_DIR$/src/com/friday/mapper/SendpageExpressMapper.xml" />
         <option value="$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/friday/mapper/SendpageKpMapper.xml" />
-        <option value="$PROJECT_DIR$/src/Configuration.xml" />
         <option value="$PROJECT_DIR$/src/com/friday/mapper/SendpageProducerMapper.xml" />
-        <option value="$PROJECT_DIR$/WebRoot/sendpage_management.jsp" />
         <option value="$PROJECT_DIR$/WebRoot/sendpage_display.jsp" />
         <option value="$PROJECT_DIR$/WebRoot/warehouse_out.jsp" />
-        <option value="$PROJECT_DIR$/WebRoot/index.jsp" />
-        <option value="$PROJECT_DIR$/src/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/src/com/friday/controller/SendPagePrintController.java" />
         <option value="$PROJECT_DIR$/src/com/friday/controller/SendPageAddController.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageCategoryEnum.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageEnums.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageKp.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/inter/SendpageItemsMapper.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageContent.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageItems.java" />
+        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/classes/Configuration.xml" />
+        <option value="$PROJECT_DIR$/src/com/friday/mapper/SendpageItemMapper.xml" />
+        <option value="$PROJECT_DIR$/src/com/friday/mapper/SendpageItemsMapper.xml" />
+        <option value="$PROJECT_DIR$/WebRoot/add_manager.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/JS/formcheck.js" />
         <option value="$PROJECT_DIR$/WebRoot/sendpage_add.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/sendpage_edit.jsp" />
         <option value="$PROJECT_DIR$/WebRoot/sendpage_print.jsp" />
+        <option value="$PROJECT_DIR$/WebRoot/sendpage_management.jsp" />
+        <option value="$PROJECT_DIR$/src/com/friday/controller/SendPageEditController.java" />
+        <option value="$PROJECT_DIR$/WebRoot/index.jsp" />
+        <option value="$PROJECT_DIR$/src/com/friday/controller/SendPageCompanyController.java" />
+        <option value="$PROJECT_DIR$/src/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/WebRoot/sendpage_kaipiao.jsp" />
+        <option value="$PROJECT_DIR$/src/com/friday/controller/SendPageKaipiaoController.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/controller/SendPagePrintController.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/controller/SendPageExpressController.java" />
+        <option value="$PROJECT_DIR$/WebRoot/sendpage_express.jsp" />
+        <option value="$PROJECT_DIR$/src/com/friday/controller/SendPageProducerController.java" />
+        <option value="$PROJECT_DIR$/WebRoot/sendpage_producer.jsp" />
+        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageItem.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/inter/SendpageCategoryMapper.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageCategory.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/service/impl/SendpageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/service/SendpageService.java" />
+        <option value="$PROJECT_DIR$/src/Configuration.xml" />
+        <option value="$PROJECT_DIR$/src/com/friday/mapper/SendpageCategoryMapper.xml" />
+        <option value="$PROJECT_DIR$/src/com/friday/controller/SendPageItemController.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/controller/SendPageCategoryController.java" />
+        <option value="$PROJECT_DIR$/WebRoot/sendpage_category.jsp" />
       </list>
     </option>
   </component>
@@ -332,17 +404,20 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="544" />
-    <option name="y" value="-8" />
+    <option name="x" value="2105" />
+    <option name="y" value="-11" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -354,7 +429,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -386,16 +460,7 @@
               <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="friday" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="SendPageAddController" type="1a9f42e2:ClassTreeNode" />
-            </path>
-            <path>
-              <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="friday" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="SendPagePrintController" type="1a9f42e2:ClassTreeNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -431,6 +496,23 @@
               <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="friday" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="SendpageServiceImpl" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="friday" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="SendpageService" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -445,6 +527,46 @@
               <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
               <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="friday" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="friday" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -453,10 +575,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="SendpageController&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/SendPageHistoryController.java&#10;Sendpage&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/model/sendpage/SendpageContent.java&#10;SendpageMapper.xml&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/mapper/SendpageMapper.xml&#10;SendpageControll&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/SendPageHistoryController.java&#10;Custom&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/QueryCustomerController.java&#10;sendpage.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_send_page.jsp&#10;CustomerSer&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/service/CustomerService.java&#10;SendpageMapper&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/inter/SendpageMapper.java&#10;adduser&#9;null&#9;null&#10;staff.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_staff.jsp&#10;add_staff.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_staff.jsp&#10;Login&#9;PSI&#9;JAVA://com.friday.controller.LoginController" />
+    <property name="SearchEverywhereHistoryKey" value="sendpage_print&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/sendpage_print.jsp&#10;SendpageController&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/SendPageHistoryController.java&#10;Sendpage&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/model/sendpage/SendpageContent.java&#10;SendpageMapper.xml&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/mapper/SendpageMapper.xml&#10;SendpageControll&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/SendPageHistoryController.java&#10;Custom&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/QueryCustomerController.java&#10;sendpage.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_send_page.jsp&#10;CustomerSer&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/service/CustomerService.java&#10;SendpageMapper&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/inter/SendpageMapper.java&#10;adduser&#9;null&#9;null&#10;staff.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_staff.jsp&#10;add_staff.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_staff.jsp&#10;Login&#9;PSI&#9;JAVA://com.friday.controller.LoginController" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547136599235" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547293838383" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../jars/mysql-connector-java-8.0.13.jar" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -472,13 +594,14 @@
       <recent name="com.friday.model.sendpage" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.friday.controller" />
       <recent name="com.friday.inter" />
+      <recent name="com.friday.model.sendpage" />
+      <recent name="com.friday.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Java\JXCSystem-master\src\com\friday\mapper" />
       <recent name="F:\Java\JXCSystem-master\WebRoot" />
       <recent name="F:\Java\JXCSystem-master\WebRoot\WEB-INF\classes\com\friday\mapper" />
-      <recent name="F:\Java\JXCSystem-master\src\com\friday\mapper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -698,6 +821,8 @@
       <workItem from="1546953649547" duration="12401000" />
       <workItem from="1547038483567" duration="12501000" />
       <workItem from="1547125046630" duration="8455000" />
+      <workItem from="1547213295710" duration="13754000" />
+      <workItem from="1547274086766" duration="10201000" />
     </task>
     <task id="LOCAL-00001" summary="update add sql query">
       <created>1547050919212</created>
@@ -710,13 +835,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81276000" />
+    <option name="totallyTimeSpent" value="105231000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18336888" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -726,7 +851,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3257329" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.74817896" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.3995657" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -762,38 +887,140 @@
     <option name="LAST_COMMIT_MESSAGE" value="update add sql query" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/friday/inter/SendpageExpressMapper.java">
+    <entry file="file://$PROJECT_DIR$/WebRoot/images/sidebar_box_bottom.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/images/search.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/images/right.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/images/red_bt_a.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/images/red_bt.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/images/user_logout.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/images/user_edit.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/images/trash.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/stock_query.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="-1875" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/staff_management.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="81" column="11" lean-forward="true" selection-start-line="81" selection-start-column="11" selection-end-line="81" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/inter/SendpageItemsMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/ModifyCustomerLoadController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="261">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/model/sendpage/Sendpage.java">
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+        <state relative-caret-position="596">
+          <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageKp.java">
+    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SendPageEditController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="725">
+          <caret line="41" column="46" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/inter/SendpageItemMapper.java">
+    <entry file="file://$PROJECT_DIR$/WebRoot/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="414">
+          <caret line="153" column="78" selection-start-line="153" selection-start-column="64" selection-end-line="153" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SendPageCompanyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="21" column="58" lean-forward="true" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+          <folding>
+            <element signature="e#704#720#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/service/StockWarnService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/service/StockQueryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/service/StockOutService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/service/StockInService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/service/StaffService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/service/ShopManagementService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/inter/SendpageCompanyMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageCompany.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -804,357 +1031,199 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/mapper/SendpageCompanyMapper.xml">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.2.4/mybatis-3.2.4.jar!/org/apache/ibatis/session/SqlSession.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/classes/Configuration.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="47" column="66" selection-start-line="47" selection-start-column="66" selection-end-line="47" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/mapper/SendpageContentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/friday/mapper/SendpageExpressMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="71" lean-forward="true" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/mapper/SendpageExpressMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/friday/mapper/SendpageKpMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/inter/SendpageCompanyMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/service/impl/SendpageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="21" column="85" selection-start-line="21" selection-start-column="85" selection-end-line="21" selection-end-column="85" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/inter/SendpageContentMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/service/impl/SendpageContentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#291#292#0" expanded="true" />
-            <element signature="e#315#316#0" expanded="true" />
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
-            <element signature="e#483#484#0" expanded="true" />
-            <element signature="e#507#508#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#605#606#0" expanded="true" />
-            <element signature="e#691#692#0" expanded="true" />
-            <element signature="e#715#716#0" expanded="true" />
-            <element signature="e#792#793#0" expanded="true" />
-            <element signature="e#816#817#0" expanded="true" />
-            <element signature="e#878#879#0" expanded="true" />
-            <element signature="e#905#906#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Configuration.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1300">
-          <caret line="52" column="59" selection-start-line="52" selection-start-column="59" selection-end-line="52" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/mapper/SendpageProducerMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageCompany.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding>
-            <element signature="e#515#516#0" expanded="true" />
-            <element signature="e#546#547#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageProducer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding>
-            <element signature="e#442#443#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#507#508#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-            <element signature="e#651#652#0" expanded="true" />
-            <element signature="e#691#692#0" expanded="true" />
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#757#758#0" expanded="true" />
-            <element signature="e#805#806#0" expanded="true" />
-            <element signature="e#845#846#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#915#916#0" expanded="true" />
-            <element signature="e#967#968#0" expanded="true" />
-            <element signature="e#1011#1012#0" expanded="true" />
-            <element signature="e#1045#1046#0" expanded="true" />
-            <element signature="e#1075#1076#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1159#1160#0" expanded="true" />
-            <element signature="e#1195#1196#0" expanded="true" />
-            <element signature="e#1227#1228#0" expanded="true" />
-            <element signature="e#1277#1278#0" expanded="true" />
-            <element signature="e#1319#1320#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1391#1392#0" expanded="true" />
-            <element signature="e#1445#1446#0" expanded="true" />
-            <element signature="e#1491#1492#0" expanded="true" />
-            <element signature="e#1525#1526#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1601#1602#0" expanded="true" />
-            <element signature="e#1639#1640#0" expanded="true" />
-            <element signature="e#1673#1674#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1749#1750#0" expanded="true" />
-            <element signature="e#1787#1788#0" expanded="true" />
-            <element signature="e#1828#1829#0" expanded="true" />
-            <element signature="e#1865#1866#0" expanded="true" />
-            <element signature="e#1925#1926#0" expanded="true" />
-            <element signature="e#1977#1978#0" expanded="true" />
-            <element signature="e#2017#2018#0" expanded="true" />
-            <element signature="e#2053#2054#0" expanded="true" />
-            <element signature="e#2111#2112#0" expanded="true" />
-            <element signature="e#2161#2162#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/friday/mapper/GoodsBackDetailMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/shop_management.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1500" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/staff_birthday_remind.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1425" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/staff_detail_information.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="92" column="23" lean-forward="true" selection-start-line="92" selection-end-line="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/staff_management.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1468" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/stock_query.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1293" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/stock_warn.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1418" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/storage_record_query.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1800" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/success.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/login.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/add_shop.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/add_staff.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/class_management.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1418" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/customer_management.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/product_sell_query.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/detail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="757">
-          <caret line="53" column="55" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="55" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/product_management.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2143" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/product_out_storage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-329">
-          <caret line="74" column="8" lean-forward="true" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/classes/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="35" column="76" lean-forward="true" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/QueryDetailController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="21" column="53" lean-forward="true" selection-start-line="21" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/product_sale.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-600">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/warehouse_out.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="160" column="7" lean-forward="true" selection-start-line="160" selection-start-column="7" selection-end-line="160" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SendPageHistoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="150" column="75" selection-start-line="150" selection-start-column="63" selection-end-line="150" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="70" column="77" lean-forward="true" selection-start-line="70" selection-start-column="77" selection-end-line="70" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SendPagePrintController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SendPageAddController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="21" column="67" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_add.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_management.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1335">
-          <caret line="76" column="24" lean-forward="true" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+        <state relative-caret-position="685">
+          <caret line="64" column="10" selection-start-line="64" selection-start-column="10" selection-end-line="64" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_print.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+        <state relative-caret-position="324">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_management.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="88" column="50" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageKp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SendPagePrintController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#663#679#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SendPageKaipiaoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="20" selection-start-line="20" selection-end-line="26" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SendPageExpressController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="25" column="59" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="25" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_kaipiao.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="77" column="47" lean-forward="true" selection-start-line="77" selection-start-column="47" selection-end-line="77" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_add.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="147" column="39" lean-forward="true" selection-start-line="147" selection-end-line="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_express.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="66" column="8" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SendPageProducerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="21" selection-start-line="21" selection-end-line="27" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="761">
+          <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/inter/SendpageItemMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/mapper/SendpageItemMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-972">
+          <caret line="77" column="71" selection-start-line="77" selection-start-column="71" selection-end-line="77" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/service/SendpageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/service/impl/SendpageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="181" selection-start-line="181" selection-end-line="181" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/utils/SessionUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Configuration.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="53" column="66" selection-start-line="53" selection-start-column="66" selection-end-line="53" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/mapper/SendpageCategoryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="75" lean-forward="true" selection-start-line="3" selection-start-column="75" selection-end-line="3" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/inter/SendpageCategoryMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding>
+            <element signature="e#170#171#0" expanded="true" />
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#235#236#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#325#326#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SendPageCategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_producer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="71" column="34" lean-forward="true" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_category.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
         </state>
       </provider>
     </entry>

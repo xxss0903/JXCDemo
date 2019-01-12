@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.friday.inter.SendpageCategoryMapper">
+    <resultMap id="BaseResultMap" type="com.friday.model.sendpage.SendpageCategory">
+        <id column="c_id" property="cId" jdbcType="INTEGER"/>
+        <result column="c_name" property="cName" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+c_id,
+c_name
+</sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from sendpagecategory
+        where c_id = #{cId,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sendpagecategory
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sendpagecategory
+    where c_id = #{cId,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.friday.model.sendpage.SendpageCategory">
+    insert into sendpagecategory (
+c_id,
+c_name
+)
+    values (#{cId,jdbcType=INTEGER}, #{cName,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.friday.model.sendpage.SendpageCategory">
+        insert into sendpagecategory
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="cId != null">
+                c_id,
+            </if>
+            <if test="cName != null">
+                c_name,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="cId != null">
+                #{cId,jdbcType=INTEGER},
+            </if>
+            <if test="cName != null">
+                #{cName,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.friday.model.sendpage.SendpageCategory">
+        update sendpagecategory
+        <set>
+            <if test="cId != null">
+                c_id=#{cId,jdbcType=INTEGER},
+            </if>
+            <if test="cName != null">
+                c_name=#{cName,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where c_id = #{cId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.friday.model.sendpage.SendpageCategory">
+    update sendpagecategory
+    set c_id=#{cId,jdbcType=INTEGER},
+      c_name=#{cName,jdbcType=VARCHAR}
+    where c_id=#{cId,jdbcType=INTEGER}
+  </update>
+</mapper>

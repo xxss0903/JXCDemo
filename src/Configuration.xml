@@ -51,5 +51,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<mapper resource="com/friday/mapper/SendpageItemsMapper.xml"/>
 		<mapper resource="com/friday/mapper/SendpageProducerMapper.xml"/>
 		<mapper resource="com/friday/mapper/SendpageExpressMapper.xml"/>
+		<mapper resource="com/friday/mapper/SendpageCategoryMapper.xml"/>
 	</mappers>
 </configuration>

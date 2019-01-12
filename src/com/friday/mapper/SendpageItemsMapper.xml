@@ -26,6 +26,11 @@ c_id
         from sendpageitems
         where i_id = #{iId,jdbcType=INTEGER}
     </select>
+    <select id="selectAllBySendpageId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+            select <include refid="Base_Column_List"/>
+        from sendpageitems
+        where s_id = #{sId, jdbcType=INTEGER}
+    </select>
     <select id="selectAll" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>

@@ -1,5 +1,7 @@
 package com.friday.model.sendpage;
 
+import java.util.List;
+
 /**
  * 送货内容
  */
@@ -9,6 +11,7 @@ public class SendpageContent {
     private String cDate;
     private String cCategory;
     private Integer cItemsId;
+    private List<SendpageItems> cItemsObj;
 
     public Integer getcId() {
         return cId;
@@ -41,10 +44,10 @@ public class SendpageContent {
     public void setcCategory(String cCategory) {
         if (cCategory != null) {
             if (cCategory.equals("1")) {
-                this.cCategory = SendpageCategoryEnum.BIAOQIAN.getName();
+                this.cCategory = SendpageEnums.CategoryEnum.BIAOQIAN.getName();
             }
         } else {
-            this.cCategory = SendpageCategoryEnum.BIAOQIAN.getName();
+            this.cCategory = SendpageEnums.CategoryEnum.BIAOQIAN.getName();
         }
     }
 
@@ -54,5 +57,13 @@ public class SendpageContent {
 
     public void setcItemsId(Integer cItemsId) {
         this.cItemsId = cItemsId;
+    }
+
+    public List<SendpageItems> getcItemsObj() {
+        return cItemsObj;
+    }
+
+    public void setcItemsObj(List<SendpageItems> cItemsObj) {
+        this.cItemsObj = cItemsObj;
     }
 }

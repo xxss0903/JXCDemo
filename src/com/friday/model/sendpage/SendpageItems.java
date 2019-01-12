@@ -19,6 +19,7 @@ public class SendpageItems {
     private Integer sId;
     // category的id
     private Integer cId;
+    private SendpageItem sendpageItem;
 
     public Integer getiId() {
         return iId;
@@ -74,5 +75,13 @@ public class SendpageItems {
 
     public void setcId(Integer cId) {
         this.cId = cId;
+    }
+
+    public SendpageItem getSendpageItem() {
+        return sendpageItem;
+    }
+
+    public void setSendpageItem(SendpageItem sendpageItem) {
+        this.sendpageItem = sendpageItem;
     }
 }

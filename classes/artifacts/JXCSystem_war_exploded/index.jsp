@@ -148,9 +148,15 @@
                     <div class="submenu">
                         <ul>
                             <%--jsp表示添加和有页面操作的，do表示查询更改的--%>
+                            <li><a  onclick="clickA(this)" alt="sendpage_history.do">查看送货单</a></li>
                             <li><a onclick="clickA(this)" alt="sendpage_add.do">添加送货单</a></li>
-                            <li><a  onclick="clickA(this)" alt="sendpage_history.do">查看历史</a></li>
+                            <li><a onclick="clickA(this)" alt="sendpage_edit.do">编辑送货单</a></li>
                             <li><a  onclick="clickA(this)" alt="sendpage_print.do">打印送货单</a></li>
+                            <li><a  onclick="clickA(this)" alt="sendpage_company.do">送货公司管理</a></li>
+                            <li><a  onclick="clickA(this)" alt="sendpage_kaipiao.do">开票管理</a></li>
+                            <li><a  onclick="clickA(this)" alt="sendpage_producer.do">生产商管理</a></li>
+                            <li><a  onclick="clickA(this)" alt="sendpage_express.do">快递管理</a></li>
+                            <li><a  onclick="clickA(this)" alt="sendpage_category.do">分类管理</a></li>
                             <li></li>
                         </ul>
                     </div>

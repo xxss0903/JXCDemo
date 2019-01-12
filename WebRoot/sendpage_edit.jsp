@@ -65,7 +65,7 @@
         }
 
         table {
-            width: 500px;
+            width: 400px;
             min-height: 25px;
             line-height: 25px;
             text-align: center;
@@ -75,13 +75,12 @@
     </style>
 </head>
 <body bgcolor="transparent" style='background:transparent'>
-<h1>打印送货单</h1>
+<h1>编辑送货单</h1>
 
 <%--根据送货单id搜索送货单--%>
 <form name="myform" action="sendpage_print.do" onsubmit="return sendpageidcheck()" method="post">
     <input type="text" name="sendpageid" id="sendpageid" size="5"/>
     <input type="submit" value="搜索送货单"/>
-    <input type="submit" value="打印送货单"/>
 </form>
 
 <table class="sendpage_table">

@@ -66,6 +66,16 @@ function modifypwdformcheck() {
 	
 }
 
+function sendpageidcheck() {
+	if (document.myform.sendpageid.value.trim() == "") {
+		alert("送货单不能为空");
+		document.myform.sendpageid.focus();
+		return false;
+	} else {
+		console.log("送货单id不空 " + document.myform.sendpageid.value)
+	}
+}
+
 //添加员工时候的表单数据校验
 function addstaffformcheck() {
 	

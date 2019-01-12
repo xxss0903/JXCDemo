@@ -11,6 +11,8 @@ public class SendpageItem {
     private Float iPrice;
     // 对应的category的id
     private Integer cId;
+    // category的名称
+    private String cName;
 
     public Integer getiId() {
         return iId;
@@ -42,5 +44,13 @@ public class SendpageItem {
 
     public void setcId(Integer cId) {
         this.cId = cId;
+    }
+
+    public String getcName() {
+        return cName;
+    }
+
+    public void setcName(String cName) {
+        this.cName = cName;
     }
 }
