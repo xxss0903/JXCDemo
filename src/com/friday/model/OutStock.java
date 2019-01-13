@@ -2,6 +2,9 @@ package com.friday.model;
 
 import java.util.Date;
 
+/**
+ * 出库记录
+ */
 public class OutStock {
     private Integer oId;
 

@@ -1,5 +1,8 @@
 package com.friday.model;
 
+/**
+ * 出库详情
+ */
 public class OutStockDetail {
     private Integer oId;
 

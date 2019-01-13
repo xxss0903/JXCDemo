@@ -58,7 +58,8 @@ ddaccordion.init({
 <div id="main_container">
 
 	<div class="header_login">
-	  <div class="logo"><a href="#"><img src="images/logo.gif" alt="" title="" border="0" /></a></div>
+	  <%--<div class="logo"><a href="#"><img src="images/logo.gif" alt="" title="" border="0" /></a></div>--%>
+	  <div class="logo"><a href="#"  style="size: 20px;">世清缘分标签管理系统</a></div>
     </div>
     <div class="login_form" align="center">
     <form name="myform" action="login.do" method="post">
@@ -83,7 +84,7 @@ ddaccordion.init({
     
     <div class="footer_login">
     
-    	<div class="left_footer_login">进销存管理系统 | Powered by Friday</div>
+    	<div class="left_footer_login">世清缘分标签管理系统</div>
     </div>
 
 </div>		

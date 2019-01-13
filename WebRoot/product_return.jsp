@@ -76,7 +76,7 @@ $(function($) {
 					</tr>
                     <tr>
                       <td width="102">订单编号</td>
-                      <td width="154"><input name="orderid" type="text" id="textfield1" size="20" /></td>
+                      <td width="80"><input name="orderid" type="text" id="textfield1" size="20" /></td>
                     </tr>
                     <tr>
                       <td>退回时间</td>

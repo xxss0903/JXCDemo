@@ -202,4 +202,22 @@ public class SendpageServiceImpl implements SendpageService {
         }
         return allItem;
     }
+
+    @Override
+    public List<SendpageItem> getAllItemByCategoryId(Integer cId) {
+        SqlSession sqlSession = null;
+        List<SendpageItem> allItem = null;
+        try {
+            sqlSession = SessionUtils.getSession();
+            SendpageItemMapper mapper = sqlSession.getMapper(SendpageItemMapper.class);
+            allItem = mapper.selectByCategoryId(cId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            SessionUtils.closeSession(sqlSession);
+        }
+        return allItem;
+    }
+
+
 }

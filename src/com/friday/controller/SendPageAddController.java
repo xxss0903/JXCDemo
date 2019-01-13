@@ -25,7 +25,7 @@ public class SendPageAddController implements Controller {
             for (Sendpage sendpage : allSendpage) {
                 System.out.println(sendpage.toString());
             }
-            model.put("result", allSendpage);
+            model.put("result", allSendpage.get(0));
         } else {
             System.out.println("送货单为0");
         }

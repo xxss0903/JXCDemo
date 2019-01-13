@@ -69,6 +69,7 @@
     <bean id="sendpageHistoryController" class="com.friday.controller.SendPageHistoryController"/>
     <bean id="sendpageAddController" class="com.friday.controller.SendPageAddController"/>
     <bean id="sendpagePrintController" class="com.friday.controller.SendPagePrintController"/>
+    <bean id="sendpagePrintImplController" class="com.friday.controller.SendPagePrintImplController"/>
     <bean id="sendpageEditController" class="com.friday.controller.SendPageEditController"/>
     <bean id="sendpageDeleteController" class="com.friday.controller.SendPageDeleteController"/>
     <bean id="sendpageCompanyController" class="com.friday.controller.SendPageCompanyController"/>
@@ -76,6 +77,9 @@
     <bean id="sendpageProducerController" class="com.friday.controller.SendPageProducerController"/>
     <bean id="sendpageExpressController" class="com.friday.controller.SendPageExpressController"/>
     <bean id="sendpageCategoryController" class="com.friday.controller.SendPageCategoryController"/>
+    <bean id="queryCategoryItemController" class="com.friday.controller.QueryCategoryItemController"/>
+    <bean id="sendpageItemEditController" class="com.friday.controller.QueryCategoryItemController"/>
+    <bean id="sendpageItemDeletetController" class="com.friday.controller.QueryCategoryItemController"/>
 
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
@@ -110,6 +114,7 @@
                 <prop key="/sendpage_history.do">sendpageHistoryController</prop>
                 <prop key="/sendpage_add.do">sendpageAddController</prop>
                 <prop key="/sendpage_print.do">sendpagePrintController</prop>
+                <prop key="/sendpage_print_impl.do">sendpagePrintImplController</prop>
                 <prop key="/sendpage_edit.do">sendpageEditController</prop>
                 <prop key="/sendpage_delete.do">sendpageDeleteController</prop>
                 <prop key="/sendpage_company.do">sendpageCompanyController</prop>
@@ -117,6 +122,9 @@
                 <prop key="/sendpage_producer.do">sendpageProducerController</prop>
                 <prop key="/sendpage_express.do">sendpageExpressController</prop>
                 <prop key="/sendpage_category.do">sendpageCategoryController</prop>
+                <prop key="/querycategoryitem.do">queryCategoryItemController</prop>
+                <prop key="/sendpage_item_edit.do">sendpageItemEditController</prop>
+                <prop key="/sendpage_delete_edit.do">sendpageItemDeletetController</prop>
 
                 <!-- CXW -->
                 <prop key="/stockquery.do">stockQueryController</prop>

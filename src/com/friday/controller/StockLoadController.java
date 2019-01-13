@@ -12,6 +12,9 @@ import org.springframework.web.servlet.mvc.Controller;
 import com.friday.service.StockQueryService;
 import com.friday.service.impl.StockQueryServiceImpl;
 
+/**
+ * 查询库存
+ */
 public class StockLoadController implements Controller {
 
 	@Override

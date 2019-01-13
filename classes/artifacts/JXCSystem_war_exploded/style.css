@@ -233,7 +233,7 @@ border: none;
 .sidebarmenu div.submenu{
 background: white;
 }
-.sidebarmenu div.submenu ul{ 
+.sidebarmenu div.submenu ul{
 list-style-type: none;
 margin: 0;
 padding: 0 0 5px 0;
@@ -309,7 +309,7 @@ border-top: 1px solid #fff;
 color: #669;
 }
 
-#rounded-corner td.jlj   
+#rounded-corner td.jlj
 {
 padding: 8px;
 background: #ff;
@@ -441,7 +441,7 @@ div.pagination a {
 padding: 2px 5px 2px 5px;
 margin-right: 2px;
 border: 1px solid #52bfea;
-text-decoration: none; 
+text-decoration: none;
 color: #52bfea;
 }
 div.pagination a:hover, div.pagination a:active {

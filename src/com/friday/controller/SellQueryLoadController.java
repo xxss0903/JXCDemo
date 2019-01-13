@@ -14,6 +14,9 @@ import com.friday.model.Shop;
 import com.friday.service.StockOutService;
 import com.friday.service.impl.StockOutServiceImpl;
 
+/**
+ * 销售记录查询
+ */
 public class SellQueryLoadController implements Controller {
 
 	@Override

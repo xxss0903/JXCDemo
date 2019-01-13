@@ -62,7 +62,8 @@
 <div id="main_container">
 
     <div class="header">
-        <div class="logo"><a href="#"><img src="images/logo.gif" alt="" title="" border="0"/></a></div>
+        <%--<div class="logo"><a href="#"><img src="images/logo.gif" alt="" title="" border="0"/></a></div>--%>
+        <div class="logo"><a href="#" style="size: 20px;">世清缘分标签管理系统</a></div>
 
         <div class="right_header">Welcome <%=session.getAttribute("name") %> | <a href="logout.do"
                                                                                   class="logout">Logout</a></div>
@@ -73,12 +74,14 @@
 
         <div class="menu">
             <ul>
-                <li><a onclick="clickA(this);" alt="order_record_query.jsp">订单记录查询</a></li>
-                <li><a onclick="clickA(this);" alt="product_storage.jsp">产品入库</a></li>
-                <li><a onclick="clickA(this);" alt="stockload.do">库存查询</a></li>
-                <li><a onclick="clickA(this);" alt="sellload.do">产品销售</a></li>
-                <li><a onclick="clickA(this);" alt="stockwarn.do">库存报警</a></li>
-                <li><a onclick="clickA(this);" alt="customerquery.do">客户管理</a></li>
+                <%--<li><a onclick="clickA(this);" alt="order_record_query.jsp">订单记录查询</a></li>--%>
+                <%--<li><a onclick="clickA(this);" alt="product_storage.jsp">产品入库</a></li>--%>
+                <%--<li><a onclick="clickA(this);" alt="stockload.do">库存查询</a></li>--%>
+                <%--<li><a onclick="clickA(this);" alt="sellload.do">产品销售</a></li>--%>
+                <%--<li><a onclick="clickA(this);" alt="stockwarn.do">库存报警</a></li>--%>
+
+                <li><a onclick="clickA(this);" alt="sendpage_history.do">送货单管理</a></li>
+                <li><a onclick="clickA(this);" alt="sendpage_company.do">客户管理</a></li>
                 <li><a onclick="clickA(this);" alt="modify_password.jsp">修改密码</a></li>
             </ul>
         </div>
@@ -88,11 +91,38 @@
             <div class="left_content">
                 <div class="sidebarmenu">
 
-                    <a class="menuitem submenuheader" href="">订单管理</a>
+                    <%--<a class="menuitem submenuheader" href="">订单管理</a>--%>
+                    <%--<div class="submenu">--%>
+                    <%--<ul>--%>
+                    <%--<li><a onclick="clickA(this);" alt="getproduct.do">订购产品</a></li>--%>
+                    <%--<li><a onclick="clickA(this);" alt="order_record_query.jsp">订单记录查询</a></li>--%>
+                    <%--</ul>--%>
+                    <%--</div>--%>
+
+                    <a class="menuitem submenuheader" href="">出库管理</a>
                     <div class="submenu">
                         <ul>
-                            <li><a onclick="clickA(this);" alt="getproduct.do">订购产品</a></li>
-                            <li><a onclick="clickA(this);" alt="order_record_query.jsp">订单记录查询</a></li>
+                            <li><a onclick="clickA(this);" alt="getoutproduct.do">产品出库</a></li>
+                            <li><a onclick="clickA(this);" alt="stockoutqueryload.do">出库记录查询</a></li>
+                            <li><a onclick="clickA(this);" alt="sellload.do">产品销售</a></li>
+                            <li><a onclick="clickA(this);" alt="sellqueryload.do">销售记录查询</a></li>
+                        </ul>
+                    </div>
+                    <%--<a class="menuitem submenuheader" href="">员工信息</a>--%>
+                    <%--<div class="submenu">--%>
+                    <%--<ul>--%>
+                    <%--<li><a onclick="clickA(this);" alt="querystaffs.do">员工管理</a></li>--%>
+                    <%--<li><a onclick="clickA(this);" alt="add_staff.jsp">添加员工</a></li>--%>
+                    <%--<li><a onclick="clickA(this);" alt="remindbirthday.do">员工生日提醒</a></li>--%>
+                    <%--</ul>--%>
+                    <%--</div>--%>
+                    <a class="menuitem submenuheader" href="">送货单管理</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a onclick="clickA(this)" alt="sendpage_history.do">查看送货单</a></li>
+                            <li><a onclick="clickA(this)" alt="sendpage_add.do">添加送货单</a></li>
+                            <li><a onclick="clickA(this)" alt="sendpage_edit.do">编辑送货单</a></li>
+                            <li><a onclick="clickA(this)" alt="sendpage_print.do">打印送货单</a></li>
                         </ul>
                     </div>
                     <a class="menuitem submenuheader" href="">入库管理</a>
@@ -104,62 +134,64 @@
                             <li><a onclick="clickA(this);" alt="Returns_records_query.jsp">退货记录查询</a></li>
                         </ul>
                     </div>
-                    <a class="menuitem submenuheader" href="">库存信息</a>
+                    <a class="menuitem submenuheader" href="">库存管理</a>
                     <div class="submenu">
                         <ul>
                             <li><a onclick="clickA(this);" alt="stockload.do">库存查询</a></li>
-                            <li><a onclick="clickA(this);" alt="stockwarn.do">库存报警</a></li>
+                            <%--<li><a onclick="clickA(this);" alt="stockwarn.do">库存报警</a></li>--%>
                             <li><a onclick="clickA(this);" alt="shopmanagement.do">网点管理</a></li>
                         </ul>
                     </div>
-                    <a class="menuitem submenuheader" href="">出库管理</a>
+
+                    <a class="menuitem submenuheader" href="">生产商管理</a>
                     <div class="submenu">
                         <ul>
-                            <li><a onclick="clickA(this);" alt="getoutproduct.do">产品出库</a></li>
-                            <li><a onclick="clickA(this);" alt="stockoutqueryload.do">出库记录查询</a></li>
-                            <li><a onclick="clickA(this);" alt="sellload.do">产品销售</a></li>
-                            <li><a onclick="clickA(this);" alt="sellqueryload.do">销售记录查询</a></li>
+                            <li><a onclick="clickA(this)" alt="sendpage_producer.do">生产商管理</a></li>
+                            <li></li>
                         </ul>
                     </div>
-                    <a class="menuitem submenuheader" href="">员工信息</a>
+                    <a class="menuitem submenuheader" href="">快递管理</a>
                     <div class="submenu">
                         <ul>
-                            <li><a onclick="clickA(this);" alt="querystaffs.do">员工管理</a></li>
-                            <li><a onclick="clickA(this);" alt="add_staff.jsp">添加员工</a></li>
-                            <li><a onclick="clickA(this);" alt="remindbirthday.do">员工生日提醒</a></li>
+                            <li><a onclick="clickA(this)" alt="sendpage_express.do">快递管理</a></li>
                         </ul>
                     </div>
                     <a class="menuitem submenuheader" href="">客户管理</a>
                     <div class="submenu">
                         <ul>
-                            <li><a onclick="clickA(this);" alt="customerquery.do">客户管理</a></li>
+                            <li><a onclick="clickA(this)" alt="sendpage_company.do">送货公司管理</a></li>
                         </ul>
+                    </div>
+                    <a class="menuitem submenuheader" href="">送货类别管理</a>
+                    <div class="submenu">
+                        <ul>
+                            <%--<li><a onclick="clickA(this)" alt="sendpage_category.do">分类管理</a></li>--%>
+                            <%--<li><a onclick="clickA(this)" alt="querycategoryitem.do?cid=1">商品管理</a></li>--%>
+                            <li><a onclick="clickA(this);" alt="queryproducts.do">产品管理</a></li>
+                            <li><a onclick="clickA(this);" alt="queryalltype.do">类别管理</a></li>
+                        </ul>
+                    </div>
+                    <a class="menuitem submenuheader" href="">发票管理</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a onclick="clickA(this)" alt="sendpage_kaipiao.do">开票管理</a></li>
+                        </ul>
+                    </div>
+                    <a class="menuitem submenuheader" href="">统计信息</a>
+                    <div class="submenu">
+                        <%--<ul>--%>
+                        <%--<li><a onclick="clickA(this);" alt="customerquery.do">客户管理</a></li>--%>
+                        <%--</ul>--%>
                     </div>
                     <a class="menuitem submenuheader" href="">系统设置</a>
                     <div class="submenu">
                         <ul>
                             <li><a onclick="clickA(this);" alt="add_manager.jsp">添加管理员</a></li>
                             <li><a onclick="clickA(this);" alt="modify_password.jsp">修改密码</a></li>
-                            <li><a onclick="clickA(this);" alt="queryproducts.do">产品管理</a></li>
-                            <li><a onclick="clickA(this);" alt="queryalltype.do">类别管理</a></li>
+
                         </ul>
                     </div>
-                    <a class="menuitem submenuheader" href="">送货单管理</a>
-                    <div class="submenu">
-                        <ul>
-                            <%--jsp表示添加和有页面操作的，do表示查询更改的--%>
-                            <li><a  onclick="clickA(this)" alt="sendpage_history.do">查看送货单</a></li>
-                            <li><a onclick="clickA(this)" alt="sendpage_add.do">添加送货单</a></li>
-                            <li><a onclick="clickA(this)" alt="sendpage_edit.do">编辑送货单</a></li>
-                            <li><a  onclick="clickA(this)" alt="sendpage_print.do">打印送货单</a></li>
-                            <li><a  onclick="clickA(this)" alt="sendpage_company.do">送货公司管理</a></li>
-                            <li><a  onclick="clickA(this)" alt="sendpage_kaipiao.do">开票管理</a></li>
-                            <li><a  onclick="clickA(this)" alt="sendpage_producer.do">生产商管理</a></li>
-                            <li><a  onclick="clickA(this)" alt="sendpage_express.do">快递管理</a></li>
-                            <li><a  onclick="clickA(this)" alt="sendpage_category.do">分类管理</a></li>
-                            <li></li>
-                        </ul>
-                    </div>
+
                 </div>
                 <div class="sidebar_box">
                     <div class="sidebar_box_bottom"></div>
@@ -178,7 +210,7 @@
 
     <div class="footer">
 
-        <div class="left_footer">进销存管理系统 | Powered by Friday</div>
+        <div class="left_footer">世清缘标签管理系统</div>
     </div>
 
 </div>

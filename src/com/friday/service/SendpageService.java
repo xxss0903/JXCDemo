@@ -58,4 +58,11 @@ public interface SendpageService {
      */
     List<SendpageCategory> getAllCategory();
 
+    /**
+     * 获取category的item
+     * @param cId
+     * @return
+     */
+    List<SendpageItem> getAllItemByCategoryId(Integer cId);
+
 }
