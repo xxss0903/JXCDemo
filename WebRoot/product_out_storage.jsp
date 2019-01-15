@@ -66,37 +66,90 @@
     <%--添加出货商品--%>
     <script type="text/javascript">
 
+        window.onload = initDatas;
+
         var selectedAddRowIndex = -1;
         var selectedValues = [];
+        var addedProductId = [];
+
+        function initDatas() {
+            var table = document.getElementById("rounded-corner");
+            var rows = table.rows;
+            var trCount = 0;
+            for (var i = 0; i < rows.length; i++) {
+                if (rows[i].id.indexOf("tr_") === 0) {
+                    var pid = rows[i].className;
+
+                    addedProductId.push(Number(pid));
+                    trCount++;
+                    console.log("是商品行 " + pid);
+                } else {
+                    console.log("不是商品行");
+                }
+            }
+            selectedAddRowIndex = trCount;
+        }
 
         function addProductRow(productsIndex, currentIndex) {
-            console.log("currentIndex = " + currentIndex);
-            if (selectedAddRowIndex === -1)  {
-                selectedAddRowIndex = currentIndex;
-            } else {
-                selectedAddRowIndex++;
+            if (!selectedValues || selectedValues.length < 4) {
+                console.log("选中商品为空")
+                alert("请选择正确得商品");
+                return
             }
-            var trObj = document.createElement("tr");
-            trObj.id = "tr_" + (selectedAddRowIndex);
-            var name = selectedValues[0];
-            var num = selectedValues[1];
-            var price = selectedValues[2];
-            var pid = selectedValues[3];
-            var insertTr = "<tr>" +
-                "                <td align=\"center\"><input type=\"text\" size=\"10\" value=\""+name+ "\"  readonly/></td>" +
-                "                <td align=\"center\"><input type=\"text\" size=\"10\" value=\""+num+ "\" readonly/></td>" +
-                "                <td align=\"center\"><input type=\"text\" size=\"10\" value=\""+price+ "\" readonly/></td>" +
-                "                <td align=\"center\"><input type=\"text\" size=\"10\" name=\""+pid+ "\"" +
-                "                                          onKeyUp=\"this.value=this.value.replace(/\\D/g,'')\"/></td>\n" +
-                "            </tr>";
+            console.log(productsIndex)
+            console.log("currentIndex = " + selectedAddRowIndex);
 
+            var trObj = document.createElement("tr");
+            var tr_id = "tr_" + selectedAddRowIndex;
+
+            trObj.id = tr_id;
+            var name = selectedValues[0].trim();
+            var num = selectedValues[1].trim();
+            var price = selectedValues[2].trim();
+            var pid = selectedValues[3].trim();
+
+            if (addedProductId.indexOf(pid) > -1) {
+                alert("已经包含商品 " + name);
+                return
+            } else {
+                addedProductId.push(pid)
+                console.log("添加商品id " + pid);
+            }
+
+            var insertTr = ' <td align="center"><input type="text" size="10" value=\'' + name + '\' readonly/></td>\n' +
+                '                <td align="center"><input type="text" size="10" value=\'' + num + '\' readonly/></td>\n' +
+                '                <td align="center"><input type="text" size="10" value=\'' + price + '\' readonly/></td>\n' +
+                '                <td align="center"><input type="text" size="10" name=\'' + pid + '\'\n' +
+                '                                          onKeyUp="this.value=this.value.replace(/\\D/g,\'\')"/></td>\n' +
+                '                <td><button type="button" onclick="deleteProductRow(\'' + tr_id + '\', ' + pid + '${""})"><img src="images/trash.png"\n' +
+                '                                                                                                alt="" title=""\n' +
+                '                                                                                                border="0"/></button></td>';
+
+            console.log(insertTr);
             trObj.innerHTML = insertTr;
-            document.getElementById("tr_" + (selectedAddRowIndex-1)).after(trObj);
+            var lastProductTr = document.getElementById("tr_" + (selectedAddRowIndex - 1))
+            if (!lastProductTr) {
+                lastProductTr = document.getElementById("tr_title_row");
+            }
+
+            lastProductTr.after(trObj)
+
+            selectedAddRowIndex++;
         }
 
         function selectedAddRow(selectedValue) {
             console.log("选中 " + selectedValue);
             selectedValues = selectedValue.split(' ');
+        }
+
+        function deleteProductRow(rowId, pid) {
+            var deleteTr = document.getElementById(rowId);
+            var deleteIndex = addedProductId.indexOf(Number(pid));
+            console.log("移除pid " + pid);
+            console.log("移除index " + deleteIndex);
+            console.log(addedProductId);
+            addedProductId = addedProductId.splice(deleteIndex, 1);
+            deleteTr.parentNode.removeChild(deleteTr);
         }
 
     </script>
@@ -110,7 +163,7 @@
 %>
 
 <%
-    int currentIndex1 = 1;
+    int currentIndex1 = 0;
     int selectProductIndex = 1;
 %>
 
@@ -120,28 +173,47 @@
             <td colspan="4" align="left"><strong>产品出库</strong></td>
         </tr>
         <tr>
-            <td align="right">出库网点</td>
-            <td colspan="3">
+            <%--<td align="left">出库网点</td>--%>
+            <td colspan="1">
+                出库网点
                 <select name="shopid">
                     <c:forEach items="${shops }" var="shop">
                         <option value="${shop.sId }">${shop.sName }</option>
                     </c:forEach>
                 </select>
             </td>
+
+            <td align="left" colspan="1">
+                <select name="add_product_id" onchange="selectedAddRow(this.options[this.options.selectedIndex].value)">
+                    <option value="" selected>请选择商品</option>
+                    <c:forEach items="${products}" var="product" varStatus="status">
+                        <option value="${product.name} ${product.num} ${product.price} ${product.pid}">${product.name}</option>
+                    </c:forEach>
+                </select>
+                <button type="button" onclick="addProductRow(<%=selectProductIndex%>, <%=currentIndex1%>)">添加Product
+                </button>
+            </td>
         </tr>
-        <tr>
+        <tr id="tr_title_row">
             <td align="center">产品名称</td>
             <td align="center">产品数量</td>
             <td align="center">产品价格</td>
             <td align="center">出库数量</td>
+            <td align="center">移除</td>
         </tr>
-        <c:forEach begin="1" end="${products.size()+1}" items="${products}" var="product" varStatus="status">
-            <tr id="tr_<%=currentIndex1%>">
+        <c:forEach begin="0" end="${products.size()}" items="${products}" var="product" varStatus="status">
+            <tr id="tr_<%=currentIndex1%>" class="${product.pid}">
                 <td align="center"><input type="text" size="10" value="${product.name }" readonly/></td>
                 <td align="center"><input type="text" size="10" value="${product.num }" readonly/></td>
                 <td align="center"><input type="text" size="10" value="${product.price }" readonly/></td>
                 <td align="center"><input type="text" size="10" name="${product.pid }"
                                           onKeyUp="this.value=this.value.replace(/\D/g,'')"/></td>
+                <td>
+                    <button type="button" onclick="deleteProductRow('tr_<%=currentIndex1%>', ${product.pid})"><img
+                            src="images/trash.png"
+                            alt="" title=""
+                            border="0"/></button>
+                </td>
             </tr>
             <%
                 currentIndex1++;
@@ -165,11 +237,9 @@
     </table>
 </form>
 
-<select name="add_product_id" onchange="selectedAddRow(this.options[this.options.selectedIndex].value)">
-    <c:forEach items="${products}" var="product">
-        <option value="${product.name} ${product.num} ${product.price} ${product.pid}">${product.name}</option>
-    </c:forEach>
-</select>
-<button onclick="addProductRow(<%=selectProductIndex%>, <%=currentIndex1%>)">添加Product</button>
+<%
+    System.out.println("初始化jsp");
+
+%>
 </body>
 </html>
