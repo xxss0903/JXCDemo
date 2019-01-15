@@ -7,41 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="812bf83f-032f-438a-942b-325612458047" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WebRoot/sendpage_company.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRoot/sendpage_item.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebRoot/sendpage_item_add.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/friday/controller/QueryCategoryItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPageItemDeleteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPageItemEditController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPagePrintImplController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/product_return.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/product_return.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/sendpage_add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/sendpage_add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/sendpage_category.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/sendpage_category.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/sendpage_print.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/sendpage_print.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/sendpage_producer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/sendpage_producer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/stock_query.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/stock_query.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/storage_record_query.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/storage_record_query.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/product_return.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/product_return.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/stock_query.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/stock_query.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/storage_record_query.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/storage_record_query.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/friday/controller/SellQueryLoadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/controller/SellQueryLoadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/friday/controller/SendPageAddController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPageAddController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/friday/controller/SendPageCompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/controller/SendPageCompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/friday/controller/StockLoadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/controller/StockLoadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/friday/inter/SendpageItemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/inter/SendpageItemMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/friday/mapper/SendpageItemMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/mapper/SendpageItemMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/friday/model/OutStock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/model/OutStock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/friday/model/OutStockDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/model/OutStockDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/friday/service/SendpageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/service/SendpageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/friday/service/impl/SendpageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/service/impl/SendpageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebRoot/product_out_storage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/product_out_storage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/product_out_storage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/product_out_storage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/friday/controller/StockOutGetProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/controller/StockOutGetProductController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -81,10 +50,10 @@
     <session id="1551314837">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.28" value="1" />
-          <entry key="project.open.time.43" value="1" />
+          <entry key="project.open.time.43" value="2" />
           <entry key="project.open.time.54" value="1" />
           <entry key="project.open.time.55" value="1" />
           <entry key="project.open.time.58" value="1" />
@@ -94,7 +63,7 @@
           <entry key="project.open.time.80" value="1" />
           <entry key="project.open.time.84" value="1" />
           <entry key="project.open.time.87" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -104,17 +73,17 @@
           <entry key="dtd" value="3" />
           <entry key="gif" value="42" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="266" />
+          <entry key="java" value="275" />
           <entry key="jpg" value="9" />
-          <entry key="js" value="2" />
-          <entry key="jsp" value="132" />
+          <entry key="js" value="3" />
+          <entry key="jsp" value="135" />
           <entry key="md" value="1" />
           <entry key="png" value="46" />
           <entry key="properties" value="3" />
           <entry key="springBeans" value="1" />
           <entry key="sql" value="7" />
-          <entry key="ts" value="1" />
-          <entry key="xml" value="160" />
+          <entry key="ts" value="2" />
+          <entry key="xml" value="163" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -124,16 +93,16 @@
           <entry key="DTD" value="3" />
           <entry key="Eclipse" value="1" />
           <entry key="Image" value="97" />
-          <entry key="JAVA" value="266" />
-          <entry key="JSP" value="132" />
-          <entry key="JavaScript" value="2" />
+          <entry key="JAVA" value="275" />
+          <entry key="JSP" value="135" />
+          <entry key="JavaScript" value="3" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="3" />
           <entry key="SQL" value="2" />
           <entry key="Scratch" value="5" />
-          <entry key="TypeScript" value="1" />
-          <entry key="XML" value="160" />
+          <entry key="TypeScript" value="2" />
+          <entry key="XML" value="163" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -141,9 +110,9 @@
           <entry key="css" value="4" />
           <entry key="dummy" value="1" />
           <entry key="gitignore" value="14" />
-          <entry key="java" value="7884" />
+          <entry key="java" value="8013" />
           <entry key="js" value="213" />
-          <entry key="jsp" value="3853" />
+          <entry key="jsp" value="8754" />
           <entry key="properties" value="8" />
           <entry key="sql" value="93" />
           <entry key="txt" value="129" />
@@ -153,8 +122,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="4" />
-          <entry key="JAVA" value="7884" />
-          <entry key="JSP" value="3853" />
+          <entry key="JAVA" value="8013" />
+          <entry key="JSP" value="8754" />
           <entry key="JavaScript" value="213" />
           <entry key="PLAIN_TEXT" value="144" />
           <entry key="Properties" value="8" />
@@ -168,55 +137,49 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebRoot/index.jsp">
+        <entry file="file://$PROJECT_DIR$/src/com/friday/controller/StockOutGetProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="163" column="26" lean-forward="true" selection-start-line="163" selection-start-column="26" selection-end-line="163" selection-end-column="26" />
+            <state relative-caret-position="167">
+              <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/friday/controller/QueryProductTypeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="25" column="59" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/friday/service/impl/ProductMServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="82" column="77" lean-forward="true" selection-start-line="82" selection-start-column="77" selection-end-line="82" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/friday/inter/ProductTypeMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/friday/mapper/ProductTypeMapper.xml">
+        <entry file="file://$PROJECT_DIR$/src/com/friday/model/Product.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="50">
-              <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/friday/controller/QueryStockOutController.java">
+        <entry file="file://$PROJECT_DIR$/src/com/friday/service/StockOutService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../jdk8/src.zip!/java/lang/Object.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+              <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebRoot/product_out_storage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="92" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -224,65 +187,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/friday/service/impl/StockOutServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="285" column="56" selection-start-line="285" selection-start-column="56" selection-end-line="285" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/friday/model/OutStockDetail.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+            <state relative-caret-position="125">
+              <caret line="55" column="50" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="50" />
               <folding>
-                <element signature="e#209#210#0" expanded="true" />
-                <element signature="e#235#236#0" expanded="true" />
-                <element signature="e#274#275#0" expanded="true" />
-                <element signature="e#304#305#0" expanded="true" />
-                <element signature="e#342#343#0" expanded="true" />
-                <element signature="e#375#376#0" expanded="true" />
-                <element signature="e#428#429#0" expanded="true" />
-                <element signature="e#472#473#0" expanded="true" />
-                <element signature="e#503#504#0" expanded="true" />
-                <element signature="e#529#530#0" expanded="true" />
-                <element signature="e#568#569#0" expanded="true" />
-                <element signature="e#598#599#0" expanded="true" />
-                <element signature="e#630#631#0" expanded="true" />
-                <element signature="e#657#658#0" expanded="true" />
-                <element signature="e#698#699#0" expanded="true" />
-                <element signature="e#730#731#0" expanded="true" />
+                <element signature="e#1293#1301#0" expanded="true" />
+                <element signature="e#1685#1701#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/friday/model/OutStock.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="176">
+              <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebRoot/JS/niceforms.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="393" column="59" lean-forward="true" selection-start-line="393" selection-start-column="59" selection-end-line="393" selection-end-column="59" />
               <folding>
-                <element signature="e#242#243#0" expanded="true" />
-                <element signature="e#268#269#0" expanded="true" />
-                <element signature="e#307#308#0" expanded="true" />
-                <element signature="e#337#338#0" expanded="true" />
-                <element signature="e#368#369#0" expanded="true" />
-                <element signature="e#394#395#0" expanded="true" />
-                <element signature="e#433#434#0" expanded="true" />
-                <element signature="e#463#464#0" expanded="true" />
-                <element signature="e#493#494#0" expanded="true" />
-                <element signature="e#521#522#0" expanded="true" />
-                <element signature="e#561#562#0" expanded="true" />
-                <element signature="e#595#596#0" expanded="true" />
-                <element signature="e#625#626#0" expanded="true" />
-                <element signature="e#651#652#0" expanded="true" />
-                <element signature="e#689#690#0" expanded="true" />
-                <element signature="e#747#748#0" expanded="true" />
-                <element signature="e#777#778#0" expanded="true" />
-                <element signature="e#803#804#0" expanded="true" />
-                <element signature="e#841#842#0" expanded="true" />
-                <element signature="e#899#900#0" expanded="true" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -291,8 +221,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/friday/inter/ProductMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="126">
+              <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/friday/mapper/ProductMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="3" column="57" lean-forward="true" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -309,19 +248,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mainiFrame</find>
-      <find>添加song'huo'dan</find>
-      <find>添加员工</find>
-      <find>修改密码</find>
-      <find>入库管理</find>
-      <find>客户管理</find>
-      <find>sendpage_company</find>
-      <find>进销存</find>
-      <find>Powered by</find>
-      <find>&lt;div class=&quot;logo&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;label/&gt;世清缘分标签管理系统&lt;/a&gt;&lt;/div&gt;</find>
-      <find>logo.gif</find>
-      <find>世清缘分标签管理系统</find>
-      <find>送货单管理</find>
       <find>style=&quot;width: 80px;&quot;</find>
       <find>style='word-wrap: break-word'</find>
       <find>商品管理</find>
@@ -339,6 +265,19 @@
       <find>stockload</find>
       <find>stock_query.jsp</find>
       <find>queryalltype</find>
+      <find>产品出库</find>
+      <find>getoutproduct</find>
+      <find>'</find>
+      <find>currentIndex</find>
+      <find>出库网点</find>
+      <find>product_out_storage</find>
+      <find>shopid</find>
+      <find>select</find>
+      <find>selectedAddProduct</find>
+      <find>addProductRow</find>
+      <find>selectProductIndex</find>
+      <find>currentIndex1 =</find>
+      <find>currentIndex1</find>
     </findStrings>
     <replaceStrings>
       <replace>SendpageContent</replace>
@@ -364,6 +303,7 @@
       <replace>c_name</replace>
       <replace>result</replace>
       <replace>width=&quot;100&quot;</replace>
+      <replace>'</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -372,10 +312,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageContent.java" />
-        <option value="$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageItems.java" />
-        <option value="$PROJECT_DIR$/WebRoot/WEB-INF/classes/Configuration.xml" />
-        <option value="$PROJECT_DIR$/src/com/friday/mapper/SendpageItemsMapper.xml" />
         <option value="$PROJECT_DIR$/WebRoot/add_manager.jsp" />
         <option value="$PROJECT_DIR$/WebRoot/JS/formcheck.js" />
         <option value="$PROJECT_DIR$/WebRoot/sendpage_edit.jsp" />
@@ -423,6 +359,10 @@
         <option value="$PROJECT_DIR$/WebRoot/index.jsp" />
         <option value="$PROJECT_DIR$/src/com/friday/model/OutStockDetail.java" />
         <option value="$PROJECT_DIR$/src/com/friday/model/OutStock.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/service/impl/StockOutServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/service/StockOutService.java" />
+        <option value="$PROJECT_DIR$/src/com/friday/controller/StockOutGetProductController.java" />
+        <option value="$PROJECT_DIR$/WebRoot/product_out_storage.jsp" />
       </list>
     </option>
   </component>
@@ -465,6 +405,34 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="friday" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
+              <item name="WebRoot" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -476,26 +444,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="stock_query&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/stock_query.jsp&#10;product_storage&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/product_storage.jsp&#10;index&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/index.jsp&#10;sendpage_print&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/sendpage_print.jsp&#10;SendpageController&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/SendPageHistoryController.java&#10;Sendpage&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/model/sendpage/SendpageContent.java&#10;SendpageMapper.xml&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/mapper/SendpageMapper.xml&#10;SendpageControll&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/SendPageHistoryController.java&#10;Custom&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/QueryCustomerController.java&#10;sendpage.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_send_page.jsp&#10;CustomerSer&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/service/CustomerService.java&#10;SendpageMapper&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/inter/SendpageMapper.java&#10;adduser&#9;null&#9;null&#10;staff.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_staff.jsp&#10;add_staff.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_staff.jsp&#10;Login&#9;PSI&#9;JAVA://com.friday.controller.LoginController" />
+    <property name="SearchEverywhereHistoryKey" value="Sendpage&#9;PSI&#9;JAVA://com.friday.model.sendpage.Sendpage&#10;stock_query&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/stock_query.jsp&#10;product_storage&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/product_storage.jsp&#10;index&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/index.jsp&#10;sendpage_print&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/sendpage_print.jsp&#10;SendpageController&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/SendPageHistoryController.java&#10;SendpageMapper.xml&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/mapper/SendpageMapper.xml&#10;SendpageControll&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/SendPageHistoryController.java&#10;Custom&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/QueryCustomerController.java&#10;sendpage.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_send_page.jsp&#10;CustomerSer&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/service/CustomerService.java&#10;SendpageMapper&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/inter/SendpageMapper.java&#10;adduser&#9;null&#9;null&#10;staff.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_staff.jsp&#10;add_staff.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_staff.jsp&#10;Login&#9;PSI&#9;JAVA://com.friday.controller.LoginController" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547393400780" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547393554822" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../jars/mysql-connector-java-8.0.13.jar" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -741,6 +697,7 @@
       <workItem from="1547213295710" duration="13754000" />
       <workItem from="1547274086766" duration="29950000" />
       <workItem from="1547351708199" duration="11596000" />
+      <workItem from="1547470805960" duration="15562000" />
     </task>
     <task id="LOCAL-00001" summary="update add sql query">
       <created>1547050919212</created>
@@ -760,12 +717,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136576000" />
+    <option name="totallyTimeSpent" value="152138000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19296375" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19509594" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -775,7 +732,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.39646202" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39646202" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.39854318" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -852,42 +809,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WebRoot/img/textarea-bl.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/img/textarea-bl.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/img/textarea-br.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/img/textarea-br.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/img/textarea-l-off.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/img/textarea-l-over.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/img/textarea-r-off.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/img/textarea-r-off.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/img/textarea-r-over.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/img/textarea-tl.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/img/textarea-tl.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/img/textarea-tr.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/img/textarea-tr.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -995,13 +916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/classes/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="33" column="76" selection-start-line="33" selection-start-column="76" selection-end-line="33" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SellQueryLoadController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
@@ -1033,45 +947,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="56" column="84" selection-start-line="56" selection-start-column="84" selection-end-line="56" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/friday/controller/QueryProductTypeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="25" column="59" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebRoot/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="163" column="26" lean-forward="true" selection-start-line="163" selection-start-column="26" selection-end-line="163" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/inter/ProductMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        <state relative-caret-position="325">
+          <caret line="25" column="59" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/friday/service/impl/ProductMServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="82" column="77" lean-forward="true" selection-start-line="82" selection-start-column="77" selection-end-line="82" selection-end-column="77" />
+        <state relative-caret-position="1725">
+          <caret line="82" column="77" selection-start-line="82" selection-start-column="77" selection-end-line="82" selection-end-column="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/friday/inter/ProductTypeMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1084,68 +977,164 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/friday/controller/QueryStockOutController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
+        <state relative-caret-position="650">
           <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/friday/service/impl/StockOutServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="285" column="56" selection-start-line="285" selection-start-column="56" selection-end-line="285" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/friday/model/OutStockDetail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="e#209#210#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#375#376#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#698#699#0" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-          </folding>
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/friday/model/OutStock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="275">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
-            <element signature="e#242#243#0" expanded="true" />
-            <element signature="e#268#269#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#368#369#0" expanded="true" />
-            <element signature="e#394#395#0" expanded="true" />
-            <element signature="e#433#434#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
-            <element signature="e#651#652#0" expanded="true" />
-            <element signature="e#689#690#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
-            <element signature="e#777#778#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-            <element signature="e#841#842#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
+            <element signature="e#246#247#0" expanded="true" />
+            <element signature="e#272#273#0" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#467#468#0" expanded="true" />
+            <element signature="e#497#498#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#565#566#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
+            <element signature="e#629#630#0" expanded="true" />
+            <element signature="e#655#656#0" expanded="true" />
+            <element signature="e#693#694#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/model/sendpage/SendpageCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/model/sendpage/Sendpage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="104" column="77" selection-start-line="104" selection-start-column="64" selection-end-line="104" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/classes/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="25" column="76" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/sendpage_category.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="5055" column="4" selection-start-line="5055" selection-start-column="4" selection-end-line="5055" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/StockOutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-200">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../jdk8/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/model/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/WEB-INF/classes/com/friday/mapper/ProductMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="57" lean-forward="true" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/inter/ProductMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/service/impl/StockOutServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="55" column="50" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="50" />
+          <folding>
+            <element signature="e#1293#1301#0" expanded="true" />
+            <element signature="e#1685#1701#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/service/StockOutService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/StockOutGetProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/JS/niceforms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="393" column="59" lean-forward="true" selection-start-line="393" selection-start-column="59" selection-end-line="393" selection-end-column="59" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebRoot/product_out_storage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="92" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

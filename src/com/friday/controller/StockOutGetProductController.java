@@ -38,6 +38,7 @@ public class StockOutGetProductController implements Controller {
 			
 			model.put("shops", shops);
 			model.put("products", products);
+			model.put("productIndex", 0);
 			return new ModelAndView("product_out_storage", model);
 		} catch (Exception e) {
 			model.put("error", "读取库存失败");
