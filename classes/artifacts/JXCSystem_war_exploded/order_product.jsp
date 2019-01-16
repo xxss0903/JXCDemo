@@ -60,67 +60,92 @@
 
         window.onload = initData;
         var typeMap = new Map();
+        var typeList = [];
 
         function initData() {
             var typeNodes = document.getElementById("product_datas").childNodes;
+            var typeDivs = [];
+            for (var l = 0; l < typeNodes.length; l++) {
+                var typeNode = typeNodes[l];
+                if (typeNode.nodeName == "DIV") {
+                    typeDivs.push(typeNode);
+                    typeList.push(typeNode.id);
+                }
+            }
 
-            for (var i = 0; i < typeNodes.length; i++) {
-                var typeDiv = typeNodes[i];
+            for (var i = 0; i < typeDivs.length; i++) {
+                var typeDiv = typeDivs[i];
                 var typeId = typeDiv.id;
-                console.log(typeId);
                 var productNodes = typeDiv.childNodes;
                 var productList = [];
                 for (var j = 0; j < productNodes.length; j++) {
                     var productDiv = productNodes[j];
-                    var fieldNodes = productDiv.childNodes;
+                    if (productDiv.nodeName == "DIV") {
+                        var fieldNodes = productDiv.childNodes;
 
-                    console.log(productDiv);
-                    console.log(fieldNodes);
+                        var pname = fieldNodes[1].innerHTML;
+                        var pstyle = fieldNodes[3].innerHTML;
+                        var pprice = fieldNodes[5].innerHTML;
+                        var pid = fieldNodes[7].innerHTML;
 
-                    var pname = fieldNodes[0].innerHTML;
-                    var pstyle = fieldNodes[1].innerHTML;
-                    var pprice =fieldNodes[2].innerHTML;
-                    var pid = fieldNodes[3].innerHTML;
+                        var productObj = {};
+                        productObj.name = pname;
+                        productObj.style = pstyle;
+                        productObj.price = pprice;
+                        productObj.id = pid;
 
-                    var productObj = {};
-                    productObj.name = pname;
-                    productObj.style = pstyle;
-                    productObj.price = pprice;
-                    productObj.id = pid;
-
-                    productList.push(productObj);
-                    console.log(productObj);
-                    // var pname = productDiv.getElementById("product_name").innerText;
-                    // var pstyle = productDiv.getElementById("product_style").innerText;
-                    // var pprice = productDiv.getElementById("product_price").innerText;
-                    // var pid = productDiv.getElementById("product_id").innerText;
-
+                        productList.push(productObj);
+                    }
                 }
                 typeMap.set(typeId, productList);
             }
+            console.log(typeMap);
+            console.log(typeList);
         }
 
+        function changeProductByTypeId(selectIndex) {
+            console.log(selectIndex);
+            var typeId = typeList[selectIndex-1];
+            console.log(typeId);
 
-        function changeProductByTypeId(typeId) {
-            var area = document.getElementById("area");
-            var countrys = document.getElementById("country");
-            var index = area.value;
-            var selects = data[index - 1];			//通过选中下拉的选单value值获取数据
+            var type = typeMap.get(typeId);
+            console.log(type);
 
-            var oldOptions = countrys.children;		//用children，数组内不会有多余属性(换行符)
-            var length = oldOptions.length;			//！！注意，提前记录length原因：
-            //如果在遍历删除过程中记录length，则length值会改变，删除会出错。
-            for (var i = 0; i < length; i++) {				//删除原先选项的过程，若不删除，选项会一直堆积。
-                countrys.removeChild(oldOptions[0]);//一直第一个元素，因为清除第一个以后，后面的元素会前移。如果按正常的i遍历，会出错！
+            var productSelect = document.getElementById("select_product_id");
+            console.log(productSelect);
+            var oldOptions = productSelect.children;
+
+            for (var i = 0; i < oldOptions.length; i++) {
+                productSelect.removeChild(oldOptions[0]);
             }
 
-            if (index == 0) return;					//如果选中的是"请选择"，就不再添加数据，避免报错（因为脚标是-1）
-
-            for (var i = 0; i < selects.length; i++) {		//增加选项过程
-                var option = document.createElement("option");
-                option.innerHTML = selects[i];
-                country.appendChild(option);
+            if (selectIndex == 0) {
+                return;
             }
+
+            for (var i = 0; i < type.length;i++) {
+                var newOption = document.createElement("option");
+                newOption.innerHTML = type[i].name;
+                productSelect.appendChild(newOption);
+            }
+
+            // var index = area.value;
+            // var selects = data[index - 1];			//通过选中下拉的选单value值获取数据
+            //
+            // var oldOptions = countrys.children;		//用children，数组内不会有多余属性(换行符)
+            // var length = oldOptions.length;			//！！注意，提前记录length原因：
+            // //如果在遍历删除过程中记录length，则length值会改变，删除会出错。
+            // for (var i = 0; i < length; i++) {				//删除原先选项的过程，若不删除，选项会一直堆积。
+            //     countrys.removeChild(oldOptions[0]);//一直第一个元素，因为清除第一个以后，后面的元素会前移。如果按正常的i遍历，会出错！
+            // }
+            //
+            // if (index == 0) return;					//如果选中的是"请选择"，就不再添加数据，避免报错（因为脚标是-1）
+            //
+            // for (var i = 0; i < selects.length; i++) {		//增加选项过程
+            //     var option = document.createElement("option");
+            //     option.innerHTML = selects[i];
+            //     country.appendChild(option);
+            // }
         }
 
     </script>
@@ -152,43 +177,18 @@
             <td colspan="4" align="left"><strong>订购产品</strong></td>
         </tr>
         <tr>
-            <c:forEach items="${products }" var="productType">
-        <tr>
-            <td colspan="4" align="center"><strong></strong>${productType.key }</td>
-        </tr>
-        <tr>
-            <td width="26" align="ceter">名称</td>
-            <td width="61" align="center">规格</td>
-            <td width="61" align="center">单价</td>
-            <td width="104" align="center">订购数量</td>
-        </tr>
-        <c:forEach items="${productType.value }" var="product">
-            <tr>
-                <td width="102" align="center"><input type="text" size="10" value="${product.pName }" readonly/>
-                </td>
-                <td width="104" align="center"><input type="text" size="6" value="${product.pStyle }" readonly/>
-                </td>
-                <td width="104" align="center"><input type="text" size="6" value="${product.pPrice }" readonly/>
-                </td>
-                <td width="106" align="center"><input name="${product.pId }" type="text" size="9"
-                                                      onkeyup="this.value=this.value.replace(/\D/g,'')"/></td>
-            </tr>
-        </c:forEach>
-        </c:forEach>
-        </tr>
-        <tr>
             <td>
                 类别
-                <select name="select_category_id">
+                <select id="select_category_id" onchange="changeProductByTypeId(this.options.selectedIndex)">
                     <option value="" selected>请选择类别</option>
                     <c:forEach items="${products}" var="productType">
-                        <option value="${productType.key}"></option>
+                        <option value="${productType.key}">${productType.key}</option>
                     </c:forEach>
                 </select>
             </td>
             <td>
                 商品
-                <select name="select_product_id">
+                <select id="select_product_id">
                     <option value="" selected>请选择商品</option>
                     <c:forEach items="${products}" var="productType">
                         <option value="${productType.value}"></option>
