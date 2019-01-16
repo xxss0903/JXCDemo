@@ -35,13 +35,13 @@ public class OrderProductServiceImpl implements OrderProductService {
 			
 			ProductMapper productMapper = sqlSession.getMapper(ProductMapper.class);
 			ProductTypeMapper productTypeMapper = sqlSession.getMapper(ProductTypeMapper.class);
-			
+
 			List<ProductType> productTypes = productTypeMapper.selectAllTypes();
 			
 			for (ProductType productType : productTypes) {
 				List<Product> products = productMapper.selectByType(productType.gettId());
 				
-				map.put(productType.gettType(), products);
+				map.put(productType.gettId().toString(), products);
 			}
 		} catch (Exception e) {
 			throw e;

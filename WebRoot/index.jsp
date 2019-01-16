@@ -91,13 +91,13 @@
             <div class="left_content">
                 <div class="sidebarmenu">
 
-                    <%--<a class="menuitem submenuheader" href="">订单管理</a>--%>
-                    <%--<div class="submenu">--%>
-                    <%--<ul>--%>
-                    <%--<li><a onclick="clickA(this);" alt="getproduct.do">订购产品</a></li>--%>
-                    <%--<li><a onclick="clickA(this);" alt="order_record_query.jsp">订单记录查询</a></li>--%>
-                    <%--</ul>--%>
-                    <%--</div>--%>
+                    <a class="menuitem submenuheader" href="">订单管理</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a onclick="clickA(this);" alt="getproduct.do">订购产品</a></li>
+                            <li><a onclick="clickA(this);" alt="order_record_query.jsp">订单记录查询</a></li>
+                        </ul>
+                    </div>
 
                     <a class="menuitem submenuheader" href="">出库管理</a>
                     <div class="submenu">
