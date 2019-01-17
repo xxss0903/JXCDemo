@@ -145,9 +145,6 @@
         function deleteProductRow(rowId, pid) {
             var deleteTr = document.getElementById(rowId);
             var deleteIndex = addedProductId.indexOf(Number(pid));
-            console.log("移除pid " + pid);
-            console.log("移除index " + deleteIndex);
-            console.log(addedProductId);
             addedProductId = addedProductId.splice(deleteIndex, 1);
             deleteTr.parentNode.removeChild(deleteTr);
         }

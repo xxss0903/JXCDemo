@@ -61,6 +61,8 @@
         window.onload = initData;
         var typeMap = new Map();
         var typeList = [];
+        var orderCount = 0;
+        var addedProductId = [];
 
         function initData() {
             var typeNodes = document.getElementById("product_datas").childNodes;
@@ -69,7 +71,6 @@
                 var typeNode = typeNodes[l];
                 if (typeNode.nodeName == "DIV") {
                     typeDivs.push(typeNode);
-                    typeList.push(typeNode.id);
                 }
             }
 
@@ -93,59 +94,98 @@
                         productObj.style = pstyle;
                         productObj.price = pprice;
                         productObj.id = pid;
+                        productObj.tid = typeId;
 
                         productList.push(productObj);
                     }
                 }
                 typeMap.set(typeId, productList);
+                typeList.push(typeId)
             }
-            console.log(typeMap);
-            console.log(typeList);
         }
 
         function changeProductByTypeId(selectIndex) {
-            console.log(selectIndex);
-            var typeId = typeList[selectIndex-1];
-            console.log(typeId);
-
-            var type = typeMap.get(typeId);
-            console.log(type);
-
             var productSelect = document.getElementById("select_product_id");
-            console.log(productSelect);
-            var oldOptions = productSelect.children;
+            productSelect.options.length = 0;
 
-            for (var i = 0; i < oldOptions.length; i++) {
-                productSelect.removeChild(oldOptions[0]);
-            }
-
-            if (selectIndex == 0) {
+            if (selectIndex === 0) {
+                var firstOption = document.createElement("option");
+                firstOption.innerHTML = "请选择商品";
+                productSelect.appendChild(firstOption);
                 return;
             }
 
-            for (var i = 0; i < type.length;i++) {
+            var typeId = typeList[selectIndex - 1];
+            var products = typeMap.get(typeId);
+
+            for (var j = 0; j < products.length; j++) {
                 var newOption = document.createElement("option");
-                newOption.innerHTML = type[i].name;
+                newOption.id = products[j].id;
+                newOption.innerHTML = products[j].name;
                 productSelect.appendChild(newOption);
             }
 
-            // var index = area.value;
-            // var selects = data[index - 1];			//通过选中下拉的选单value值获取数据
-            //
-            // var oldOptions = countrys.children;		//用children，数组内不会有多余属性(换行符)
-            // var length = oldOptions.length;			//！！注意，提前记录length原因：
-            // //如果在遍历删除过程中记录length，则length值会改变，删除会出错。
-            // for (var i = 0; i < length; i++) {				//删除原先选项的过程，若不删除，选项会一直堆积。
-            //     countrys.removeChild(oldOptions[0]);//一直第一个元素，因为清除第一个以后，后面的元素会前移。如果按正常的i遍历，会出错！
-            // }
-            //
-            // if (index == 0) return;					//如果选中的是"请选择"，就不再添加数据，避免报错（因为脚标是-1）
-            //
-            // for (var i = 0; i < selects.length; i++) {		//增加选项过程
-            //     var option = document.createElement("option");
-            //     option.innerHTML = selects[i];
-            //     country.appendChild(option);
-            // }
+        }
+
+        // 添加订购商品行
+        function addOrderProductRow() {
+            // 获取到要添加得商品数据
+            var typeIndex = document.getElementById("select_type_id").selectedIndex;
+            var productIndex = document.getElementById("select_product_id").selectedIndex;
+            if (typeIndex === 0) {
+                return
+            } else {
+                typeIndex = typeIndex - 1;
+            }
+
+            var typeId = typeList[typeIndex];
+            var type = typeMap.get(typeId)
+            // add product to order product row
+            var product = type[productIndex];
+
+            var name = product.name;
+            var price = product.price;
+            var style = product.style;
+            var pid = product.id;
+            var tid = product.tid;
+
+            console.log(addedProductId);
+            if (addedProductId.indexOf(pid) >= 0) {
+                alert("已经添加商品");
+                return;
+            } else {
+                addedProductId.push(pid);
+            }
+
+
+            var newCount = orderCount + 1;
+            var trObj = document.createElement("tr");
+            var new_tr_id = "tr_order_product_" + newCount;
+            var old_tr_id = "tr_order_product_" + orderCount;
+            trObj.id = new_tr_id;
+
+            var innerHtmlString = ' <td align="center"><input type="text" size="10" value=\'' + name + '\' readonly/></td>\n' +
+                '                <td align="center"><input type="text" size="10" value=\'' + style + '\' readonly/></td>\n' +
+                '                <td align="center"><input type="text" size="10" value=\'' + price + '\' readonly/></td>\n' +
+                '                <td align="center"><input type="text" size="10" name=\'' + pid + '\'\n' +
+                '                                          onKeyUp="this.value=this.value.replace(/\\D/g,\'\')"/></td>\n' +
+                '                <td><button type="button" onclick="deleteOrderProductRow(\'' + new_tr_id + '\', ' + pid + '${""})"><img src="images/trash.png"\n' +
+                '                                                                                                alt="" title=""\n' +
+                '                                                                                                border="0"/></button></td>';
+
+            trObj.innerHTML = innerHtmlString;
+            var oldTr = document.getElementById(old_tr_id);
+            oldTr.after(trObj);
+            orderCount = newCount;
+        }
+
+        function deleteOrderProductRow(tr_id, pid) {
+            var pidIndex = addedProductId.indexOf(pid);
+            if (pidIndex > 0) {
+                addedProductId = addedProductId.splice(pidIndex, 1);
+            }
+            var deleteRow = document.getElementById(tr_id);
+            deleteRow.parentNode.removeChild(deleteRow);
         }
 
     </script>
@@ -178,8 +218,7 @@
         </tr>
         <tr>
             <td>
-                类别
-                <select id="select_category_id" onchange="changeProductByTypeId(this.options.selectedIndex)">
+                <select id="select_type_id" onchange="changeProductByTypeId(this.options.selectedIndex)">
                     <option value="" selected>请选择类别</option>
                     <c:forEach items="${products}" var="productType">
                         <option value="${productType.key}">${productType.key}</option>
@@ -187,42 +226,49 @@
                 </select>
             </td>
             <td>
-                商品
                 <select id="select_product_id">
                     <option value="" selected>请选择商品</option>
-                    <c:forEach items="${products}" var="productType">
-                        <option value="${productType.value}"></option>
-                    </c:forEach>
                 </select>
             </td>
             <td>
-                <button type="button">添加商品</button>
+                <button type="button" onclick="addOrderProductRow()">添加商品</button>
             </td>
 
         </tr>
-        <c:forEach items="${products }" var="productType">
-            <tr>
-                <td colspan="4" align="center"><strong></strong>${productType.key }</td>
-            </tr>
-            <tr>
-                <td width="26" align="ceter">名称</td>
-                <td width="61" align="center">规格</td>
-                <td width="61" align="center">单价</td>
-                <td width="104" align="center">订购数量</td>
-            </tr>
-            <c:forEach items="${productType.value }" var="product">
-                <tr>
-                    <td width="102" align="center"><input type="text" size="10" value="${product.pName }" readonly/>
-                    </td>
-                    <td width="104" align="center"><input type="text" size="6" value="${product.pStyle }" readonly/>
-                    </td>
-                    <td width="104" align="center"><input type="text" size="6" value="${product.pPrice }" readonly/>
-                    </td>
-                    <td width="106" align="center"><input name="${product.pId }" type="text" size="9"
-                                                          onkeyup="this.value=this.value.replace(/\D/g,'')"/></td>
-                </tr>
-            </c:forEach>
-        </c:forEach>
+        <tr>
+            <td width="26" align="ceter">名称</td>
+            <td width="61" align="center">规格</td>
+            <td width="61" align="center">单价</td>
+            <td width="104" align="center">订购数量</td>
+        </tr>
+
+        <tr id="tr_order_product_0">
+
+        </tr>
+
+        <%--<c:forEach items="${products }" var="productType">--%>
+        <%--<tr>--%>
+        <%--<td colspan="4" align="center"><strong></strong>${productType.key }</td>--%>
+        <%--</tr>--%>
+        <%--<tr>--%>
+        <%--<td width="26" align="ceter">名称</td>--%>
+        <%--<td width="61" align="center">规格</td>--%>
+        <%--<td width="61" align="center">单价</td>--%>
+        <%--<td width="104" align="center">订购数量</td>--%>
+        <%--</tr>--%>
+        <%--<c:forEach items="${productType.value }" var="product">--%>
+        <%--<tr>--%>
+        <%--<td width="102" align="center"><input type="text" size="10" value="${product.pName }" readonly/>--%>
+        <%--</td>--%>
+        <%--<td width="104" align="center"><input type="text" size="6" value="${product.pStyle }" readonly/>--%>
+        <%--</td>--%>
+        <%--<td width="104" align="center"><input type="text" size="6" value="${product.pPrice }" readonly/>--%>
+        <%--</td>--%>
+        <%--<td width="106" align="center"><input name="${product.pId }" type="text" size="9"--%>
+        <%--onkeyup="this.value=this.value.replace(/\D/g,'')"/></td>--%>
+        <%--</tr>--%>
+        <%--</c:forEach>--%>
+        <%--</c:forEach>--%>
         <tr>
             <td align="right"><strong>订购时间</strong></td>
             <td colspan="4"><input name="orderTime" type="text" id="textfield21" size="27" onclick="WdatePicker()"/>
