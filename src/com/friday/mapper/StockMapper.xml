@@ -24,7 +24,14 @@
     <include refid="Base_Column_List" />
     from stocks
   </select>
-  
+
+  <!--根据商品整个选择-->
+  <select id="selectAllGroupByProductId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from stocks group by p_id=#{pId, jdbcType=INTEGER}
+  </select>
+
   <select id="selectByshopId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
   	select 
   	<include refid="Base_Column_List"/>

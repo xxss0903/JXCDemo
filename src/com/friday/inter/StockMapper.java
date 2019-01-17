@@ -34,6 +34,12 @@ public interface StockMapper {
      */
     List<Stock> selectAll();
 
+    /**
+     * 所有的商品
+     * @return
+     */
+    List<Stock> selectAllGroupByProductId();
+
 	List<Stock> selectByshopId(Integer sId);
 
 	List<Stock> selectAllStocks();

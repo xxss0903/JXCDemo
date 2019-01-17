@@ -42,6 +42,7 @@
             }
         })
     </script>
+    <script type="text/javascript" src="JS/formcheck.js"></script>
     <script src="JS/jquery.jclock-1.2.0.js.txt" type="text/javascript"></script>
     <script type="text/javascript" src="JS/jconfirmaction.jquery.js"></script>
     <script type="text/javascript">
@@ -167,7 +168,7 @@
             var innerHtmlString = ' <td align="center"><input type="text" size="10" value=\'' + name + '\' readonly/></td>\n' +
                 '                <td align="center"><input type="text" size="10" value=\'' + style + '\' readonly/></td>\n' +
                 '                <td align="center"><input type="text" size="10" value=\'' + price + '\' readonly/></td>\n' +
-                '                <td align="center"><input type="text" size="10" name=\'' + pid + '\'\n' +
+                '                <td align="center"><input type="text" value="1" size="10" name=\'' + pid + '\'\n' +
                 '                                          onKeyUp="this.value=this.value.replace(/\\D/g,\'\')"/></td>\n' +
                 '                <td><button type="button" onclick="deleteOrderProductRow(\'' + new_tr_id + '\', ' + pid + '${""})"><img src="images/trash.png"\n' +
                 '                                                                                                alt="" title=""\n' +
@@ -199,7 +200,7 @@
 </div>
 <div style="display: none;" id="product_datas">
     <c:forEach items="${products }" var="productType">
-        <div id="${productType.key}">
+        <div id="${productType.key.split("_")[0]}">
             <c:forEach items="${productType.value }" var="product">
                 <div id="${product.pId}">
                     <div id="product_name">${product.pName}</div>
@@ -211,17 +212,17 @@
         </div>
     </c:forEach>
 </div>
-<form action="orderproduct.do" method="post">
+<form name="myform" action="orderproduct.do" method="post">
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
         <tr>
-            <td colspan="4" align="left"><strong>订购产品</strong></td>
+            <td colspan="5" align="left"><strong>采购产品</strong></td>
         </tr>
         <tr>
             <td>
                 <select id="select_type_id" onchange="changeProductByTypeId(this.options.selectedIndex)">
                     <option value="" selected>请选择类别</option>
                     <c:forEach items="${products}" var="productType">
-                        <option value="${productType.key}">${productType.key}</option>
+                        <option value="${productType.key.split("_")[0]}">${productType.key.split("_")[1]}</option>
                     </c:forEach>
                 </select>
             </td>
@@ -230,16 +231,17 @@
                     <option value="" selected>请选择商品</option>
                 </select>
             </td>
-            <td>
+            <td colspan="3">
                 <button type="button" onclick="addOrderProductRow()">添加商品</button>
             </td>
 
         </tr>
         <tr>
-            <td width="26" align="ceter">名称</td>
-            <td width="61" align="center">规格</td>
-            <td width="61" align="center">单价</td>
-            <td width="104" align="center">订购数量</td>
+            <td width="26" align="ceter"  >名称</td>
+            <td width="61" align="center" >规格</td>
+            <td width="61" align="center" >单价</td>
+            <td width="61" align="center" >订购数量</td>
+            <td width="61" align="center" >删除</td>
         </tr>
 
         <tr id="tr_order_product_0">
@@ -277,11 +279,11 @@
         </tr>
         <tr>
             <td align="right"><strong>备注</strong></td>
-            <td colspan="3"><textarea name="remark" cols="60" id="textfield23"></textarea></td>
+            <td colspan="4"><textarea name="remark" style="height: 100px;" cols="60" id="textfield23"></textarea></td>
         </tr>
         <tr>
             <td colspan="4" align="center">
-                <input type="submit" id="button" value="确认提交"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" id="button"  onsubmit="return orderCheck()"value="确认提交"/>&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="reset" id="button2" value="重新填写"/>
             </td>
         </tr>

@@ -42,7 +42,7 @@ public class OrderProductServiceImpl implements OrderProductService {
             for (ProductType productType : productTypes) {
                 List<Product> products = productMapper.selectByType(productType.gettId());
                 if (products.size() > 0) {
-                    map.put(productType.gettId().toString(), products);
+                    map.put(productType.gettId().toString()+"_"+productType.gettType(), products);
                 }
             }
         } catch (Exception e) {

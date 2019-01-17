@@ -146,6 +146,10 @@ function addstaffformcheck() {
 		document.myform.phone.focus();
 		return false;
 	}
-	
+
+	// 采购订单，检查数量是否为0
+	function orderCheck() {
+		document.myform.
+    }
 
 }

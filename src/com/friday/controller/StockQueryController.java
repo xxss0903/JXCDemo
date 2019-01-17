@@ -25,7 +25,7 @@ public class StockQueryController implements Controller {
 			int shopId = Integer.parseInt(request.getParameter("sName"));
 			model.put("stock", stockQueryService.stockQuery(shopId));
 			model.put("shop", stockQueryService.shopQuery());
-			model.put("shopname", stockQueryService.QueryShopName(shopId));
+			model.put("shopname", stockQueryService.queryShopName(shopId));
 
 		} catch (Exception e) {
 			model.put("error","查询库存失败");
