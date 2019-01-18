@@ -65,7 +65,27 @@
         var orderCount = 0;
         var addedProductId = [];
 
+        function getNowDate() {
+            var date = new Date();
+            var nowMonth = date.getMonth() + 1;
+            var strDate = date.getDate();
+
+            var seperator = "-";
+
+            if (nowMonth >= 1 && nowMonth <= 9) {
+                nowMonth = "0" + nowMonth;
+            }
+            if (strDate >= 0 && strDate <= 9) {
+                strDate = "0" + strDate;
+            }
+
+            return date.getFullYear() + seperator + nowMonth + seperator + strDate;
+        }
+
         function initData() {
+            var orderTime = document.getElementById("textfield21");
+            orderTime.value = getNowDate();
+
             var typeNodes = document.getElementById("product_datas").childNodes;
             var typeDivs = [];
             for (var l = 0; l < typeNodes.length; l++) {
@@ -237,11 +257,11 @@
 
         </tr>
         <tr>
-            <td width="26" align="ceter"  >名称</td>
-            <td width="61" align="center" >规格</td>
-            <td width="61" align="center" >单价</td>
-            <td width="61" align="center" >订购数量</td>
-            <td width="61" align="center" >删除</td>
+            <td width="26" align="ceter">名称</td>
+            <td width="61" align="center">规格</td>
+            <td width="61" align="center">单价</td>
+            <td width="61" align="center">订购数量</td>
+            <td width="61" align="center">删除</td>
         </tr>
 
         <tr id="tr_order_product_0">
@@ -271,11 +291,12 @@
         <%--</tr>--%>
         <%--</c:forEach>--%>
         <%--</c:forEach>--%>
-        <tr>
-            <td align="right"><strong>订购时间</strong></td>
-            <td colspan="4"><input name="orderTime" type="text" id="textfield21" size="27" onclick="WdatePicker()"/>
-                &nbsp;&nbsp;＊点击文本框获取时间
-            </td>
+        <>
+        >
+        <td align="right"><strong>订购时间</strong></td>
+        <td colspan="4"><input name="orderTime" type="text" id="textfield21" size="27" onclick="WdatePicker()"/>
+            &nbsp;&nbsp;＊点击文本框获取时间
+        </td>
         </tr>
         <tr>
             <td align="right"><strong>备注</strong></td>
@@ -283,7 +304,7 @@
         </tr>
         <tr>
             <td colspan="4" align="center">
-                <input type="submit" id="button"  onsubmit="return orderCheck()"value="确认提交"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" id="button" onsubmit="return orderCheck()" value="确认提交"/>&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="reset" id="button2" value="重新填写"/>
             </td>
         </tr>
