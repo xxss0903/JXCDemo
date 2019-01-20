@@ -82,7 +82,7 @@
         <td colspan="6" align="left"><strong>订单记录查询</strong></td>
     </tr>
     <tr>
-        <td colspan="6" align="right">
+        <td colspan="6" align="left">
             <form action="queryorder.do" method="post">
                 <label>开始时间：</label>
                 <input name="starttime" type="text" id="textfield" size="5" onclick="WdatePicker()"/>
@@ -107,7 +107,7 @@
         <td width="50" align="center"><strong>经办人 </strong></td>
         <td width="50" align="center"><strong>合计金额</strong></td>
         <td width="50" align="center"><strong>状态</strong></td>
-        <td width="50" align="center"><strong>入库</strong></td>
+        <td width="50" align="center"><strong>操作</strong></td>
     </tr>
     </thead>
     <tfoot>
@@ -152,9 +152,23 @@
             <td align="center">${order.user }</td>
             <td align="center">${order.price }</td>
             <td align="center">${order.style }</td>
-            <td align="center"><a href="product_storage.jsp?orderid=${order.oId}">
-                <button type="button" ${order.style!="未处理" ? 'style="display: none"' : ""}>入库</button>
-            </a></td>
+            <td align="center">
+                <c:choose>
+                    <c:when test="${order.style == '未处理'}">
+                        <a href="product_storage.jsp?orderid=${order.oId}">
+                            <button type="button">入库</button>
+                        </a>
+                        <a href="product_return.jsp?orderid=${order.oId}">
+                            <button type="button">退回</button>
+                        </a>
+                    </c:when>
+                    <%--<c:when test="${order.style == '已入库'}">--%>
+                        <%--<a href="product_return.jsp?orderid=${order.oId}">--%>
+                            <%--<button type="button">退回</button>--%>
+                        <%--</a>--%>
+                    <%--</c:when>--%>
+                </c:choose>
+            </td>
         </tr>
     </c:forEach>
     </tbody>

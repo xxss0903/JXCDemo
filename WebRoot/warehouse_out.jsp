@@ -83,7 +83,7 @@ $(function($) {
 		<td colspan="5" align="left"><strong>出库记录查询</strong></td>
 	</tr>
     <tr>
-    	<td colspan="5" align="right">
+    	<td colspan="5" align="left">
        	<form action="querystockout.do" method="post">
         	  <label>开始时间：</label>
         	  <input name="starttime" type="text" id="textfield" size="5" onclick="WdatePicker()" />
@@ -111,7 +111,7 @@ $(function($) {
     </thead>
     <tfoot>
 		 <tr>
-			<td colspan="5" align="right">
+			<td colspan="5" align="left">
 			<div class="pagination">
 				<form action="querystockout.do" method="post" style="display:none" name="hideform">
 		       	  <input name="starttime" type="text" id="textfield" size="8" onclick="WdatePicker()" value="${starttime }"/>

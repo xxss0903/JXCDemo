@@ -1,5 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
+<%@ page import="com.friday.service.StockQueryService" %>
+<%@ page import="com.friday.service.impl.StockQueryServiceImpl" %>
+<%@ page import="com.friday.model.Shop" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
@@ -63,6 +66,16 @@
     </script>
 
     <script language="javascript" type="text/javascript" src="JS/niceforms.js"></script>
+    <script language="javascript" type="text/javascript" src="JS/commonutils.js"></script>
+
+    <script type="text/javascript">
+        window.onload = initDatas
+
+        function initDatas() {
+            document.getElementById("textfield3").value = getNowDate();
+        }
+
+    </script>
 
 </head>
 <body bgcolor="transparent" style='background:transparent'>
@@ -71,10 +84,18 @@
 </div>
 <%!
     String orderid = null;
+    List<Shop> shops = new ArrayList();
 %>
 <%
     orderid = request.getParameter("orderid");
-    if (orderid != null)
+
+    // 获取区域内容
+    try {
+        StockQueryService stockQueryService = new StockQueryServiceImpl();
+        shops = stockQueryService.shopQuery();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
 %>
 <form action="stockin.do" method="post">
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
@@ -88,13 +109,25 @@
                     <td width="154"><input name="orderid" type="text" id="textfield1" size="20"/></td>
                 </c:when>
                 <c:otherwise>
-                    <td width="154"><input name="orderid" type="text" id="textfield1" size="20" value="<%=orderid%>"/></td>
+                    <td width="154"><input name="orderid" type="text" id="textfield1" size="20" value="<%=orderid%>"/>
+                    </td>
                 </c:otherwise>
             </c:choose>
         </tr>
         <tr>
             <td>入库时间</td>
             <td><input name="intime" type="text" id="textfield3" size="20" onclick="WdatePicker()"/></td>
+        </tr>
+        <tr>
+            <td>入库区域</td>
+            <td>
+                <select name="select_shop" id="select_shop">
+                    <c:forEach items="<%=shops%>" var="shop">
+                        <option value="${shop.sId}">${shop.sName}</option>
+                    </c:forEach>
+                </select>
+            </td>
+            <%--<td><input name="inshop" type="text" id="textfield4" size="20" onclick=""/></td>--%>
         </tr>
         <tr>
             <td>备注</td>

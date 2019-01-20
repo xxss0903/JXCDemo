@@ -1,11 +1,15 @@
 package com.friday.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.friday.model.Order;
+import com.friday.service.OrderProductService;
+import com.friday.service.impl.OrderProductServiceImpl;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 import com.friday.service.DetailQueryService;
@@ -19,20 +23,21 @@ public class QueryDetailController implements Controller {
         Map<String, Object> model = new HashMap<String, Object>();
         try {
             DetailQueryService detailQueryService = new DetailQueryServiceImpl();
+            OrderProductService orderProductService = new OrderProductServiceImpl();
             String did = request.getParameter("did");
             String table = request.getParameter("table");
-            model.put("details", detailQueryService.queryDetail(did, table));
-            model.put("did", did);
-            ModelAndView modelView = new ModelAndView("detail", model);
-            if (table.equals("order")) {
-                // 订购产品得订单添加入库和退回功能，传递订单编号
-                modelView.addObject("orderid", did);
+            Order order = orderProductService.queryOrder(did);
+            if (order != null) {
+                model.put("details", detailQueryService.queryDetail(did, table));
+                model.put("did", did);
+                model.put("remark", order.getoBz());
+                ModelAndView modelView = new ModelAndView("detail", model);
+                return modelView;
             }
-            return modelView;
         } catch (Exception e) {
             model.put("error", "获取失败");
             e.printStackTrace();
-            return new ModelAndView("error", model);
         }
+        return new ModelAndView("error", model);
     }
 }

@@ -50,6 +50,7 @@
     </script>
     <script src="JS/jquery.jclock-1.2.0.js.txt" type="text/javascript"></script>
     <script type="text/javascript" src="JS/jconfirmaction.jquery.js"></script>
+    <script type="text/javascript" src="JS/commonutils.js"></script>
     <script type="text/javascript">
 
         $(document).ready(function () {
@@ -73,6 +74,7 @@
         var addedProductId = [];
 
         function initDatas() {
+            // document.getElementById("testfield1").value = getNowDate();
             var table = document.getElementById("rounded-corner");
             var rows = table.rows;
             var trCount = 0;
@@ -88,6 +90,12 @@
                 }
             }
             selectedAddRowIndex = trCount;
+
+            // 初始化全国的库存
+            var selectShop = document.getElementById("select_shop");
+            var selectedIndex = selectShop.selectedIndex;
+            var shopId = selectShop.options[selectedIndex].value;
+            changeShopId(shopId)
         }
 
         function addProductRow(productsIndex, currentIndex) {
@@ -149,6 +157,20 @@
             deleteTr.parentNode.removeChild(deleteTr);
         }
 
+        // 更改当前选中的地区，将查询结果添加到div中
+        function changeShopId(shopId) {
+            console.log("shopid " + shopId);
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", "queryproductlist.do?shopid=" + shopId, true);
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState === 4)
+                    result.innerHTML = xmlHttp.responseText;
+                else
+                    result.innerHTML = "正在查询，请稍等";
+            };
+            xmlHttp.send();
+        }
+
     </script>
 
     <script language="javascript" type="text/javascript" src="JS/niceforms.js"></script>
@@ -156,87 +178,87 @@
 </head>
 <body bgcolor="transparent" style='background:transparent'>
 
-<%!
-%>
+<%--<%--%>
+<%--int currentIndex1 = 0;--%>
+<%--int selectProductIndex = 1;--%>
+<%--%>--%>
 
-<%
-    int currentIndex1 = 0;
-    int selectProductIndex = 1;
-%>
+<table id="rounded-corner" summary="2007 Major IT Companies' Profit">
+    <tr>
+        <td colspan="5" align="left"><strong>产品出库</strong></td>
+    </tr>
+    <tr>
+        <%--<td align="left">出库网点</td>--%>
+        <td colspan="5" align="left">
+            出库网点
+            <select id="select_shop" name="shopid" onchange="changeShopId(this.options[this.options.selectedIndex].value)">
+                <c:forEach items="${shops }" var="shop">
+                    <c:if test="${shop.sId != 0}">
+                        <option value="${shop.sId}">${shop.sName }</option>
+                    </c:if>
+                </c:forEach>
+            </select>
+        </td>
 
-<form action="stockout.do" method="post">
-    <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
-        <tr>
-            <td colspan="4" align="left"><strong>产品出库</strong></td>
-        </tr>
-        <tr>
-            <%--<td align="left">出库网点</td>--%>
-            <td colspan="1">
-                出库网点
-                <select name="shopid">
-                    <c:forEach items="${shops }" var="shop">
-                        <option value="${shop.sId }">${shop.sName }</option>
-                    </c:forEach>
-                </select>
-            </td>
+        <%--<td align="left" colspan="1">--%>
+        <%--<select name="add_product_id" onchange="selectedAddRow(this.options[this.options.selectedIndex].value)">--%>
+        <%--<option value="" selected>请选择商品</option>--%>
+        <%--<c:forEach items="${products}" var="product" varStatus="status">--%>
+        <%--<option value="${product.name} ${product.num} ${product.price} ${product.pid}">${product.name}</option>--%>
+        <%--</c:forEach>--%>
+        <%--</select>--%>
 
-            <td align="left" colspan="1">
-                <select name="add_product_id" onchange="selectedAddRow(this.options[this.options.selectedIndex].value)">
-                    <option value="" selected>请选择商品</option>
-                    <c:forEach items="${products}" var="product" varStatus="status">
-                        <option value="${product.name} ${product.num} ${product.price} ${product.pid}">${product.name}</option>
-                    </c:forEach>
-                </select>
-                <button type="button" onclick="addProductRow(<%=selectProductIndex%>, <%=currentIndex1%>)">添加Product
-                </button>
-            </td>
-        </tr>
-        <tr id="tr_title_row">
-            <td align="center">产品名称</td>
-            <td align="center">产品数量</td>
-            <td align="center">产品价格</td>
-            <td align="center">出库数量</td>
-            <td align="center">移除</td>
-        </tr>
-        <c:forEach begin="0" end="${products.size()}" items="${products}" var="product" varStatus="status">
-            <tr id="tr_<%=currentIndex1%>" class="${product.pid}">
-                <td align="center"><input type="text" size="10" value="${product.name }" readonly/></td>
-                <td align="center"><input type="text" size="10" value="${product.num }" readonly/></td>
-                <td align="center"><input type="text" size="10" value="${product.price }" readonly/></td>
-                <td align="center"><input type="text" size="10" name="${product.pid }"
-                                          onKeyUp="this.value=this.value.replace(/\D/g,'')"/></td>
-                <td>
-                    <button type="button" onclick="deleteProductRow('tr_<%=currentIndex1%>', ${product.pid})"><img
-                            src="images/trash.png"
-                            alt="" title=""
-                            border="0"/></button>
-                </td>
-            </tr>
-            <%
-                currentIndex1++;
-            %>
-        </c:forEach>
-        <tr>
-            <td align="right">出库时间</td>
-            <td><input name="outtime" type="text" size="20" onclick="WdatePicker()"/></td>
-            <td align="left" colspan="2">＊点击文本框获取时间</td>
-        </tr>
-        <tr>
-            <td align="right">备注</td>
-            <td colspan="3"><input name="remark" type="text" size="20"/></td>
-        </tr>
-        <tr>
-            <td colspan="4" align="center">
-                <input type="submit" value="确认出库"/>
-                <input type="reset" value="重新填写"/>
-            </td>
-        </tr>
-    </table>
-</form>
+        <%--</td>--%>
+        <%--<td colspan="1" align="left">--%>
+        <%--<button type="button" onclick="addProductRow(<%=selectProductIndex%>, <%=currentIndex1%>)">添加Product--%>
+        <%--</button>--%>
+        <%--</td>--%>
+    </tr>
+    <%--<tr id="tr_title_row">--%>
+    <%--<td align="center">产品名称</td>--%>
+    <%--<td align="center">产品数量</td>--%>
+    <%--<td align="center">产品价格</td>--%>
+    <%--<td align="center">出库数量</td>--%>
+    <%--<td align="center">操作</td>--%>
+    <%--</tr>--%>
 
-<%
-    System.out.println("初始化jsp");
 
-%>
+    <%--<c:forEach begin="0" end="${products.size()}" items="${products}" var="product" varStatus="status">--%>
+    <%--<tr id="tr_<%=currentIndex1%>" class="${product.pid}">--%>
+    <%--<td align="center"><input type="text" size="10" value="${product.name }" readonly/></td>--%>
+    <%--<td align="center"><input type="text" size="10" value="${product.num }" readonly/></td>--%>
+    <%--<td align="center"><input type="text" size="10" value="${product.price }" readonly/></td>--%>
+    <%--<td align="center"><input type="text" size="10" name="${product.pid }"--%>
+    <%--onKeyUp="this.value=this.value.replace(/\D/g,'')"/></td>--%>
+    <%--<td>--%>
+    <%--<button type="button" onclick="deleteProductRow('tr_<%=currentIndex1%>', ${product.pid})"><img--%>
+    <%--src="images/trash.png"--%>
+    <%--alt="" title=""--%>
+    <%--border="0"/></button>--%>
+    <%--</td>--%>
+    <%--</tr>--%>
+    <%--<%--%>
+    <%--currentIndex1++;--%>
+    <%--%>--%>
+    <%--</c:forEach>--%>
+    <%--<tr>--%>
+    <%--<td align="right">出库时间</td>--%>
+    <%--<td><input name="outtime" id="testfield1" type="text" size="20" onclick="WdatePicker()"/></td>--%>
+    <%--<td align="left" colspan="2">＊点击文本框获取时间</td>--%>
+    <%--</tr>--%>
+    <%--<tr>--%>
+    <%--<td align="right">备注</td>--%>
+    <%--<td colspan="3"><input name="remark" type="text" size="20"/></td>--%>
+    <%--</tr>--%>
+    <%--<tr>--%>
+    <%--<td colspan="5" align="center">--%>
+    <%--<input type="submit" value="确认出库"/>--%>
+    <%--<input type="reset" value="重新填写"/>--%>
+    <%--</td>--%>
+    <%--</tr>--%>
+</table>
+
+<div id="result"></div>
+
 </body>
 </html>

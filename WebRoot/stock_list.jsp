@@ -46,45 +46,51 @@
     <script type="text/javascript" src="JS/jconfirmaction.jquery.js"></script>
 
     <script language="javascript" type="text/javascript" src="JS/niceforms.js"></script>
+    <script language="javascript" type="text/javascript" src="JS/commonutils.js"></script>
+
+    <script type="text/javascript">
+
+
+    </script>
 
 </head>
 <body bgcolor="transparent" style='background:transparent'>
+<%--<input type="text" name="shopid" value="${shopid}" style="display: none;"/>--%>
 <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
     <tr>
-        <td colspan="3" align="center"><strong>详情:${did }</strong></td>
+        <td colspan="4" align="center"><strong>${shopname}</strong></td>
     </tr>
-    <%--<c:if test="${did != null}">--%>
-        <%--<tr>--%>
-            <%--<td colspan="2" align="center">--%>
-                <%--<a href="product_storage.jsp?orderid=${did}">--%>
-                    <%--<button type="button">入库</button>--%>
-                <%--</a>--%>
-            <%--</td>--%>
-            <%--<td colspan="2" align="center">--%>
-                <%--<a href="product_return.jsp?orderid=${did}">--%>
-                    <%--<button type="button">退回</button>--%>
-                <%--</a>--%>
-            <%--</td>--%>
-        <%--</tr>--%>
-    <%--</c:if>--%>
+    <c:choose>
+        <c:when test="${result.size() > 0}">
+            <tr>
+                <td align="center"  width="79" >产品名称</td>
+                <td width="79" align="center">规格</td>
+                <td width="96" align="center">单价</td>
+                <td width="70" align="center">库存数量</td>
+            </tr>
+
+            <c:forEach items="${result}" var="productsMessage">
+                <tr>
+                    <td align="center">${productsMessage.name}</td>
+                    <td align="center">${productsMessage.guige}</td>
+                    <td align="center">${productsMessage.price}</td>
+                    <td align="center">${productsMessage.num}</td>
+                </tr>
+            </c:forEach>
+        </c:when>
+        <c:otherwise>
+            <tr style="height: 100px">
+                <td colspan="5"><strong>此地区没有库存，请选择其他地区</strong></td>
+            </tr>
+        </c:otherwise>
+    </c:choose>
 
     <tr>
-        <td align="center">名称</td>
-        <td align="center">订购数量</td>
-        <td align="center">价格</td>
-    </tr>
-    <c:forEach items="${details }" var="detail">
-        <tr>
-            <td align="center">${detail.name }</td>
-            <td align="center">${detail.num }</td>
-            <td align="center">${detail.price }</td>
-        </tr>
-    </c:forEach>
-    <tr>
-        <td colspan="6" align="center"><strong>备注</strong></td>
-    </tr>
-    <tr>
-        <td colspan="5" align="center">${remark}</td>
+        <td colspan="4" align="right">
+            <div class="pagination">
+                <span class="disabled">prev</span><span class="current">1</span><span class="disabled">prev</span>
+            </div>
+        </td>
     </tr>
 </table>
 </body>

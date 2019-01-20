@@ -12,6 +12,7 @@ public class Order {
     private String oBz;
 
     private Integer oStyle;
+    private String styleName;
 
     public String getoId() {
         return oId;
@@ -38,6 +39,9 @@ public class Order {
     }
 
     public String getoBz() {
+        if (oBz == null) {
+            return "";
+        }
         return oBz;
     }
 
@@ -50,6 +54,30 @@ public class Order {
     }
 
     public void setoStyle(Integer oStyle) {
+        String styleName = "";
+        switch (oStyle) {
+            case 0:
+                styleName = "未处理";
+                break;
+            case 1:
+                styleName = "已入库";
+                break;
+            case -1:
+                styleName = "已退回";
+                break;
+            default:
+                styleName = "未处理";
+                break;
+        }
+        setStyleName(styleName);
         this.oStyle = oStyle;
+    }
+
+    public String getStyleName() {
+        return styleName;
+    }
+
+    public void setStyleName(String styleName) {
+        this.styleName = styleName;
     }
 }

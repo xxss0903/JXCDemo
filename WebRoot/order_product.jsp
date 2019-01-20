@@ -45,6 +45,7 @@
     <script type="text/javascript" src="JS/formcheck.js"></script>
     <script src="JS/jquery.jclock-1.2.0.js.txt" type="text/javascript"></script>
     <script type="text/javascript" src="JS/jconfirmaction.jquery.js"></script>
+    <script type="text/javascript" src="JS/commonutils.js"></script>
     <script type="text/javascript">
 
         $(document).ready(function () {
@@ -64,23 +65,6 @@
         var typeList = [];
         var orderCount = 0;
         var addedProductId = [];
-
-        function getNowDate() {
-            var date = new Date();
-            var nowMonth = date.getMonth() + 1;
-            var strDate = date.getDate();
-
-            var seperator = "-";
-
-            if (nowMonth >= 1 && nowMonth <= 9) {
-                nowMonth = "0" + nowMonth;
-            }
-            if (strDate >= 0 && strDate <= 9) {
-                strDate = "0" + strDate;
-            }
-
-            return date.getFullYear() + seperator + nowMonth + seperator + strDate;
-        }
 
         function initData() {
             var orderTime = document.getElementById("textfield21");
@@ -291,8 +275,6 @@
         <%--</tr>--%>
         <%--</c:forEach>--%>
         <%--</c:forEach>--%>
-        <>
-        >
         <td align="right"><strong>订购时间</strong></td>
         <td colspan="4"><input name="orderTime" type="text" id="textfield21" size="27" onclick="WdatePicker()"/>
             &nbsp;&nbsp;＊点击文本框获取时间

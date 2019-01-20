@@ -17,6 +17,8 @@ public class InStock {
 
     private Date iDate;//入库时间
 
+    private Integer sId;
+
     public String getiId() {
         return iId;
     }
@@ -49,6 +51,11 @@ public class InStock {
 		this.iDate = iDate;
 	}
 
+    public Integer getsId() {
+        return sId;
+    }
 
-
+    public void setsId(Integer sId) {
+        this.sId = sId;
+    }
 }

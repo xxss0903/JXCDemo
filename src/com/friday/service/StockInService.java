@@ -17,6 +17,8 @@ public interface StockInService {
 	 */
 	int stockIn(String orderId, String inId, Date date, String bz, String uId) throws Exception;
 
+	int stockIn(String orderId, String inId, Date date, Integer shopId, String bz, String uId) throws Exception;
+
 	/**
 	 * 商品退回
 	 * @param orderId 产品id

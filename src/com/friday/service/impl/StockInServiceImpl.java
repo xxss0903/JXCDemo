@@ -110,6 +110,83 @@ public class StockInServiceImpl implements StockInService {
     }
 
     @Override
+    public int stockIn(String orderId, String inId, Date date, Integer shopId, String bz, String uId) throws Exception {
+        int ret = 0;
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = SessionUtils.getSession();
+
+            OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+            OrderDetailMapper orderDetailMapper = sqlSession.getMapper(OrderDetailMapper.class);
+            InStockMapper inStockMapper = sqlSession.getMapper(InStockMapper.class);
+            InStockDetailMapper inStockDetailMapper = sqlSession.getMapper(InStockDetailMapper.class);
+            StockMapper stockMapper = sqlSession.getMapper(StockMapper.class);
+            //此订单应该未处理
+            if (orderMapper.selectByPrimaryKey(orderId).getoStyle() != 0) {
+                throw new Exception();
+            }
+
+            InStock inStock = new InStock();
+
+            inStock.setuId(uId);
+            inStock.setoId(orderId);
+            inStock.setiId(inId);
+            inStock.setsId(shopId);
+            inStock.setiDate(date);
+            inStockMapper.insert(inStock);
+
+            Order order = new Order();
+            order.setoBz(null);
+            order.setoDate(null);
+            order.setoId(orderId);
+            order.setoStyle(1);
+            order.setuId(null);
+
+            orderMapper.updateByPrimaryKeySelective(order);
+
+            List<OrderDetail> orderDetails = orderDetailMapper.selectByOrderId(orderId);
+            List<Stock> stocks = stockMapper.selectAll();
+
+            for (OrderDetail orderDetail : orderDetails) {
+                InStockDetail inStockDetail = new InStockDetail();
+                inStockDetail.setInstockId(inId);
+                inStockDetail.setiNum(orderDetail.getoNum());
+                inStockDetail.setpId(orderDetail.getpId());
+                inStockDetailMapper.insert(inStockDetail);
+
+                boolean flag = false;
+                for (Stock stock : stocks) {
+                    if (stock.getShopId() == shopId && stock.getpId() == orderDetail.getpId()) {
+                        stock.setsNum(stock.getsNum() + orderDetail.getoNum());
+                        stockMapper.updateByPrimaryKey(stock);
+                        flag = true;
+                        break;
+                    }
+                }
+                if (!flag) {
+                    Stock stock = new Stock();
+                    stock.setShopId(shopId);
+                    stock.setpId(orderDetail.getpId());
+                    stock.setsMaxnum(Integer.MAX_VALUE);
+                    stock.setsMinnum(0);
+                    stock.setsNum(orderDetail.getoNum());
+                    stockMapper.insert(stock);
+                }
+            }
+
+            sqlSession.commit();
+            ret = 1;
+        } catch (Exception e) {
+            sqlSession.rollback();
+            throw e;
+        } finally {
+            SessionUtils.closeSession(sqlSession);
+        }
+
+        return ret;
+    }
+
+    @Override
     public int goodsBack(String orderId, Date date, String bz,
                          String uId) throws Exception {
         int ret = 0;
@@ -123,8 +200,9 @@ public class StockInServiceImpl implements StockInService {
             GoodsBackMapper goodsBackMapper = sqlSession.getMapper(GoodsBackMapper.class);
             GoodsBackDetailMapper goodsBackDetailMapper = sqlSession.getMapper(GoodsBackDetailMapper.class);
 
+            // 未处理的才能退回，其他的不能退回
             if (orderMapper.selectByPrimaryKey(orderId).getoStyle() != 0) {
-                throw new Exception();
+                throw new Exception("订单状态错误，请确认当前订单状态！");
             }
 
             GoodsBack goodsBack = new GoodsBack();

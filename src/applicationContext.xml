@@ -81,6 +81,10 @@
     <bean id="sendpageItemEditController" class="com.friday.controller.QueryCategoryItemController"/>
     <bean id="sendpageItemDeletetController" class="com.friday.controller.QueryCategoryItemController"/>
 
+
+    <bean id="queryProductByShopController" class="com.friday.controller.QueryCategoryItemController"/>
+    <bean id="queryProductListController" class="com.friday.controller.QueryProductListByShopController"/>
+
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
@@ -150,6 +154,9 @@
                 <prop key="addproduct.do">addProductController</prop>
                 <prop key="querystaffs.do">queryAllStaffsController</prop>
                 <prop key="deletestaff.do">deleteStaffController</prop>
+
+                <prop key="queryproductbyshop.do">queryProductByShopController</prop>
+                <prop key="queryproductlist.do">queryProductListController</prop>
 
 
             </props>

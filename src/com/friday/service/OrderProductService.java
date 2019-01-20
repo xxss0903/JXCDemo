@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.xml.crypto.Data;
 
+import com.friday.model.Order;
 import com.friday.model.ProductType;
 
 public interface OrderProductService {
@@ -24,4 +25,6 @@ public interface OrderProductService {
 	 * @throws Exception
 	 */
 	public List<Object> queryOrder(Date start, Date end, int style, String orderId) throws Exception;
+
+	Order queryOrder(String orderId) throws Exception;
 }

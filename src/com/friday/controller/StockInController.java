@@ -31,10 +31,12 @@ public class StockInController implements Controller {
 			String oid = request.getParameter("orderid");
 			String timeString = request.getParameter("intime");
 			String bz = request.getParameter("remark");
+			String shopIdString = request.getParameter("select_shop");
+			int shopId = Integer.parseInt(shopIdString);
 			String inId = "RK" + new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date(System.currentTimeMillis()));
 			Date date = timeString.isEmpty() ? new Date(System.currentTimeMillis()) : Date.valueOf(timeString);
-			
-			int flag = stockInService.stockIn(oid, inId, date, bz, uId);
+			System.out.println("产品入库 shopid = " + shopId);
+			int flag = stockInService.stockIn(oid, inId, date, shopId, bz, uId);
 			if(flag == 1) {
 				model.put("msg", "成功入库");
 				return new ModelAndView("product_storage", model);

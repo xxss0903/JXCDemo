@@ -81,7 +81,7 @@ $(function($) {
 		<td colspan="4" align="left"><strong>退回记录查询</strong></td>
 	</tr>
     <tr>
-    	<td colspan="4" align="right">
+    	<td colspan="4" align="left">
        	<form action="thquery.do" method="post">
         	  <label>开始时间：</label>
         	  <input name="starttime" type="text" id="textfield" size="5" onclick="WdatePicker()" />

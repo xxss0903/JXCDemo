@@ -41,6 +41,8 @@ public class StockOutController implements Controller {
 			
 			String shopIdString = request.getParameter("shopid");
 			int shopId = Integer.parseInt(shopIdString);
+
+			System.out.println("出库地区: " + shopIdString);
 			
 			Map<String, String[]> paraMap = request.getParameterMap();
 			Iterator<String> iterator = paraMap.keySet().iterator();

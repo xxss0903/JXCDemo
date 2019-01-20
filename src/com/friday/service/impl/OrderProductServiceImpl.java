@@ -177,4 +177,19 @@ public class OrderProductServiceImpl implements OrderProductService {
         return list;
     }
 
+    @Override
+    public Order queryOrder(String orderId) throws Exception {
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = SessionUtils.getSession();
+            OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+            if (orderId != null && !orderId.isEmpty()) {
+                return orderMapper.selectByPrimaryKey(orderId);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+        return null;
+    }
 }

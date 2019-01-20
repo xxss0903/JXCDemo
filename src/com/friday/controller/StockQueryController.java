@@ -23,7 +23,8 @@ public class StockQueryController implements Controller {
 			StockQueryService stockQueryService = new StockQueryServiceImpl();
 
 			int shopId = Integer.parseInt(request.getParameter("sName"));
-			model.put("stock", stockQueryService.stockQuery(shopId));
+			System.out.println("查询库存 " + shopId);
+			model.put("result", stockQueryService.stockQuery(shopId));
 			model.put("shop", stockQueryService.shopQuery());
 			model.put("shopname", stockQueryService.queryShopName(shopId));
 
@@ -33,7 +34,7 @@ public class StockQueryController implements Controller {
 			return new ModelAndView("error",model);
 		}
 		
-		return new ModelAndView("stock_query",model);
+		return new ModelAndView("stock_list",model);
 	}
 
 }

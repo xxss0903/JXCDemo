@@ -62,7 +62,7 @@
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.open("GET", "querydetail.do?did=" + did + "&table=in", true);
             xmlHttp.onreadystatechange = function () {
-                if (xmlHttp.readyState == 4)
+                if (xmlHttp.readyState === 4)
                     result.innerHTML = xmlHttp.responseText;
                 else
                     result.innerHTML = "正在查询，请稍等";
@@ -81,7 +81,7 @@
         <td colspan="4" align="left"><strong>入库记录查询</strong></td>
     </tr>
     <tr>
-        <td colspan="4" align="right">
+        <td colspan="4" align="left">
             <form action="rkquery.do" method="post">
                 <label>开始时间：</label>
                 <input name="starttime" type="text" id="textfield" size="5" onclick="WdatePicker()"/>

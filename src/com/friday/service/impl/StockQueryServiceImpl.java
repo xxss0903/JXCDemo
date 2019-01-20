@@ -54,7 +54,6 @@ public class StockQueryServiceImpl implements StockQueryService {
                 stocks = stockMapper.selectByshopId(shopId);
             }
             for (Stock stock : stocks) {
-                //System.out.print("//"+stock.getsNum());
                 Product product = productMapper.selectByPrimaryKey(stock.getpId());
 
                 Map<String, Object> map = new HashMap<String, Object>();
@@ -62,6 +61,7 @@ public class StockQueryServiceImpl implements StockQueryService {
                 map.put("name", product.getpName());
                 map.put("guige", product.getpStyle());
                 map.put("price", product.getpPrice());
+                map.put("pid", product.getpId());
                 list.add(map);
             }
         } catch (Exception e) {

@@ -58,53 +58,90 @@
 
     <script language="javascript" type="text/javascript" src="JS/niceforms.js"></script>
 
+    <script type="text/javascript">
+        window.onload = initDatas;
+
+        function initDatas() {
+            // 初始化全国的库存
+            var selectShop = document.getElementById("sName");
+            var selectedIndex = selectShop.selectedIndex;
+            var shopId = selectShop.options[selectedIndex].value;
+            changeShopId(shopId)
+        }
+
+        function changeShopId(shopId) {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", "stockquery.do?sName=" + shopId, true);
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState === 4)
+                    result.innerHTML = xmlHttp.responseText;
+                else
+                    result.innerHTML = "正在查询，请稍等";
+            };
+            xmlHttp.send();
+        }
+
+
+    </script>
+
 </head>
 <body bgcolor="transparent" style='background:transparent'>
-<form action="stockquery.do" method="post">
-    <table id="rounded-corner" summary="2007 Major IT Companies' Profit" width="623" border="0">
-        <tr>
-            <td colspan="4" align="left"><strong>库存查询</strong></td>
-        </tr>
-        <tr>
-            <td width="82" align="center">搜索：</td>
-            <td width="88" align="center"><label for="select">
-                <select name="sName" id="sName">
-                    <c:forEach items="${shop}" var="shopName">
-                        <option value="${shopName.sId}">${shopName.sName}</option>
-                    </c:forEach>
+<%--<form action="stockquery.do" method="post">--%>
+<table id="rounded-corner" summary="2007 Major IT Companies' Profit" width="623" border="0">
+    <tr>
+        <td colspan="4" align="left"><strong>库存查询</strong></td>
+    </tr>
+    <tr>
+        <td width="82" align="left" colspan="1">搜索：</td>
+        <td width="88" align="left" colspan="3"><label for="select">
+            <select name="sName" id="sName" onchange="changeShopId(this.options[this.options.selectedIndex].value)">
+                <c:forEach items="${shop}" var="shopName">
+                    <option value="${shopName.sId}">${shopName.sName}</option>
+                </c:forEach>
 
-                </select></label></td>
-            <td colspan="4" align="left"><input type="submit" value="查询" style="font-size:16px"/></td>
-        </tr>
-        <tr>
-            <td colspan="4" align="center"><strong>${shopname}</strong></td>
-        </tr>
-        <tr>
-            <td align="center">产品名称</td>
-            <td width="79" align="center">规格</td>
-            <td width="96" align="center">单价</td>
-            <td width="70" align="center">库存数量</td>
+            </select></label></td>
+        <%--<td colspan="2" align="left"><input type="submit" value="查询" style="font-size:16px"/></td>--%>
+    </tr>
 
-        </tr>
 
-        <c:forEach items="${stock}" var="productsMessage">
-            <tr>
-                <td align="center">${productsMessage.name}</td>
-                <td align="center">${productsMessage.guige}</td>
-                <td align="center">${productsMessage.price}</td>
-                <td align="center">${productsMessage.num}</td>
+    <%----%>
 
-            </tr>
-        </c:forEach>
+    <%--<tr>--%>
+    <%--<td align="center">产品名称</td>--%>
+    <%--<td width="79" align="center">规格</td>--%>
+    <%--<td width="96" align="center">单价</td>--%>
+    <%--<td width="70" align="center">库存数量</td>--%>
+    <%--</tr>--%>
+    <%----%>
+    <%----%>
+    <%--<c:choose>--%>
+    <%--<c:when test="${stock.size() > 0}">--%>
+    <%--<c:forEach items="${stock}" var="productsMessage">--%>
+    <%--<tr>--%>
+    <%--<td align="center">${productsMessage.name}</td>--%>
+    <%--<td align="center">${productsMessage.guige}</td>--%>
+    <%--<td align="center">${productsMessage.price}</td>--%>
+    <%--<td align="center">${productsMessage.num}</td>--%>
 
-        <tr>
-            <td colspan="4" align="right">
-                <div class="pagination">
-                    <span class="disabled">prev</span><span class="current">1</span><span class="disabled">prev</span>
-                </div>
-            </td>
-        </tr>
-    </table>
-</form>
+    <%--</tr>--%>
+    <%--</c:forEach>--%>
+    <%--</c:when>--%>
+    <%--<c:otherwise>--%>
+    <%--<tr>--%>
+    <%--<td style="height: 100px;" colspan="4"><strong>库存为空</strong></td>--%>
+    <%--</tr>--%>
+    <%--</c:otherwise>--%>
+    <%--</c:choose>--%>
+
+    <%--<tr>--%>
+    <%--<td colspan="4" align="right">--%>
+    <%--<div class="pagination">--%>
+    <%--<span class="disabled">prev</span><span class="current">1</span><span class="disabled">prev</span>--%>
+    <%--</div>--%>
+    <%--</td>--%>
+    <%--</tr>--%>
+</table>
+<%--</form>--%>
+<div id="result"></div>
 </body>
 </html>

@@ -149,7 +149,7 @@ function addstaffformcheck() {
 
 	// 采购订单，检查数量是否为0
 	function orderCheck() {
-		document.myform.
+
     }
 
 }

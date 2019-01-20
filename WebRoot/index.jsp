@@ -192,17 +192,19 @@
                     <%--<li><a onclick="clickA(this)" alt="sendpage_kaipiao.do">开票管理</a></li>--%>
                     <%--</ul>--%>
                     <%--</div>--%>
-                    <%--<a class="menuitem submenuheader" href="">统计信息</a>--%>
-                    <%--<div class="submenu">--%>
-                    <%--&lt;%&ndash;<ul>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;<li><a onclick="clickA(this);" alt="customerquery.do">客户管理</a></li>&ndash;%&gt;--%>
-                    <%--&lt;%&ndash;</ul>&ndash;%&gt;--%>
-                    <%--</div>--%>
+                    <a class="menuitem submenuheader" href="">统计信息</a>
+                    <div class="submenu">
+                    <ul>
+                        <li><a onclick="clickA(this);" alt="customerquery.do">成本核算</a></li>
+                        <li><a onclick="clickA(this);" alt="customerquery.do">销售统计</a></li>
+                    </ul>
+                    </div>
                     <a class="menuitem submenuheader" href="">系统设置</a>
                     <div class="submenu">
                         <ul>
                             <li><a onclick="clickA(this);" alt="add_manager.jsp">添加管理员</a></li>
                             <li><a onclick="clickA(this);" alt="modify_password.jsp">修改密码</a></li>
+                            <li><a onclick="clickA(this);" alt="modify_password.jsp">默认地址</a></li>
                         </ul>
                     </div>
 

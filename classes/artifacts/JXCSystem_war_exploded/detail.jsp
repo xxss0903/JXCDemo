@@ -53,25 +53,25 @@
     <tr>
         <td colspan="3" align="center"><strong>详情:${did }</strong></td>
     </tr>
-    <c:if test="${did != null}">
-        <tr>
-            <td colspan="2" align="center">
-                <a href="product_storage.jsp?orderid=${did}">
-                    <button type="button">入库</button>
-                </a>
-            </td>
-            <td colspan="2" align="center">
-                <a href="product_return.jsp?orderid=${did}">
-                    <button type="button">退回</button>
-                </a>
-            </td>
-        </tr>
-    </c:if>
+    <%--<c:if test="${did != null}">--%>
+        <%--<tr>--%>
+            <%--<td colspan="2" align="center">--%>
+                <%--<a href="product_storage.jsp?orderid=${did}">--%>
+                    <%--<button type="button">入库</button>--%>
+                <%--</a>--%>
+            <%--</td>--%>
+            <%--<td colspan="2" align="center">--%>
+                <%--<a href="product_return.jsp?orderid=${did}">--%>
+                    <%--<button type="button">退回</button>--%>
+                <%--</a>--%>
+            <%--</td>--%>
+        <%--</tr>--%>
+    <%--</c:if>--%>
 
     <tr>
         <td align="center">名称</td>
         <td align="center">订购数量</td>
-        <td align="center">订购数量</td>
+        <td align="center">价格</td>
     </tr>
     <c:forEach items="${details }" var="detail">
         <tr>
@@ -80,6 +80,12 @@
             <td align="center">${detail.price }</td>
         </tr>
     </c:forEach>
+    <tr>
+        <td colspan="6" align="center"><strong>备注</strong></td>
+    </tr>
+    <tr>
+        <td colspan="5" align="center">${remark}</td>
+    </tr>
 </table>
 </body>
 </html>
