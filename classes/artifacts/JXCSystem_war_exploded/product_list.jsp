@@ -75,6 +75,10 @@
             selectedAddRowIndex = trCount;
         }
 
+        function displayNowDate(){
+            document.getElementById("testfield1").value = getNowDate();
+        }
+
         function deleteProductRow(rowId, pid) {
             var deleteTr = document.getElementById(rowId);
             var deleteIndex = addedProductId.indexOf(Number(pid));
@@ -100,6 +104,7 @@
     int currentIndex1 = 0;
     int selectProductIndex = 1;
     System.out.println("jsp 刷新页面");
+
 %>
 
 <form action="stockout.do" method="post">

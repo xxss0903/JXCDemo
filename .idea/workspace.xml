@@ -7,15 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="812bf83f-032f-438a-942b-325612458047" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/product_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/product_list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/product_out_storage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/product_out_storage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebRoot/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebRoot/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/product_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/product_list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/product_out_storage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/product_out_storage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/classes/artifacts/JXCSystem_war_exploded/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/friday/controller/StockOutGetProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/controller/StockOutGetProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/friday/service/impl/StockOutServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/service/impl/StockOutServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/friday/controller/SellLoadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/friday/controller/SellLoadController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="E:\temp\JXCDemo\.idea\shelf/" />
@@ -83,7 +75,7 @@
           <entry key="dtd" value="4" />
           <entry key="gif" value="59" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="355" />
+          <entry key="java" value="356" />
           <entry key="jpg" value="17" />
           <entry key="js" value="16" />
           <entry key="jsp" value="182" />
@@ -104,7 +96,7 @@
           <entry key="DTD" value="4" />
           <entry key="Eclipse" value="1" />
           <entry key="Image" value="133" />
-          <entry key="JAVA" value="355" />
+          <entry key="JAVA" value="356" />
           <entry key="JSP" value="182" />
           <entry key="JavaScript" value="16" />
           <entry key="Markdown" value="1" />
@@ -121,7 +113,7 @@
           <entry key="css" value="130" />
           <entry key="dummy" value="1" />
           <entry key="gitignore" value="14" />
-          <entry key="java" value="9790" />
+          <entry key="java" value="9791" />
           <entry key="js" value="230" />
           <entry key="jsp" value="12693" />
           <entry key="properties" value="8" />
@@ -133,7 +125,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="130" />
-          <entry key="JAVA" value="9790" />
+          <entry key="JAVA" value="9791" />
           <entry key="JSP" value="12693" />
           <entry key="JavaScript" value="230" />
           <entry key="PLAIN_TEXT" value="144" />
@@ -224,11 +216,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebRoot/product_sale.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="96" column="56" lean-forward="true" selection-start-line="96" selection-start-column="56" selection-end-line="96" selection-end-column="56" />
+            <state relative-caret-position="422">
+              <caret line="79" column="39" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SellLoadController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="30" column="39" lean-forward="true" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -280,15 +281,6 @@
               <folding>
                 <element signature="e#1020#1026#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/friday/service/StockOutService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -375,7 +367,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/friday/controller/SendPageAddController.java" />
         <option value="$PROJECT_DIR$/WebRoot/sendpage_add.jsp" />
         <option value="$PROJECT_DIR$/src/com/friday/controller/SendPageCompanyController.java" />
         <option value="$PROJECT_DIR$/WebRoot/sendpage_company.jsp" />
@@ -426,6 +417,7 @@
         <option value="$PROJECT_DIR$/src/com/friday/controller/StockOutGetProductController.java" />
         <option value="$PROJECT_DIR$/src/com/friday/controller/QueryProductListByShopController.java" />
         <option value="$PROJECT_DIR$/WebRoot/product_list.jsp" />
+        <option value="$PROJECT_DIR$/src/com/friday/controller/SellLoadController.java" />
       </list>
     </option>
   </component>
@@ -474,6 +466,11 @@
             <path>
               <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JXCSystem-master" type="462c0819:PsiDirectoryNode" />
+              <item name="friday_data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JXCSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -582,7 +579,7 @@
     <property name="SearchEverywhereHistoryKey" value="index.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/index.jsp&#10;changeShopId&#9;null&#9;null&#10;detail.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/detail.jsp&#10;order_product_query.jsp&#9;null&#9;null&#10;order_product&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/order_product.jsp&#10;Sendpage&#9;PSI&#9;JAVA://com.friday.model.sendpage.Sendpage&#10;stock_query&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/stock_query.jsp&#10;product_storage&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/product_storage.jsp&#10;index&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/index.jsp&#10;sendpage_print&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/sendpage_print.jsp&#10;SendpageController&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/SendPageHistoryController.java&#10;SendpageMapper.xml&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/mapper/SendpageMapper.xml&#10;SendpageControll&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/SendPageHistoryController.java&#10;Custom&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/controller/QueryCustomerController.java&#10;sendpage.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_send_page.jsp&#10;CustomerSer&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/service/CustomerService.java&#10;SendpageMapper&#9;FILE&#9;file://F:/Java/JXCSystem-master/src/com/friday/inter/SendpageMapper.java&#10;adduser&#9;null&#9;null&#10;staff.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_staff.jsp&#10;add_staff.jsp&#9;FILE&#9;file://F:/Java/JXCSystem-master/WebRoot/add_staff.jsp&#10;Login&#9;PSI&#9;JAVA://com.friday.controller.LoginController" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548085949561" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548086306519" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../jars/mysql-connector-java-8.0.13.jar" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -833,7 +830,7 @@
       <workItem from="1547864121272" duration="11502000" />
       <workItem from="1547888496828" duration="9082000" />
       <workItem from="1547950707441" duration="34156000" />
-      <workItem from="1548077239476" duration="8581000" />
+      <workItem from="1548077239476" duration="8851000" />
     </task>
     <task id="LOCAL-00001" summary="update add sql query">
       <created>1547050919212</created>
@@ -849,14 +846,22 @@
       <option name="project" value="LOCAL" />
       <updated>1547293892910</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="temp save">
+      <created>1548085969824</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1548085969824</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252964000" />
+    <option name="totallyTimeSpent" value="253234000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21428572" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -868,7 +873,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3912591" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3912591" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.39854318" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -994,13 +999,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/friday/model/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/ServletRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3950">
@@ -1380,8 +1378,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebRoot/product_sale.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="96" column="56" lean-forward="true" selection-start-line="96" selection-start-column="56" selection-end-line="96" selection-end-column="56" />
+        <state relative-caret-position="422">
+          <caret line="79" column="39" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/friday/controller/SellLoadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="30" column="39" lean-forward="true" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
         </state>
       </provider>
     </entry>

@@ -27,7 +27,7 @@ public class SellLoadController implements Controller {
 			Map<Integer, Object> map = new HashMap<Integer, Object>();
 			List<Shop> shops = stockOutService.getAllShops();
 			for (Shop shop : shops) {
-				if (shop.getsId() == 1) {
+				if (shop.getsId() == 0) {
 					shops.remove(shop);
 					break;
 				}
