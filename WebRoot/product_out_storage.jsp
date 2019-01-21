@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%@ page import="com.friday.model.Product" %>
+<%@ page import="com.friday.model.Shop" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     String path = request.getContextPath();
@@ -69,92 +70,12 @@
 
         window.onload = initDatas;
 
-        var selectedAddRowIndex = -1;
-        var selectedValues = [];
-        var addedProductId = [];
-
         function initDatas() {
-            // document.getElementById("testfield1").value = getNowDate();
-            var table = document.getElementById("rounded-corner");
-            var rows = table.rows;
-            var trCount = 0;
-            for (var i = 0; i < rows.length; i++) {
-                if (rows[i].id.indexOf("tr_") === 0) {
-                    var pid = rows[i].className;
-
-                    addedProductId.push(Number(pid));
-                    trCount++;
-                    console.log("是商品行 " + pid);
-                } else {
-                    console.log("不是商品行");
-                }
-            }
-            selectedAddRowIndex = trCount;
-
             // 初始化全国的库存
             var selectShop = document.getElementById("select_shop");
             var selectedIndex = selectShop.selectedIndex;
             var shopId = selectShop.options[selectedIndex].value;
             changeShopId(shopId)
-        }
-
-        function addProductRow(productsIndex, currentIndex) {
-            if (!selectedValues || selectedValues.length < 4) {
-                console.log("选中商品为空")
-                alert("请选择正确得商品");
-                return
-            }
-            console.log(productsIndex)
-            console.log("currentIndex = " + selectedAddRowIndex);
-
-            var trObj = document.createElement("tr");
-            var tr_id = "tr_" + selectedAddRowIndex;
-
-            trObj.id = tr_id;
-            var name = selectedValues[0].trim();
-            var num = selectedValues[1].trim();
-            var price = selectedValues[2].trim();
-            var pid = selectedValues[3].trim();
-
-            if (addedProductId.indexOf(pid) > -1) {
-                alert("已经包含商品 " + name);
-                return
-            } else {
-                addedProductId.push(pid)
-                console.log("添加商品id " + pid);
-            }
-
-            var insertTr = ' <td align="center"><input type="text" size="10" value=\'' + name + '\' readonly/></td>\n' +
-                '                <td align="center"><input type="text" size="10" value=\'' + num + '\' readonly/></td>\n' +
-                '                <td align="center"><input type="text" size="10" value=\'' + price + '\' readonly/></td>\n' +
-                '                <td align="center"><input type="text" size="10" name=\'' + pid + '\'\n' +
-                '                                          onKeyUp="this.value=this.value.replace(/\\D/g,\'\')"/></td>\n' +
-                '                <td><button type="button" onclick="deleteProductRow(\'' + tr_id + '\', ' + pid + '${""})"><img src="images/trash.png"\n' +
-                '                                                                                                alt="" title=""\n' +
-                '                                                                                                border="0"/></button></td>';
-
-            console.log(insertTr);
-            trObj.innerHTML = insertTr;
-            var lastProductTr = document.getElementById("tr_" + (selectedAddRowIndex - 1))
-            if (!lastProductTr) {
-                lastProductTr = document.getElementById("tr_title_row");
-            }
-
-            lastProductTr.after(trObj)
-
-            selectedAddRowIndex++;
-        }
-
-        function selectedAddRow(selectedValue) {
-            console.log("选中 " + selectedValue);
-            selectedValues = selectedValue.split(' ');
-        }
-
-        function deleteProductRow(rowId, pid) {
-            var deleteTr = document.getElementById(rowId);
-            var deleteIndex = addedProductId.indexOf(Number(pid));
-            addedProductId = addedProductId.splice(deleteIndex, 1);
-            deleteTr.parentNode.removeChild(deleteTr);
         }
 
         // 更改当前选中的地区，将查询结果添加到div中
@@ -177,12 +98,9 @@
 
 </head>
 <body bgcolor="transparent" style='background:transparent'>
-
-<%--<%--%>
-<%--int currentIndex1 = 0;--%>
-<%--int selectProductIndex = 1;--%>
-<%--%>--%>
-
+<%
+    
+%>
 <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
     <tr>
         <td colspan="5" align="left"><strong>产品出库</strong></td>
@@ -199,63 +117,7 @@
                 </c:forEach>
             </select>
         </td>
-
-        <%--<td align="left" colspan="1">--%>
-        <%--<select name="add_product_id" onchange="selectedAddRow(this.options[this.options.selectedIndex].value)">--%>
-        <%--<option value="" selected>请选择商品</option>--%>
-        <%--<c:forEach items="${products}" var="product" varStatus="status">--%>
-        <%--<option value="${product.name} ${product.num} ${product.price} ${product.pid}">${product.name}</option>--%>
-        <%--</c:forEach>--%>
-        <%--</select>--%>
-
-        <%--</td>--%>
-        <%--<td colspan="1" align="left">--%>
-        <%--<button type="button" onclick="addProductRow(<%=selectProductIndex%>, <%=currentIndex1%>)">添加Product--%>
-        <%--</button>--%>
-        <%--</td>--%>
     </tr>
-    <%--<tr id="tr_title_row">--%>
-    <%--<td align="center">产品名称</td>--%>
-    <%--<td align="center">产品数量</td>--%>
-    <%--<td align="center">产品价格</td>--%>
-    <%--<td align="center">出库数量</td>--%>
-    <%--<td align="center">操作</td>--%>
-    <%--</tr>--%>
-
-
-    <%--<c:forEach begin="0" end="${products.size()}" items="${products}" var="product" varStatus="status">--%>
-    <%--<tr id="tr_<%=currentIndex1%>" class="${product.pid}">--%>
-    <%--<td align="center"><input type="text" size="10" value="${product.name }" readonly/></td>--%>
-    <%--<td align="center"><input type="text" size="10" value="${product.num }" readonly/></td>--%>
-    <%--<td align="center"><input type="text" size="10" value="${product.price }" readonly/></td>--%>
-    <%--<td align="center"><input type="text" size="10" name="${product.pid }"--%>
-    <%--onKeyUp="this.value=this.value.replace(/\D/g,'')"/></td>--%>
-    <%--<td>--%>
-    <%--<button type="button" onclick="deleteProductRow('tr_<%=currentIndex1%>', ${product.pid})"><img--%>
-    <%--src="images/trash.png"--%>
-    <%--alt="" title=""--%>
-    <%--border="0"/></button>--%>
-    <%--</td>--%>
-    <%--</tr>--%>
-    <%--<%--%>
-    <%--currentIndex1++;--%>
-    <%--%>--%>
-    <%--</c:forEach>--%>
-    <%--<tr>--%>
-    <%--<td align="right">出库时间</td>--%>
-    <%--<td><input name="outtime" id="testfield1" type="text" size="20" onclick="WdatePicker()"/></td>--%>
-    <%--<td align="left" colspan="2">＊点击文本框获取时间</td>--%>
-    <%--</tr>--%>
-    <%--<tr>--%>
-    <%--<td align="right">备注</td>--%>
-    <%--<td colspan="3"><input name="remark" type="text" size="20"/></td>--%>
-    <%--</tr>--%>
-    <%--<tr>--%>
-    <%--<td colspan="5" align="center">--%>
-    <%--<input type="submit" value="确认出库"/>--%>
-    <%--<input type="reset" value="重新填写"/>--%>
-    <%--</td>--%>
-    <%--</tr>--%>
 </table>
 
 <div id="result"></div>

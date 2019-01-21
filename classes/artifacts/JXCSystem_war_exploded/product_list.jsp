@@ -56,6 +56,7 @@
         var addedProductId = [];
 
         function initDatas() {
+            console.log("初始化时间")
             document.getElementById("testfield1").value = getNowDate();
             var table = document.getElementById("rounded-corner");
             var rows = table.rows;
@@ -98,12 +99,9 @@
 <%
     int currentIndex1 = 0;
     int selectProductIndex = 1;
+    System.out.println("jsp 刷新页面");
 %>
-<%--map.put("num", stock.getsNum());--%>
-<%--map.put("name", product.getpName());--%>
-<%--map.put("guige", product.getpStyle());--%>
-<%--map.put("price", product.getpPrice());--%>
-<%--map.put("pid", product.getpId());--%>
+
 <form action="stockout.do" method="post">
     <input type="text" name="shopid" value="${shopid}" style="display: none;"/>
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
@@ -147,8 +145,7 @@
 
         <tr>
             <td align="right" colspan="2">出库时间</td>
-            <td><input name="outtime" id="testfield1" type="text" size="20" onclick="WdatePicker()" autocomplete="off"/>
-            </td>
+            <td><input name="outtime" id="testfield1" type="text" size="20" onclick="WdatePicker()" autocomplete="off"/></td>
             <td align="left" colspan="2">＊点击文本框获取时间</td>
         </tr>
         <tr>

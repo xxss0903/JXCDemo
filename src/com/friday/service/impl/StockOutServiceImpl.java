@@ -122,37 +122,18 @@ public class StockOutServiceImpl implements StockOutService {
                 outStockDetail.setoNum(outStocks.get(outStockDetail.getpId()));
                 outStockDetailMapper.insert(outStockDetail);
 
-                boolean shopFlag = false, warehouseFlag = false;
                 for (Stock stock : stocks) {
                     if (stock.getShopId() == shopId && stock.getpId() == outStockDetail.getpId()) {
-                        stock.setsNum(stock.getsNum() - outStockDetail.getoNum());
+                        int lastNum = stock.getsNum() - outStockDetail.getoNum();
                         stockMapper.updateByPrimaryKey(stock);
-//                        shopFlag = true;
-//                        if (shopFlag && warehouseFlag) break;
+                        stock.setsNum(lastNum);
+                        if (lastNum <= 0) {
+                            // 全部出库，删除商品的库存信息
+                            stockMapper.deleteByPrimaryKey(stock.getsId());
+                        }
+                        break;
                     }
-//                    else if (stock.getShopId() == 1 && stock.getpId() == outStockDetail.getpId()) {
-//                        if (stock.getsNum() >= outStockDetail.getoNum()) {
-//                            stock.setsNum(stock.getsNum() - outStockDetail.getoNum());
-//                            stockMapper.updateByPrimaryKey(stock);
-//                            warehouseFlag = true;
-//                            if (shopFlag && warehouseFlag) break;
-//                        } else {
-//                            throw new Exception();
-//                        }
-//                    }
                 }
-//                if (!warehouseFlag) {
-//                    throw new Exception();
-//                }
-//                if (!shopFlag) {
-//                    Stock stock = new Stock();
-//                    stock.setShopId(shopId);
-//                    stock.setpId(outStockDetail.getpId());
-//                    stock.setsMaxnum(Integer.MAX_VALUE);
-//                    stock.setsMinnum(0);
-//                    stock.setsNum(outStockDetail.getoNum());
-//                    stockMapper.insert(stock);
-//                }
             }
 
             sqlSession.commit();

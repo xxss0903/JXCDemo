@@ -192,6 +192,7 @@ a.forgot_pass {
     height: auto;
     position: relative;
     line-height: 1em;
+    cursor: pointer;
 }
 
 /* style the links for the top level */
@@ -203,6 +204,7 @@ a.forgot_pass {
     text-decoration: none;
     color: #fff;
     padding: 0 21px 0 17px;
+    cursor: pointer;
 }
 
 .menu a.current {
@@ -219,6 +221,7 @@ a.forgot_pass {
     height: 100%;
     line-height: 1em;
     padding: 1em 1em;
+    cursor: pointer;
 }
 
 .menu ul table ul a, .menu ul table ul a:visited {
@@ -793,7 +796,7 @@ img.sidebar_icon_right {
 
 .valid_box {
     width: 540px;
-    clear: both;
+    clear: both;menu
     background: url(images/valid.png) no-repeat left #edfce9;
     border: 1px #cceac4 solid;
     background-position: 15px 10px;
