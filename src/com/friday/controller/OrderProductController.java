@@ -33,7 +33,8 @@ public class OrderProductController implements Controller {
 			String uId = (String) session.getAttribute("account");
 			Map<Integer, Integer> order = new HashMap<Integer, Integer>();
 			String dateString = request.getParameter("orderTime");
-			
+			String inShopString = request.getParameter("select_shop");
+			int shopId = Integer.parseInt(inShopString);
 			Date date = dateString.isEmpty() ? new Date(System.currentTimeMillis()) : Date.valueOf(dateString);//如果时间没有填写就使用当前时间
 			String bz = request.getParameter("remark");
 			String oId = "DD" + new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date(System.currentTimeMillis()));
@@ -50,7 +51,7 @@ public class OrderProductController implements Controller {
 				}
 			}
 			
-			int flag = orderProductService.orderProduct(order, date, bz, uId, oId);
+			int flag = orderProductService.orderProduct(order,shopId, date, bz, uId, oId);
 			if(flag == 1) {
 				model.put("products", orderProductService.getTypeAndProduct());
 				model.put("success", "添加订单成功");

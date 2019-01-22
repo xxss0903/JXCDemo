@@ -10,7 +10,8 @@ public class Order {
     private Date oDate;
 
     private String oBz;
-
+    // 订单入库得地区id
+    private Integer sId;
     private Integer oStyle;
     private String styleName;
 
@@ -71,6 +72,14 @@ public class Order {
         }
         setStyleName(styleName);
         this.oStyle = oStyle;
+    }
+
+    public Integer getShopId() {
+        return sId;
+    }
+
+    public void setShopId(Integer shopId) {
+        this.sId = shopId;
     }
 
     public String getStyleName() {

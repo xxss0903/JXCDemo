@@ -74,6 +74,48 @@ public class OrderProductServiceImpl implements OrderProductService {
 
             orderMapper.insert(order);
 
+            for (Integer integer : orders.keySet()) {
+                OrderDetail orderDetail = new OrderDetail();
+                orderDetail.setpId(integer);
+                orderDetail.setoNum(orders.get(orderDetail.getpId()));
+                orderDetail.setOrderId(order.getoId());
+                orderDetailMapper.insert(orderDetail);
+            }
+
+            sqlSession.commit();
+            ret = 1;
+        } catch (Exception e) {
+            sqlSession.rollback();
+            throw e;
+        } finally {
+            SessionUtils.closeSession(sqlSession);
+        }
+
+        return ret;
+    }
+
+
+    @Override
+    public int orderProduct(Map<Integer, Integer> orders, Integer shopId, Date date, String bz, String uId, String oId) throws Exception {
+        int ret = 0;
+        SqlSession sqlSession = null;
+
+        try {
+            sqlSession = SessionUtils.getSession();
+
+            OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+            OrderDetailMapper orderDetailMapper = sqlSession.getMapper(OrderDetailMapper.class);
+
+            Order order = new Order();
+            order.setoDate(date);
+            order.setoBz(bz);
+            order.setoStyle(0);
+            order.setuId(uId);
+            order.setoId(oId);
+            order.setShopId(shopId);
+
+            orderMapper.insert(order);
+
             Iterator<Integer> iterator = orders.keySet().iterator();
 
             while (iterator.hasNext()) {
@@ -95,6 +137,7 @@ public class OrderProductServiceImpl implements OrderProductService {
 
         return ret;
     }
+
 
     @Override
     public List<Object> queryOrder(Date start, Date end, int style,

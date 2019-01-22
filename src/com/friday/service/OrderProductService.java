@@ -14,7 +14,8 @@ public interface OrderProductService {
 	public Map<String, Object> getTypeAndProduct() throws Exception;
 	
 	public int orderProduct(Map<Integer, Integer> order, Date date, String bz , String uId, String oId) throws Exception;
-	
+	public int orderProduct(Map<Integer, Integer> order,Integer shopId, Date date, String bz , String uId, String oId) throws Exception;
+
 	/**
 	 * 根据查询条件获取订单列表
 	 * @param start 开始时间
