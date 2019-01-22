@@ -7,30 +7,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.alibaba.druid.sql.SQLUtils;
+import com.friday.inter.*;
+import com.friday.model.*;
 import org.apache.ibatis.session.SqlSession;
 
-import com.friday.inter.OrderDetailMapper;
-import com.friday.inter.OrderMapper;
-import com.friday.inter.OutStockDetailMapper;
-import com.friday.inter.OutStockMapper;
-import com.friday.inter.ProductMapper;
-import com.friday.inter.ProductTypeMapper;
-import com.friday.inter.SellDetailMapper;
-import com.friday.inter.SellMapper;
-import com.friday.inter.ShopMapper;
-import com.friday.inter.StockMapper;
-import com.friday.inter.UserMapper;
-import com.friday.model.Order;
-import com.friday.model.OrderDetail;
-import com.friday.model.OutStock;
-import com.friday.model.OutStockDetail;
-import com.friday.model.Product;
-import com.friday.model.ProductType;
-import com.friday.model.Sell;
-import com.friday.model.SellDetail;
-import com.friday.model.Shop;
-import com.friday.model.Stock;
-import com.friday.model.User;
 import com.friday.service.StockOutService;
 import com.friday.utils.SessionUtils;
 
@@ -91,6 +72,58 @@ public class StockOutServiceImpl implements StockOutService {
         return list;
     }
 
+    /**
+     * 根据订单，然后查出入库多少，然后再减去相应的数量
+     *
+     * @return
+     */
+    public void stockOutByOrderId(String orderId) throws Exception {
+        SqlSession sqlSession = null;
+
+        try {
+            sqlSession = SessionUtils.getSession();
+            OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+            Order order = orderMapper.selectByPrimaryKey(orderId);
+            StockMapper stockMapper = sqlSession.getMapper(StockMapper.class);
+            OrderDetailMapper orderDetailMapper = sqlSession.getMapper(OrderDetailMapper.class);
+            // 获取订单中的商品详情，数量，用来减去库存中的数量
+            List<OrderDetail> orderDetails = orderDetailMapper.selectByOrderId(order.getoId());
+            List<Stock> stocks = stockMapper.selectByshopId(order.getShopId());
+            for (Stock stock : stocks) {
+                boolean isUpdateStock = false;
+                boolean isDeleteStock = false;
+                for (OrderDetail od : orderDetails) {
+                    if (od.getpId() == stock.getpId()) {
+                        if (stock.getsNum() < od.getoNum()) {
+                            throw new Exception();
+                        } else {
+                            int lastNum = stock.getsNum() - od.getoNum();
+                            stock.setsNum(lastNum);
+                            if (lastNum == 0) {
+                                isDeleteStock = true;
+                            }
+                        }
+                        isUpdateStock = true;
+                        break;
+                    }
+                }
+                if (isDeleteStock) {
+                    stockMapper.deleteByPrimaryKey(stock.getsId());
+                } else {
+                    if (isUpdateStock) {
+                        stockMapper.updateByPrimaryKey(stock);
+                    }
+                }
+            }
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        } finally {
+            SessionUtils.closeSession(sqlSession);
+        }
+    }
+
     @Override
     public int stockOut(Map<Integer, Integer> outStocks, Date date, String bz, String uId, int shopId) throws Exception {
         int ret = 0;
@@ -125,8 +158,8 @@ public class StockOutServiceImpl implements StockOutService {
                 for (Stock stock : stocks) {
                     if (stock.getShopId() == shopId && stock.getpId() == outStockDetail.getpId()) {
                         int lastNum = stock.getsNum() - outStockDetail.getoNum();
-                        stockMapper.updateByPrimaryKey(stock);
                         stock.setsNum(lastNum);
+                        stockMapper.updateByPrimaryKey(stock);
                         if (lastNum <= 0) {
                             // 全部出库，删除商品的库存信息
                             stockMapper.deleteByPrimaryKey(stock.getsId());
@@ -144,9 +177,7 @@ public class StockOutServiceImpl implements StockOutService {
         } finally {
             SessionUtils.closeSession(sqlSession);
         }
-
         return ret;
-
     }
 
     @Override
@@ -351,6 +382,66 @@ public class StockOutServiceImpl implements StockOutService {
         }
 
         return list;
+    }
+
+
+    // 入库了的退货
+    @Override
+    public int goodsBack(String orderId, Date date, String bz,
+                         String uId) throws Exception {
+        int ret = 0;
+        SqlSession sqlSession = null;
+
+        try {
+            sqlSession = SessionUtils.getSession();
+
+            OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+            OrderDetailMapper orderDetailMapper = sqlSession.getMapper(OrderDetailMapper.class);
+            GoodsBackMapper goodsBackMapper = sqlSession.getMapper(GoodsBackMapper.class);
+            GoodsBackDetailMapper goodsBackDetailMapper = sqlSession.getMapper(GoodsBackDetailMapper.class);
+
+            // 已经入库的才能退回，其他的不能退回
+            if (orderMapper.selectByPrimaryKey(orderId).getoStyle() != 1) {
+                throw new Exception("订单状态错误，请确认当前订单状态！");
+            }
+
+            GoodsBack goodsBack = new GoodsBack();
+
+            goodsBack.setuId(uId);
+            goodsBack.setgDate(date);
+            goodsBack.setgBz(bz);
+
+            goodsBackMapper.insert(goodsBack);
+
+            Order order = new Order();
+            order.setoBz(null);
+            order.setoDate(null);
+            order.setoId(orderId);
+            order.setoStyle(-1);
+            order.setuId(null);
+
+            orderMapper.updateByPrimaryKeySelective(order);
+
+            List<OrderDetail> orderDetails = orderDetailMapper.selectByOrderId(orderId);
+
+            for (OrderDetail orderDetail : orderDetails) {
+                GoodsBackDetail goodsBackDetail = new GoodsBackDetail();
+                goodsBackDetail.setGoodsbackId(goodsBack.getgId());
+                goodsBackDetail.setgNum(orderDetail.getoNum());
+                goodsBackDetail.setpId(orderDetail.getpId());
+                goodsBackDetailMapper.insert(goodsBackDetail);
+            }
+
+            sqlSession.commit();
+            ret = 1;
+        } catch (Exception e) {
+            sqlSession.rollback();
+            throw e;
+        } finally {
+            SessionUtils.closeSession(sqlSession);
+        }
+
+        return ret;
     }
 
 }

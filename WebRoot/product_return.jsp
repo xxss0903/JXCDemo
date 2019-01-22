@@ -85,7 +85,7 @@
 <%
     orderid = request.getParameter("orderid");
 %>
-<form action="goodsback.do" method="post">
+<form action="goodsback.do?gtype=1" method="post">
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
         <tr>
             <td colspan="3" align="left"><strong>订单退回</strong></td>

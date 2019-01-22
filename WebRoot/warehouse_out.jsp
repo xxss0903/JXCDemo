@@ -80,10 +80,10 @@ $(function($) {
 <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
     <thead>
 	<tr>
-		<td colspan="5" align="left"><strong>出库记录查询</strong></td>
+		<td colspan="6" align="left"><strong>出库记录查询</strong></td>
 	</tr>
     <tr>
-    	<td colspan="5" align="left">
+    	<td colspan="6" align="left">
        	<form action="querystockout.do" method="post">
         	  <label>开始时间：</label>
         	  <input name="starttime" type="text" id="textfield" size="5" onclick="WdatePicker()" />
@@ -102,16 +102,17 @@ $(function($) {
        	</td>
      </tr>
         <tr>
-        	<td width="61" align="center"><strong>出库编号</strong></td>
+        	<td width="50" align="center"><strong>出库编号</strong></td>
         	<td width="50" align="center"><strong>出库网点</strong></td>
             <td width="50" align="center"><strong>出库时间</strong></td>
-            <td width="64" align="center"><strong>经办人 </strong></td>
-            <td width="85" align="center"><strong>合计金额</strong></td>
+            <td width="50" align="center"><strong>经办人 </strong></td>
+            <td width="50" align="center"><strong>合计金额</strong></td>
+            <td width="50" align="center"><strong>操作</strong></td>
         </tr>
     </thead>
     <tfoot>
 		 <tr>
-			<td colspan="5" align="left">
+			<td colspan="6" align="left">
 			<div class="pagination">
 				<form action="querystockout.do" method="post" style="display:none" name="hideform">
 		       	  <input name="starttime" type="text" id="textfield" size="8" onclick="WdatePicker()" value="${starttime }"/>
@@ -153,6 +154,7 @@ $(function($) {
             <td align="center">${order.date }</td>
             <td align="center">${order.user }</td>
             <td align="center">${order.price }</td>
+			<td align="center"><button type="button">退回</button></td>
         </tr>
      </c:forEach>
     </tbody>

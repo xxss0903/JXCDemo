@@ -260,7 +260,7 @@
         <tr>
             <td align="center">库存地点</td>
             <td colspan="4" align="left">
-                <select id="select_shop">
+                <select id="select_shop" name="select_shop">
                     <c:forEach items="${shops}" var="shop">
                         <option value="${shop.sId}">${shop.sName}</option>
                     </c:forEach>

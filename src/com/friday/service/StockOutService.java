@@ -13,4 +13,5 @@ public interface StockOutService {
 	int sell(Map<Integer, Integer> sells, Date date, String bz , String uId, int shopId) throws Exception;
 	List<Object> queryStockOut(Date start, Date end, int shopId, int orderId) throws Exception;
 	List<Object> querySell(Date start, Date end, int shopId, int orderId) throws Exception;
+	int goodsBack(String orderId, Date date, String bz, String uId) throws Exception;
 }

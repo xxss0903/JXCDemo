@@ -22,12 +22,12 @@
     select 
     <include refid="Base_Column_List" />
     from orders
-    where o_style = #{oStyle,jdbcType=INTEGER}
+    where o_style = #{oStyle,jdbcType=INTEGER} order by o_id=#{oId, jdbcType=VARCHAR} desc
   </select>
   <select id="selectAll" resultMap="BaseResultMap" >
     select 
     <include refid="Base_Column_List" />
-    from orders
+    from orders order by o_id=#{oId, jdbcType=VARCHAR} desc
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from orders
@@ -37,7 +37,7 @@
     insert into orders (o_id, u_id, o_date, 
       o_bz, o_style, s_id)
     values (#{oId,jdbcType=VARCHAR}, #{uId,jdbcType=VARCHAR}, #{oDate,jdbcType=TIMESTAMP}, 
-      #{oBz,jdbcType=VARCHAR}, #{oStyle,jdbcType=INTEGER}, #{oStyle,jdbcType=INTEGER})
+      #{oBz,jdbcType=VARCHAR}, #{oStyle,jdbcType=INTEGER}, #{sId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.friday.model.Order" >
     insert into orders

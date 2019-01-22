@@ -186,6 +186,7 @@ public class StockInServiceImpl implements StockInService {
         return ret;
     }
 
+    // 入库了的退货
     @Override
     public int goodsBack(String orderId, Date date, String bz,
                          String uId) throws Exception {
@@ -200,8 +201,8 @@ public class StockInServiceImpl implements StockInService {
             GoodsBackMapper goodsBackMapper = sqlSession.getMapper(GoodsBackMapper.class);
             GoodsBackDetailMapper goodsBackDetailMapper = sqlSession.getMapper(GoodsBackDetailMapper.class);
 
-            // 未处理的才能退回，其他的不能退回
-            if (orderMapper.selectByPrimaryKey(orderId).getoStyle() != 0) {
+            // 已经入库的才能退回，其他的不能退回
+            if (orderMapper.selectByPrimaryKey(orderId).getoStyle() != 1) {
                 throw new Exception("订单状态错误，请确认当前订单状态！");
             }
 

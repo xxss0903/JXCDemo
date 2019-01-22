@@ -55,8 +55,8 @@ public class StockOutController implements Controller {
 					stockOut.put(Integer.parseInt(key), Integer.parseInt(value));
 				}
 			}
-			
 			stockOutService.stockOut(stockOut, date, bz, uId, shopId);
+
 			model.put("success", "产品出库成功");
 			return new ModelAndView("success", model);
 		} catch (Exception e) {

@@ -19,6 +19,21 @@ import java.util.List;
 
 public class StockQueryServiceImpl implements StockQueryService {
 
+    public Stock queryStock(Integer stockId) throws Exception {
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = SessionUtils.getSession();
+            StockMapper shopMapper = sqlSession.getMapper(StockMapper.class);
+
+            Stock stock = shopMapper.selectByPrimaryKey(stockId);
+            return stock;
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            SessionUtils.closeSession(sqlSession);
+        }
+    }
+
     public List<Object> stockQuery(int shopId) throws Exception {
         SqlSession sqlSession = null;
 
