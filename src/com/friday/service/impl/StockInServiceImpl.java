@@ -375,4 +375,21 @@ public class StockInServiceImpl implements StockInService {
         return list;
     }
 
+
+    @Override
+    public GoodsBack queryGoodsBackById(Integer gid) throws Exception {
+        SqlSession sqlSession = null;
+
+        try {
+            sqlSession = SessionUtils.getSession();
+
+            GoodsBackMapper goodsBackMapper = sqlSession.getMapper(GoodsBackMapper.class);
+            return goodsBackMapper.selectByPrimaryKey(gid);
+        } catch (Exception e) {
+            sqlSession.rollback();
+            throw e;
+        } finally {
+            SessionUtils.closeSession(sqlSession);
+        }
+    }
 }

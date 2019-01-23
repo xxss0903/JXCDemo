@@ -154,10 +154,10 @@
             <td align="center">${order.style }</td>
             <td align="center">
                 <c:choose>
-                    <c:when test="${order.style == '未处理'}">
-                        <a href="product_storage.jsp?orderid=${order.oId}">
-                            <button type="button">入库</button>
-                        </a>
+                    <c:when test="${order.style == '已入库'}">
+                        <%--<a href="product_storage.jsp?orderid=${order.oId}">--%>
+                            <%--<button type="button">入库</button>--%>
+                        <%--</a>--%>
                         <a href="product_return.jsp?orderid=${order.oId}">
                             <button type="button">退回</button>
                         </a>

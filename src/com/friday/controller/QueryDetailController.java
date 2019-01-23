@@ -7,9 +7,11 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.friday.model.GoodsBack;
 import com.friday.model.Order;
 import com.friday.service.OrderProductService;
 import com.friday.service.impl.OrderProductServiceImpl;
+import com.friday.service.impl.StockInServiceImpl;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 import com.friday.service.DetailQueryService;
@@ -23,17 +25,15 @@ public class QueryDetailController implements Controller {
         Map<String, Object> model = new HashMap<String, Object>();
         try {
             DetailQueryService detailQueryService = new DetailQueryServiceImpl();
-            OrderProductService orderProductService = new OrderProductServiceImpl();
+            StockInServiceImpl stockInService = new StockInServiceImpl();
             String did = request.getParameter("did");
             String table = request.getParameter("table");
-            Order order = orderProductService.queryOrder(did);
-            if (order != null) {
+            GoodsBack goodsBack = stockInService.queryGoodsBackById(Integer.parseInt(did));
                 model.put("details", detailQueryService.queryDetail(did, table));
                 model.put("did", did);
-                model.put("remark", order.getoBz());
+                model.put("remark", goodsBack.getgBz());
                 ModelAndView modelView = new ModelAndView("detail", model);
                 return modelView;
-            }
         } catch (Exception e) {
             model.put("error", "获取失败");
             e.printStackTrace();

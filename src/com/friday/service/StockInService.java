@@ -1,5 +1,7 @@
 package com.friday.service;
 
+import com.friday.model.GoodsBack;
+
 import java.sql.Date;
 import java.util.List;
 
@@ -40,4 +42,5 @@ public interface StockInService {
 	 */
 	List<Object> queryStockIn(Date start, Date end, String orderId) throws Exception;
 	List<Object> queryReturn(Date start, Date end, int orderId) throws Exception;
+	GoodsBack queryGoodsBackById(Integer gid) throws Exception;
 }

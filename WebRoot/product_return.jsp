@@ -97,7 +97,8 @@
                     <td width="154"><input name="orderid" type="text" id="textfield1" size="20"/></td>
                 </c:when>
                 <c:otherwise>
-                    <td width="154"><input name="orderid" type="text" id="textfield1" size="20" value="<%=orderid%>"/></td>
+                    <td width="154"><input name="orderid" type="text" id="textfield1" size="20" value="<%=orderid%>"/>
+                    </td>
                 </c:otherwise>
             </c:choose>
             <%--<td width="80"><input name="orderid" type="text" id="textfield1" size="20"/></td>--%>

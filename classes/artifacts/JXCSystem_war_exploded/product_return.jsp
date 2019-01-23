@@ -85,7 +85,7 @@
 <%
     orderid = request.getParameter("orderid");
 %>
-<form action="goodsback.do" method="post">
+<form action="goodsback.do?gtype=1" method="post">
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
         <tr>
             <td colspan="3" align="left"><strong>订单退回</strong></td>
@@ -97,7 +97,8 @@
                     <td width="154"><input name="orderid" type="text" id="textfield1" size="20"/></td>
                 </c:when>
                 <c:otherwise>
-                    <td width="154"><input name="orderid" type="text" id="textfield1" size="20" value="<%=orderid%>"/></td>
+                    <td width="154"><input name="orderid" type="text" id="textfield1" size="20" value="<%=orderid%>"/>
+                    </td>
                 </c:otherwise>
             </c:choose>
             <%--<td width="80"><input name="orderid" type="text" id="textfield1" size="20"/></td>--%>

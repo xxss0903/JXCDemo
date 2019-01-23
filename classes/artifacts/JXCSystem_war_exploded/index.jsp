@@ -94,12 +94,12 @@
                     <a class="menuitem submenuheader" href="">采购与入库管理</a>
                     <div class="submenu">
                         <ul>
-                            <li><a onclick="clickA(this);" alt="getproduct.do">采购产品</a></li>
+                            <li><a onclick="clickA(this);" alt="getproduct.do">采购产品并入库</a></li>
                             <li><a onclick="clickA(this);" alt="order_record_query.jsp">采购记录查询</a></li>
-                            <li><a onclick="clickA(this);" alt="product_storage.jsp">产品入库</a></li>
-                            <li><a onclick="clickA(this);" alt="product_return.jsp">产品退回</a></li>
-                            <li><a onclick="clickA(this);" alt="storage_record_query.jsp">入库记录查询</a></li>
+                            <li><a onclick="clickA(this);" alt="product_return.jsp">采购退回</a></li>
                             <li><a onclick="clickA(this);" alt="Returns_records_query.jsp">退货记录查询</a></li>
+                            <%--<li><a onclick="clickA(this);" alt="product_storage.jsp">产品入库</a></li>--%>
+                            <%--<li><a onclick="clickA(this);" alt="storage_record_query.jsp">入库记录查询</a></li>--%>
                         </ul>
                     </div>
                     <a class="menuitem submenuheader" href="">库存管理</a>
@@ -116,8 +116,8 @@
                         <ul>
                             <li><a onclick="clickA(this);" alt="getoutproduct.do">产品出库</a></li>
                             <li><a onclick="clickA(this);" alt="stockoutqueryload.do">出库记录查询</a></li>
-                            <li><a onclick="clickA(this);" alt="sellload.do">产品销售</a></li>
-                            <li><a onclick="clickA(this);" alt="sellqueryload.do">销售记录查询</a></li>
+                            <li><a onclick="clickA(this);" alt="sellload.do">出库退回</a></li>
+                            <li><a onclick="clickA(this);" alt="sellqueryload.do">出库退回记录</a></li>
                         </ul>
                     </div>
 
@@ -137,7 +137,6 @@
                             <li><a onclick="clickA(this)" alt="sendpage_producer.do">生产商管理</a></li>
                             <li><a onclick="clickA(this)" alt="sendpage_company.do">送货公司管理</a></li>
                             <li><a onclick="clickA(this)" alt="sendpage_kaipiao.do">开票管理</a></li>
-
                         </ul>
                     </div>
                     <a class="menuitem submenuheader" href="">采购产品管理</a>
