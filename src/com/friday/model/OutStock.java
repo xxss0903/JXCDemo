@@ -15,6 +15,9 @@ public class OutStock {
     private String uId;
 
     private String oBz;
+    // 出库的状态，如果已经出过库，那么就能退回，如果已经退回过了，那么就不能再退回了
+    // 1，是已出库没退回，2是已经退回
+    private Integer oSt;
 
     public Integer getoId() {
         return oId;
@@ -54,5 +57,13 @@ public class OutStock {
 
     public void setoBz(String oBz) {
         this.oBz = oBz == null ? null : oBz.trim();
+    }
+
+    public Integer getoSt() {
+        return oSt;
+    }
+
+    public void setoSt(Integer oSt) {
+        this.oSt = oSt;
     }
 }

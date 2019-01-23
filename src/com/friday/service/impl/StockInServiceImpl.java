@@ -109,6 +109,59 @@ public class StockInServiceImpl implements StockInService {
         return ret;
     }
 
+
+    /**
+     * 根据订单，然后查出入库多少，然后再减去相应的数量
+     *
+     * @return
+     */
+    public void stockOutByOrderId(String orderId) throws Exception {
+        SqlSession sqlSession = null;
+
+        try {
+            sqlSession = SessionUtils.getSession();
+            OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+            Order order = orderMapper.selectByPrimaryKey(orderId);
+            StockMapper stockMapper = sqlSession.getMapper(StockMapper.class);
+            OrderDetailMapper orderDetailMapper = sqlSession.getMapper(OrderDetailMapper.class);
+            // 获取订单中的商品详情，数量，用来减去库存中的数量
+            List<OrderDetail> orderDetails = orderDetailMapper.selectByOrderId(order.getoId());
+            List<Stock> stocks = stockMapper.selectByshopId(order.getShopId());
+            for (Stock stock : stocks) {
+                boolean isUpdateStock = false;
+                boolean isDeleteStock = false;
+                for (OrderDetail od : orderDetails) {
+                    if (od.getpId() == stock.getpId()) {
+                        if (stock.getsNum() < od.getoNum()) {
+                            throw new Exception();
+                        } else {
+                            int lastNum = stock.getsNum() - od.getoNum();
+                            stock.setsNum(lastNum);
+                            if (lastNum == 0) {
+                                isDeleteStock = true;
+                            }
+                        }
+                        isUpdateStock = true;
+                        break;
+                    }
+                }
+                if (isDeleteStock) {
+                    stockMapper.deleteByPrimaryKey(stock.getsId());
+                } else {
+                    if (isUpdateStock) {
+                        stockMapper.updateByPrimaryKey(stock);
+                    }
+                }
+            }
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        } finally {
+            SessionUtils.closeSession(sqlSession);
+        }
+    }
+
     @Override
     public int stockIn(String orderId, String inId, Date date, Integer shopId, String bz, String uId) throws Exception {
         int ret = 0;
@@ -211,6 +264,7 @@ public class StockInServiceImpl implements StockInService {
             goodsBack.setuId(uId);
             goodsBack.setgDate(date);
             goodsBack.setgBz(bz);
+            goodsBack.setgType(1);
 
             goodsBackMapper.insert(goodsBack);
 

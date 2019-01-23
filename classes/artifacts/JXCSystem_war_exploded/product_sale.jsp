@@ -63,82 +63,51 @@
     <script type="text/javascript">
         window.onload = initDatas;
 
-        function initDatas(){
-            document.getElementById("textfield1").value = getNowDate();
+        function initDatas() {
+            document.getElementById("textfield3").value = getNowDate();
         }
     </script>
 </head>
 <body bgcolor="transparent" style='background:transparent'>
-<table id="rounded-corner" summary="2007 Major IT Companies' Profit">
-    <tr>
-        <td colspan="4" align="left"><strong>产品销售</strong></td>
-    </tr>
-    <tr>
-        <td align="right">出库网点</td>
-        <td colspan="3">
-            <select onchange="shopChange(this.value)" id="shopselect">
-                <c:forEach items="${shops }" var="shop">
-                    <option value="${shop.sId }">${shop.sName }</option>
-                </c:forEach>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="4">
-            <c:forEach items="${shopproducts }" var="products">
-                <form action="sell.do" method="post" id="${products.key }">
-                    <table id="rounded-corner">
-                        <tr style="display:none" ]>
-                            <td colspan="4"><input type="text" name="shopid" value="${products.key }" readonly/></td>
-                        </tr>
-                        <tr>
-                            <td align="center">产品名称</td>
-                            <td align="center">产品数量</td>
-                            <td align="center">产品价格</td>
-                            <td align="center">销售数量</td>
-                        </tr>
-                        <c:forEach items="${products.value }" var="product">
-                            <tr>
-                                <td align="center"><input type="text" size="10" value="${product.name }" readonly/></td>
-                                <td align="center"><input type="text" size="10" value="${product.num }" readonly/></td>
-                                <td align="center"><input type="text" size="10" value="${product.price }" readonly/>
-                                </td>
-                                <td align="center"><input type="text" size="10" name="${product.pid }"
-                                                          onKeyUp="this.value=this.value.replace(/\D/g,'')"/></td>
-                            </tr>
-                        </c:forEach>
-                        <tr>
-                            <td align="right">销售时间</td>
-                            <td><input name="outtime" id="textfield1" type="text" size="20" onclick="WdatePicker()"/></td>
-                            <td align="left" colspan="2">＊点击文本框获取时间</td>
-                        </tr>
-                        <tr>
-                            <td align="right">备注</td>
-                            <td colspan="3"><input name="remark" type="text" size="20"/></td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" align="center">
-                                <input type="submit" value="确认销售"/>
-                                <input type="reset" value="重新填写"/>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </c:forEach>
-        </td>
-    </tr>
-</table>
-<script>
-    function shopChange(id) {
-        for (var i = 0; i < document.forms.length; i++) {
-            var form = document.forms[i];
-            form.style.display = "none";
-        }
-        var curForm = document.getElementById(id);
-        curForm.style.display = "";
-    }
-
-    shopChange(document.getElementById("shopselect").value);
-</script>
+<%!
+    String oid = null;
+%>
+<%
+    oid = request.getParameter("oid");
+%>
+<form action="stockback.do?gtype=2" method="post">
+    <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
+        <tr>
+            <td colspan="4" align="left"><strong>出库退回</strong></td>
+        </tr>
+        <tr>
+            <td width="102">订单编号</td>
+            <c:choose>
+                <c:when test="<%=oid == null%>">
+                    <td width="154"><input name="orderid" type="text" id="textfield1" size="20"/></td>
+                </c:when>
+                <c:otherwise>
+                    <td width="154"><input name="orderid" type="text" id="textfield1" size="20" value="<%=oid%>"/>
+                    </td>
+                </c:otherwise>
+            </c:choose>
+            <%--<td width="80"><input name="orderid" type="text" id="textfield1" size="20"/></td>--%>
+        </tr>
+        <tr>
+            <td>退回时间</td>
+            <td><input name="intime" type="text" id="textfield3" size="20" onclick="WdatePicker()"/></td>
+        </tr>
+        <tr>
+            <td>备注</td>
+            <td><input name="remark" type="text" id="textfield5" size="20"/></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" name="button1" id="button1" value="确认退回"/>
+                <input type="reset" name="button2" id="button2" value="重新填写"/>
+            </td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>

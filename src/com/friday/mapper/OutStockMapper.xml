@@ -7,9 +7,10 @@
     <result column="o_date" property="oDate" jdbcType="TIMESTAMP" />
     <result column="u_id" property="uId" jdbcType="VARCHAR" />
     <result column="o_bz" property="oBz" jdbcType="VARCHAR" />
+    <result column="o_st" property="oSt" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    o_id, s_id, o_date, u_id, o_bz
+    o_id, s_id, o_date, u_id, o_bz, o_st
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -34,9 +35,9 @@
   </delete>
   <insert id="insert" useGeneratedKeys="true" keyProperty="oId" parameterType="com.friday.model.OutStock" >
     insert into outstock (o_id, s_id, o_date, 
-      u_id, o_bz)
+      u_id, o_bz, o_st)
     values (#{oId,jdbcType=INTEGER}, #{sId,jdbcType=INTEGER}, #{oDate,jdbcType=TIMESTAMP}, 
-      #{uId,jdbcType=VARCHAR}, #{oBz,jdbcType=VARCHAR})
+      #{uId,jdbcType=VARCHAR}, #{oBz,jdbcType=VARCHAR}, #{oSt,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.friday.model.OutStock" >
     insert into outstock
@@ -56,6 +57,9 @@
       <if test="oBz != null" >
         o_bz,
       </if>
+      <if test="oSt != null" >
+        o_st,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="oId != null" >
@@ -72,6 +76,9 @@
       </if>
       <if test="oBz != null" >
         #{oBz,jdbcType=VARCHAR},
+      </if>
+      <if test="oSt != null" >
+        #{oSt,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -90,6 +97,9 @@
       <if test="oBz != null" >
         o_bz = #{oBz,jdbcType=VARCHAR},
       </if>
+      <if test="oSt != null" >
+        o_st = #{oSt,jdbcType=INTEGER},
+      </if>
     </set>
     where o_id = #{oId,jdbcType=INTEGER}
   </update>
@@ -98,7 +108,8 @@
     set s_id = #{sId,jdbcType=INTEGER},
       o_date = #{oDate,jdbcType=TIMESTAMP},
       u_id = #{uId,jdbcType=VARCHAR},
-      o_bz = #{oBz,jdbcType=VARCHAR}
+      o_bz = #{oBz,jdbcType=VARCHAR},
+      o_st = #{oSt,jdbcType=VARCHAR}
     where o_id = #{oId,jdbcType=INTEGER}
   </update>
 </mapper>

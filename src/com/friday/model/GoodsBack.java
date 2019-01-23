@@ -14,6 +14,7 @@ public class GoodsBack {
     private Float gBackprice;
 
     private String gBz;
+    private Integer gType;
 
     public Integer getgId() {
         return gId;
@@ -61,5 +62,13 @@ public class GoodsBack {
 
     public void setgBz(String gBz) {
         this.gBz = gBz == null ? null : gBz.trim();
+    }
+
+    public Integer getgType() {
+        return gType;
+    }
+
+    public void setgType(Integer gType) {
+        this.gType = gType;
     }
 }
