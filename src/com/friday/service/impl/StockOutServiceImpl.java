@@ -238,6 +238,7 @@ public class StockOutServiceImpl implements StockOutService {
                         map.put("date", outStock.getoDate());
                         User user = userMapper.selectByPrimaryKey(outStock.getuId());
                         map.put("user", user.getuName());
+                        map.put("oSt", outStock.getoSt());
                         List<OutStockDetail> outStockDetails = outStockDetailMapper.selectByOutStocksId(outStock.getoId());
                         int price = 0;
                         for (OutStockDetail outStockDetail : outStockDetails) {
@@ -347,8 +348,7 @@ public class StockOutServiceImpl implements StockOutService {
             sqlSession = SessionUtils.getSession();
 
             GoodsBackMapper goodsBackMapper = sqlSession.getMapper(GoodsBackMapper.class);
-
-
+            StockMapper stockMapper = sqlSession.getMapper(StockMapper.class);
             OutStockDetailMapper outStockDetailMapper = sqlSession.getMapper(OutStockDetailMapper.class);
             OutStockMapper outStockMapper = sqlSession.getMapper(OutStockMapper.class);
 
@@ -380,6 +380,30 @@ public class StockOutServiceImpl implements StockOutService {
                 goodsBackDetail.setoNum(outStockDetail.getoNum());
                 goodsBackDetail.setpId(outStockDetail.getpId());
                 outStockDetailMapper.insert(goodsBackDetail);
+            }
+
+            // 减数量添加到stock里面
+            List<Stock> stocks = stockMapper.selectAll();
+            for (OutStockDetail outStockDetail: orderDetails) {
+
+                boolean flag = false;
+                for (Stock stock : stocks) {
+                    if (stock.getShopId().equals(outStock.getsId()) && stock.getpId().equals(outStockDetail.getpId())) {
+                        stock.setsNum(stock.getsNum() + outStockDetail.getoNum());
+                        stockMapper.updateByPrimaryKey(stock);
+                        flag = true;
+                        break;
+                    }
+                }
+                if (!flag) {
+                    Stock stock = new Stock();
+                    stock.setShopId(outStock.getsId());
+                    stock.setpId(outStockDetail.getpId());
+                    stock.setsMaxnum(Integer.MAX_VALUE);
+                    stock.setsMinnum(0);
+                    stock.setsNum(outStockDetail.getoNum());
+                    stockMapper.insert(stock);
+                }
             }
 
             sqlSession.commit();

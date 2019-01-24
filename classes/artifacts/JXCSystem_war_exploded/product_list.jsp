@@ -79,12 +79,12 @@
             document.getElementById("testfield1").value = getNowDate();
         }
 
-        function deleteProductRow(rowId, pid) {
-            var deleteTr = document.getElementById(rowId);
-            var deleteIndex = addedProductId.indexOf(Number(pid));
-            addedProductId = addedProductId.splice(deleteIndex, 1);
-            deleteTr.parentNode.removeChild(deleteTr);
-        }
+        // function deleteProductRow(rowId, pid) {
+        //     var deleteTr = document.getElementById(rowId);
+        //     var deleteIndex = addedProductId.indexOf(Number(pid));
+        //     addedProductId = addedProductId.splice(deleteIndex, 1);
+        //     deleteTr.parentNode.removeChild(deleteTr);
+        // }
 
         // 检查输入数量是否超出总数
         function checkNumberUnderCount() {

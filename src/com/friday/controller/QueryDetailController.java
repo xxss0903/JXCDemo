@@ -30,20 +30,21 @@ public class QueryDetailController implements Controller {
             String did = request.getParameter("did");
             String table = request.getParameter("table");
             String bz = "";
-            if (table == "back") {
-                GoodsBack goodsBack = stockInService.queryGoodsBackById(Integer.parseInt(did));
-                bz = goodsBack.getgBz();
-            } else {
-                Order order = orderProductService.queryOrder(did);
-                if (order != null) {
-                    bz = order.getoBz();
+            try {
+                int didNumber = Integer.parseInt(did);
+                GoodsBack goodsBack = stockInService.queryGoodsBackById(didNumber);
+                if (goodsBack != null) {
+                    bz = goodsBack.getgBz();
                 }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+                Order order = orderProductService.queryOrder(did);
+                bz = order.getoBz();
             }
             model.put("details", detailQueryService.queryDetail(did, table));
             model.put("did", did);
             model.put("remark", bz);
-            ModelAndView modelView = new ModelAndView("detail", model);
-            return modelView;
+            return new ModelAndView("detail", model);
         } catch (Exception e) {
             model.put("error", "获取失败");
             e.printStackTrace();

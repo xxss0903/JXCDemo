@@ -24,15 +24,12 @@ public class StockBackController implements Controller {
         Map<String, Object> model = new HashMap<String, Object>();
 
         try {
-            StockInService stockInService = new StockInServiceImpl();
             StockOutServiceImpl stockOutService = new StockOutServiceImpl();
             HttpSession session = request.getSession();
 
             String uId = (String) session.getAttribute("account");
             String oid = request.getParameter("orderid");
             String timeString = request.getParameter("intime");
-            String gtypeString = request.getParameter("gtype");
-            int gtype = Integer.parseInt(gtypeString);
             String bz = request.getParameter("remark");
             Date date = timeString.isEmpty() ? new Date(System.currentTimeMillis()) : Date.valueOf(timeString);
 
@@ -46,13 +43,12 @@ public class StockBackController implements Controller {
                 return new ModelAndView("product_sale", model);
             } else {
                 model.put("msg", "失败");
-                return new ModelAndView("product_sale", model);
-
+                return new ModelAndView("error", model);
             }
         } catch (Exception e) {
             model.put("msg", "失败");
             e.printStackTrace();
-            return new ModelAndView("product_return", model);
+            return new ModelAndView("error", model);
         }
     }
 

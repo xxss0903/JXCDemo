@@ -70,6 +70,8 @@
 
         window.onload = initDatas;
 
+        var addedProductId = [];
+
         function initDatas() {
             // 初始化全国的库存
             var selectShop = document.getElementById("select_shop");
@@ -92,6 +94,11 @@
             xmlHttp.send();
         }
 
+        function deleteProductRow(rowId, pid) {
+            console.log("delete tr " + rowId)
+            var deleteTr = document.getElementById(rowId);
+            deleteTr.parentNode.removeChild(deleteTr);
+        }
     </script>
 
     <script language="javascript" type="text/javascript" src="JS/niceforms.js"></script>

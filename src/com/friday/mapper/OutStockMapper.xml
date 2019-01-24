@@ -109,7 +109,7 @@
       o_date = #{oDate,jdbcType=TIMESTAMP},
       u_id = #{uId,jdbcType=VARCHAR},
       o_bz = #{oBz,jdbcType=VARCHAR},
-      o_st = #{oSt,jdbcType=VARCHAR}
+      o_st = #{oSt,jdbcType=INTEGER }
     where o_id = #{oId,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -58,6 +58,7 @@
         });
     </script>
     <script language="JavaScript">
+
         function queryDetail(did) {
             // 發起一個新的請求獲取詳情
             var xmlHttp = new XMLHttpRequest();
@@ -87,6 +88,34 @@
             };
             xmlHttp.send();
         }
+
+
+
+        window.onload = initDatas;
+
+        var selectedAddRowIndex = -1;
+        var addedProductId = [];
+
+        function initDatas() {
+            console.log("初始化时间")
+            // document.getElementById("testfield1").value = getNowDate();
+            // var table = document.getElementById("rounded-corner");
+            // var rows = table.rows;
+            // var trCount = 0;
+            // for (var i = 0; i < rows.length; i++) {
+            //     if (rows[i].id.indexOf("tr_") === 0) {
+            //         var pid = rows[i].className;
+            //
+            //         addedProductId.push(Number(pid));
+            //         trCount++;
+            //         console.log("是商品行 " + pid);
+            //     } else {
+            //         console.log("不是商品行");
+            //     }
+            // }
+            // selectedAddRowIndex = trCount;
+        }
+
 
     </script>
     <script language="javascript" type="text/javascript" src="JS/niceforms.js"></script>
@@ -170,11 +199,16 @@
             <td align="center">${order.date }</td>
             <td align="center">${order.user }</td>
             <td align="center">${order.price }</td>
-            <c:if test="${order.oSt == 2}">
-                <td align="center"><a href="product_sale.jsp?oid=${order.oId}">
-                    <button type="button">退回</button>
-                </a></td>
-            </c:if>
+            <c:choose>
+                <c:when test="${order.oSt == 2}">
+                    <td align="center"><a href="product_sale.jsp?oid=${order.oId}">
+                        <button type="button" onclick="deleteProductRow('tr_0', ${order.pid})">退回</button>
+                    </a></td>
+                </c:when>
+                <c:otherwise>
+                    <td>${order.oSt}</td>
+                </c:otherwise>
+            </c:choose>
         </tr>
     </c:forEach>
     </tbody>
