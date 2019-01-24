@@ -205,8 +205,12 @@
                         <button type="button" onclick="deleteProductRow('tr_0', ${order.pid})">退回</button>
                     </a></td>
                 </c:when>
+                <c:when test="${order.oSt == 1}">
+                    <td>已退回</td>
+
+                </c:when>
                 <c:otherwise>
-                    <td>${order.oSt}</td>
+                    <td>已出库</td>
                 </c:otherwise>
             </c:choose>
         </tr>

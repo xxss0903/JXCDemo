@@ -8,9 +8,10 @@
     <result column="g_price" property="gPrice" jdbcType="REAL" />
     <result column="g_backPrice" property="gBackprice" jdbcType="REAL" />
     <result column="g_bz" property="gBz" jdbcType="VARCHAR" />
+    <result column="g_type" property="gType" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    g_id, g_date, u_id, g_price, g_backPrice, g_bz
+    g_id, g_date, u_id, g_price, g_backPrice, g_bz, g_type
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -29,9 +30,9 @@
   </delete>
   <insert id="insert" useGeneratedKeys="true" keyProperty="gId" parameterType="com.friday.model.GoodsBack" >
     insert into goodsback (g_id, g_date, u_id, 
-      g_price, g_backPrice, g_bz)
+      g_price, g_backPrice, g_bz, g_type)
     values (#{gId,jdbcType=INTEGER}, #{gDate,jdbcType=TIMESTAMP}, #{uId,jdbcType=VARCHAR}, 
-      #{gPrice,jdbcType=REAL}, #{gBackprice,jdbcType=REAL}, #{gBz,jdbcType=VARCHAR})
+      #{gPrice,jdbcType=REAL}, #{gBackprice,jdbcType=REAL}, #{gBz,jdbcType=VARCHAR},#{gType,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.friday.model.GoodsBack" >
     insert into goodsback
@@ -54,6 +55,9 @@
       <if test="gBz != null" >
         g_bz,
       </if>
+      <if test="gType != null" >
+        g_type,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="gId != null" >
@@ -73,6 +77,9 @@
       </if>
       <if test="gBz != null" >
         #{gBz,jdbcType=VARCHAR},
+      </if>
+      <if test="gType != null" >
+        #{gType,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -94,6 +101,9 @@
       <if test="gBz != null" >
         g_bz = #{gBz,jdbcType=VARCHAR},
       </if>
+      <if test="gType != null" >
+        g_type = #{gType,jdbcType=INTEGER},
+      </if>
     </set>
     where g_id = #{gId,jdbcType=INTEGER}
   </update>
@@ -103,7 +113,8 @@
       u_id = #{uId,jdbcType=VARCHAR},
       g_price = #{gPrice,jdbcType=REAL},
       g_backPrice = #{gBackprice,jdbcType=REAL},
-      g_bz = #{gBz,jdbcType=VARCHAR}
+      g_bz = #{gBz,jdbcType=VARCHAR},
+      g_type = #{gType,jdbcType=INTEGER}
     where g_id = #{gId,jdbcType=INTEGER}
   </update>
 </mapper>

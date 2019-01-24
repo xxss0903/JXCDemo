@@ -381,7 +381,7 @@ public class StockInServiceImpl implements StockInService {
             if (orderId != -1) {
                 GoodsBack goodsBack = goodsBackMapper.selectByPrimaryKey(orderId);
 
-                if (goodsBack != null) {
+                if (goodsBack != null && goodsBack.getgType() == 1) {
                     Map<String, Object> map = new HashMap<String, Object>();
                     map.put("oId", goodsBack.getgId());
                     map.put("date", goodsBack.getgDate());
@@ -402,7 +402,10 @@ public class StockInServiceImpl implements StockInService {
                 List<GoodsBack> goodsBacks = goodsBackMapper.selectAll();
 
                 for (GoodsBack goodsBack : goodsBacks) {
-                    if ((end == null ? true : goodsBack.getgDate().before(end)) && (start == null ? true : goodsBack.getgDate().after(start))) {
+                    if (goodsBack.getgType() != 1) {
+                        continue;
+                    }
+                    if ((end == null || goodsBack.getgDate().before(end)) && (start == null || goodsBack.getgDate().after(start))) {
                         Map<String, Object> map = new HashMap<String, Object>();
                         map.put("oId", goodsBack.getgId());
                         map.put("date", goodsBack.getgDate());

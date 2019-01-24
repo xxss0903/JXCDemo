@@ -14,4 +14,5 @@ public interface StockOutService {
 	List<Object> queryStockOut(Date start, Date end, int shopId, int orderId) throws Exception;
 	List<Object> querySell(Date start, Date end, int shopId, int orderId) throws Exception;
 	int goodsBack(String orderId, Date date, String bz, String uId) throws Exception;
+	List<Object> queryReturn(Date start, Date end, int orderId) throws Exception;
 }

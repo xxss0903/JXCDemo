@@ -85,6 +85,7 @@
     <bean id="queryProductByShopController" class="com.friday.controller.QueryCategoryItemController"/>
     <bean id="queryProductListController" class="com.friday.controller.QueryProductListByShopController"/>
     <bean id="stockBackController" class="com.friday.controller.StockBackController"/>
+    <bean id="stockReturnController" class="com.friday.controller.StockReturnController"/>
 
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
@@ -159,6 +160,7 @@
                 <prop key="queryproductbyshop.do">queryProductByShopController</prop>
                 <prop key="queryproductlist.do">queryProductListController</prop>
                 <prop key="stockback.do">stockBackController</prop>
+                <prop key="stockreturn.do">stockReturnController</prop>
             </props>
         </property>
     </bean>

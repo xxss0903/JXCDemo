@@ -117,7 +117,7 @@
                             <li><a onclick="clickA(this);" alt="getoutproduct.do">产品出库</a></li>
                             <li><a onclick="clickA(this);" alt="stockoutqueryload.do">出库记录查询</a></li>
                             <li><a onclick="clickA(this);" alt="sellload.do">出库退回</a></li>
-                            <li><a onclick="clickA(this);" alt="sellqueryload.do">出库退回记录</a></li>
+                            <li><a onclick="clickA(this);" alt="product_sell_query.jsp">出库退回记录</a></li>
                         </ul>
                     </div>
 

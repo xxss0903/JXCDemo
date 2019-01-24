@@ -36,10 +36,6 @@ public class StockBackController implements Controller {
             int flag = stockOutService.goodsBack(oid, date,bz, uId);
             if (flag == 1) {
                 model.put("msg", "成功");
-                // 退回成功之后，将库存的数量减少，先根据订单id查到订单信息，再对对应的地区的库存做清退
-//                stockOutService.stockOutByOrderId(oid);
-//                stockInService.stockIn(oid, "", date, bz, uId);
-
                 return new ModelAndView("product_sale", model);
             } else {
                 model.put("msg", "失败");
