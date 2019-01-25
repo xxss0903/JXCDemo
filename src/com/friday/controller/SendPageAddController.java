@@ -17,7 +17,6 @@ import java.util.Map;
 public class SendPageAddController implements Controller {
     @Override
     public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
-        System.out.println("添加送货单");
         Map<String, Object> model = new HashMap<String, Object>();
         SendpageServiceImpl sendpageService = new SendpageServiceImpl();
         List<Sendpage> allSendpage = sendpageService.getAllSendpage();

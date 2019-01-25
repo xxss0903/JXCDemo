@@ -42,8 +42,8 @@
             }
         })
     </script>
-    <script type="text/javascript" src="JS/formcheck.js"></script>
     <script src="JS/jquery.jclock-1.2.0.js.txt" type="text/javascript"></script>
+    <script type="text/javascript" src="JS/formcheck.js"></script>
     <script type="text/javascript" src="JS/jconfirmaction.jquery.js"></script>
     <script type="text/javascript" src="JS/commonutils.js"></script>
     <script type="text/javascript">
@@ -58,6 +58,8 @@
             $('.jclock').jclock();
         });
     </script>
+    <script language="javascript" type="text/javascript" src="JS/niceforms.js"></script>
+
     <script>
 
         window.onload = initData;
@@ -166,6 +168,7 @@
             var newCount = orderCount + 1;
             var trObj = document.createElement("tr");
             var new_tr_id = "tr_order_product_" + newCount;
+            var new_tr_name = "tr_order_product_" + newCount;
             var old_tr_id = "tr_order_product_" + orderCount;
             trObj.id = new_tr_id;
 
@@ -195,7 +198,6 @@
 
     </script>
 
-    <script language="javascript" type="text/javascript" src="JS/niceforms.js"></script>
 
 </head>
 <body bgcolor="transparent" style='background:transparent'>
@@ -216,8 +218,8 @@
         </div>
     </c:forEach>
 </div>
-<form name="myform" action="orderproduct.do" method="post">
-    <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
+<form name="myform" action="orderproduct.do" onsubmit="return orderproductcheck()" method="post" >
+    <table id="rounded-corner" name="product_table" summary="2007 Major IT Companies' Profit">
         <tr>
             <td colspan="5" align="left"><strong>采购产品</strong></td>
         </tr>
@@ -273,8 +275,8 @@
         </tr>
         <tr>
             <td colspan="4" align="center">
-                <input type="submit" id="button" onsubmit="return orderCheck()" value="确认提交"/>&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="reset" id="button2" value="重新填写"/>
+                <input type="submit" name="button" id="button"  value="确认提交"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="reset" name="button2" id="button2" value="重新填写"/>
             </td>
         </tr>
     </table>

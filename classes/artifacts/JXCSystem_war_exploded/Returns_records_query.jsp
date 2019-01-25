@@ -62,7 +62,7 @@
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.open("GET", "querydetail.do?did=" + did + "&table=back", true);
             xmlHttp.onreadystatechange = function () {
-                if (xmlHttp.readyState == 4)
+                if (xmlHttp.readyState === 4)
                     result.innerHTML = xmlHttp.responseText;
                 else
                     result.innerHTML = "正在查询，请稍等";

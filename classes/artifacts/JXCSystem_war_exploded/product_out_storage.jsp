@@ -106,7 +106,7 @@
 </head>
 <body bgcolor="transparent" style='background:transparent'>
 <%
-    
+
 %>
 <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
     <tr>
@@ -116,7 +116,8 @@
         <%--<td align="left">出库网点</td>--%>
         <td colspan="5" align="left">
             出库网点
-            <select id="select_shop" name="shopid" onchange="changeShopId(this.options[this.options.selectedIndex].value)">
+            <select id="select_shop" name="shopid"
+                    onchange="changeShopId(this.options[this.options.selectedIndex].value)">
                 <c:forEach items="${shops }" var="shop">
                     <c:if test="${shop.sId != 0}">
                         <option value="${shop.sId}">${shop.sName }</option>
@@ -124,6 +125,7 @@
                 </c:forEach>
             </select>
         </td>
+
     </tr>
 </table>
 

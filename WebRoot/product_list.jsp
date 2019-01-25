@@ -161,6 +161,7 @@
             <td colspan="5" align="center">
                 <input type="submit" value="确认出库"/>
                 <input type="reset" value="重新填写"/>
+                <input type="checkbox" checked/>生成送货单
             </td>
         </tr>
     </table>

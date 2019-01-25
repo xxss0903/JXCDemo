@@ -58,12 +58,20 @@ public class StockOutController implements Controller {
 			stockOutService.stockOut(stockOut, date, bz, uId, shopId);
 
 			model.put("success", "产品出库成功");
+
+			// 生成送货单
+			createSendpage();
+
 			return new ModelAndView("success", model);
 		} catch (Exception e) {
 			model.put("error", "操作失败");
 			e.printStackTrace();
 			return new ModelAndView("error", model);
 		}
+	}
+
+	private void createSendpage() {
+
 	}
 
 }
