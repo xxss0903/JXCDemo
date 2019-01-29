@@ -102,7 +102,7 @@
     </table>
 </form>
 
-<table class="sendpage_table">
+<table class="sendpage_table" style="width: 700px;">
     <!-- 标题 -->
     <tr class="title">
         <th colspan="8"><input name="sp_content_category" type="text" value="${result.sTitle}"/></th>

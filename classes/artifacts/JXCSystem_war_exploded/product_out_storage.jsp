@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
-<%@ page import="com.friday.model.Product" %>
 <%@ page import="com.friday.model.Shop" %>
+<%@ page import="com.friday.service.impl.StockQueryServiceImpl" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     String path = request.getContextPath();
@@ -94,6 +94,61 @@
             xmlHttp.send();
         }
 
+        var orderCount = 0;
+
+        function addProduct() {
+            // 获取选中商品
+            var productSelect = document.getElementById("select_product_list");
+            var selectedIndex = productSelect.selectedIndex;
+            var product = productSelect.options[selectedIndex].value;
+            console.log("select product = " + product.replace("=", ":"));
+            var productObj = product.parseJSON();
+            console.log(productObj);
+
+            var name = product.name;
+            var price = product.price;
+            var num = product.num;
+            var pid = product.pid;
+
+            if (addedProductId.indexOf(pid) >= 0) {
+                alert("已经添加商品");
+                return;
+            } else {
+                addedProductId.push(pid);
+            }
+
+
+            var newCount = orderCount + 1;
+            var trObj = document.createElement("tr");
+            var new_tr_id = "tr_product_" + newCount;
+            var new_tr_name = "tr_product_" + newCount;
+            var old_tr_id = "tr_product_" + orderCount;
+            trObj.id = new_tr_id;
+
+
+            var innerHtmlString = '<td align="center"><input type="text" size="10" value=\'' + name + '\' readonly/></td>\n' +
+                '                        <td align="center"><input type="text" size="10" value=\'' + num + '\' readonly/></td>\n' +
+                '                        <td align="center"><input type="text" size="10" value=\'' + price + '\' readonly/></td>\n' +
+                '                        <td align="center"><input type="number"\n' +
+                '                                                  oninput="if(value > \'' + num + '\'){ value = \'' + num + '\'}if (value<0){value=1} "\n' +
+                '                                                  size="10"\n' +
+                '                                                  name="\'' + pid + '\'" value="1"\n' +
+                '                                                  onKeyUp="this.value=this.value.replace(/\\D/g,\'\')"/></td>\n' +
+                '                        <td>\n' +
+                '                            <button type="button" onclick="deleteProductRow(\'' + new_tr_id + '\', ' + pid + '${""})">' +
+                '                                <img\n' +
+                '                                        src="images/trash.png"\n' +
+                '                                        alt="" title=""\n' +
+                '                                        border="0"/></button>\n' +
+                '                        </td>'
+
+            trObj.innerHTML = innerHtmlString;
+            var oldTr = document.getElementById(old_tr_id);
+            oldTr.after(trObj);
+            orderCount = newCount;
+
+        }
+
         function deleteProductRow(rowId, pid) {
             console.log("delete tr " + rowId)
             var deleteTr = document.getElementById(rowId);
@@ -105,9 +160,7 @@
 
 </head>
 <body bgcolor="transparent" style='background:transparent'>
-<%
 
-%>
 <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
     <tr>
         <td colspan="5" align="left"><strong>产品出库</strong></td>

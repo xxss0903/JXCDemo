@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
+<%@ page import="com.friday.service.impl.SendpageServiceImpl" %>
+<%@ page import="com.friday.model.sendpage.SendpageCompany" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     String path = request.getContextPath();
@@ -75,25 +77,20 @@
             selectedAddRowIndex = trCount;
         }
 
-        function displayNowDate(){
-            document.getElementById("testfield1").value = getNowDate();
-        }
-
+        // function addProduct() {
+        //     // 获取选中商品
+        //     var productSelect = document.getElementById("select_product_list");
+        //     var selectedIndex = productSelect.selectedIndex;
+        //     var productId = productSelect.options[selectedIndex].value;
+        //     console.log("select productId = " + productId);
+        //
+        // }
+        //
         // function deleteProductRow(rowId, pid) {
+        //     console.log("delete tr " + rowId)
         //     var deleteTr = document.getElementById(rowId);
-        //     var deleteIndex = addedProductId.indexOf(Number(pid));
-        //     addedProductId = addedProductId.splice(deleteIndex, 1);
         //     deleteTr.parentNode.removeChild(deleteTr);
         // }
-
-        // 检查输入数量是否超出总数
-        function checkNumberUnderCount() {
-            // console.log(inputNum)
-            // console.log(count)
-            // if (inputNum > count) {
-            //     alert("出库数量大于库存数量，请重新输入");
-            // }
-        }
 
     </script>
 
@@ -102,14 +99,33 @@
 
 <%
     int currentIndex1 = 0;
-    int selectProductIndex = 1;
     System.out.println("jsp 刷新页面");
+
+    // 获取送货公司
+    SendpageServiceImpl sendpageService = new SendpageServiceImpl();
+    // 送货公司列表
+    List<SendpageCompany> sendpageCompany1 = sendpageService.getAllCompany();
 
 %>
 
 <form action="stockout.do" method="post">
     <input type="text" name="shopid" value="${shopid}" style="display: none;"/>
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
+        <tr>
+            <td colspan="1">
+                选择商品
+                <select name="select_product_list" id="select_product_list">
+                    <c:forEach items="${result}" var="product">
+                        <option value="${product}">${product.name}</option>
+                    </c:forEach>
+                </select>
+            </td>
+            <td colspan="4" align="left"><button type="button" onclick="addProduct()">添加出库商品</button></td>
+        </tr>
+
+        <tr id="tr_product_0"></tr>
+
+
         <c:choose>
             <c:when test="${result.size() > 0}">
                 <tr id="tr_title_row">
@@ -125,7 +141,8 @@
                         <td align="center"><input type="text" size="10" value="${product.num }" readonly/></td>
                         <td align="center"><input type="text" size="10" value="${product.price }" readonly/></td>
                         <td align="center"><input type="number"
-                                                  oninput="if(value > ${product.num}){ value = ${product.num}}if (value<0){value=1} " size="10"
+                                                  oninput="if(value > ${product.num}){ value = ${product.num}}if (value<0){value=1} "
+                                                  size="10"
                                                   name="${product.pid }" value="1"
                                                   onKeyUp="this.value=this.value.replace(/\D/g,'')"/></td>
                         <td>
@@ -150,12 +167,24 @@
 
         <tr>
             <td align="right" colspan="2">出库时间</td>
-            <td><input name="outtime" id="testfield1" type="text" size="20" onclick="WdatePicker()" autocomplete="off"/></td>
+            <td><input name="outtime" id="testfield1" type="text" size="20" onclick="WdatePicker()" autocomplete="off"/>
+            </td>
             <td align="left" colspan="2">＊点击文本框获取时间</td>
         </tr>
         <tr>
             <td align="right" colspan="2">备注</td>
             <td colspan="3"><input name="remark" type="text" size="20"/></td>
+        </tr>
+        <tr>
+            <td align="right" colspan="2">送货公司</td>
+
+            <td colspan="3">
+                <select name="select_company" id="select_company">
+                    <c:forEach items="<%=sendpageCompany1%>" var="company">
+                        <option value="${company.tId}">${company.tCompany}</option>
+                    </c:forEach>
+                </select>
+            </td>
         </tr>
         <tr>
             <td colspan="5" align="center">

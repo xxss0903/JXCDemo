@@ -36,14 +36,14 @@ public class StockOutController implements Controller {
 			String uId = (String) session.getAttribute("account");
 			Map<Integer, Integer> stockOut = new HashMap<Integer, Integer>();
 			String dateString = request.getParameter("outtime");
-			Date date = dateString.isEmpty() ? new Date(System.currentTimeMillis()) : Date.valueOf(dateString);
+			// 送货公司
+            String sendpageCompany = request.getParameter("select_company");
+            System.out.println("送货公司 " + sendpageCompany);
+            Date date = dateString.isEmpty() ? new Date(System.currentTimeMillis()) : Date.valueOf(dateString);
 			String bz = request.getParameter("remark");
-			
 			String shopIdString = request.getParameter("shopid");
 			int shopId = Integer.parseInt(shopIdString);
 
-			System.out.println("出库地区: " + shopIdString);
-			
 			Map<String, String[]> paraMap = request.getParameterMap();
 			Iterator<String> iterator = paraMap.keySet().iterator();
 			while (iterator.hasNext()) {

@@ -67,12 +67,12 @@ $(function($) {
 <form action="addsendpage.do" method="post">
     <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
 	<tr>
-		<td colspan="4" align="left"><strong>添加送货单</strong></td>
+		<td colspan="4" align="left"><strong>添加送货单1</strong></td>
 	</tr>
 </table>
 </form>
 
-<table class="sendpage_table">
+<table class="sendpage_table" width="100%">
     <!-- 标题 -->
     <tr class="title">
         <th colspan="8">${sendpage.sTitle}</th>
@@ -80,14 +80,14 @@ $(function($) {
     <!-- 送货内容 -->
     <tr class="content">
     <tr>
-        <th class="content_title" width="80">编号</th>
-        <th class="content_title" width="80">日期</th>
-        <th class="content_title" width="80">类别</th>
-        <th class="content_title" width="80">品名</th>
-        <th class="content_title" width="80">数量</th>
-        <th class="content_title" width="80">单价</th>
-        <th class="content_title" width="80">金额</th>
-        <th class="content_title" width="80">备注</th>
+        <th class="content_title" width="20%" style="width: 30px">编号</th>
+        <th class="content_title" width="20%" style="width: 30px">日期</th>
+        <th class="content_title" width="10%" style="width: 30px">类别</th>
+        <th class="content_title" width="10%" style="width: 30px">品名</th>
+        <th class="content_title" width="10%" style="width: 30px">数量</th>
+        <th class="content_title" width="10%" style="width: 30px">单价</th>
+        <th class="content_title" width="10%" style="width: 30px">金额</th>
+        <th class="content_title" width="10%" style="width: 30px">备注</th>
     </tr>
     <tr class="content_items">
         <td class="content_title">${sendpage.sContent.cNumber}</td>

@@ -86,50 +86,48 @@
     <input type="submit" value="打印送货单"/>
 </form>
 
-<table class="sendpage_table">
+<table class="sendpage_table" width="100%">
     <!-- 标题 -->
     <tr class="title">
-        <th colspan="8">${sendpage.sTitle}</th>
+        <th width="100%" colspan="8">${sendpage.sTitle}</th>
     </tr>
     <!-- 送货内容 -->
-    <tr class="content">
     <tr>
-        <th class="content_title" width="80">编号</th>
-        <th class="content_title" width="80">日期</th>
-        <th class="content_title" width="80">类别</th>
-        <th class="content_title" width="80">品名</th>
-        <th class="content_title" width="80">数量</th>
-        <th class="content_title" width="80">单价</th>
-        <th class="content_title" width="80">金额</th>
-        <th class="content_title" width="80">备注</th>
+        <th width="20%">编号1</th>
+        <th width="20%">日期1</th>
+        <th width="20%">类别</th>
+        <th width="10%">品名</th>
+        <th width="10%">数量</th>
+        <th width="10%">单价</th>
+        <th width="10%">金额</th>
+        <th width="10%">备注</th>
     </tr>
     <tr class="content_items">
-        <td class="content_title">${sendpage.sContent.cNumber}</td>
-        <td class="content_title">${sendpage.sDate}</td>
-        <td class="content_title">${sendpage.sContent.cCategory}</td>
+        <td>${sendpage.sContent.cNumber}</td>
+        <td>${sendpage.sDate}</td>
+        <td>${sendpage.sContent.cCategory}</td>
 
         <%--子item的表格--%>
         <td colspan="5">
             <table>
                 <c:forEach items="${sendpage.sContent.cItemsObj}" var="item">
                     <tr>
-                        <td class="content_title" width="80">${item.sendpageItem.iName}</td>
-                        <td class="content_title" width="80">${item.iAmount}</td>
-                        <td class="content_title" width="80">${item.sendpageItem.iPrice}</td>
-                        <td class="content_title" width="80">${item.iPriceTotal}</td>
-                        <td class="content_title" width="80">${item.iComment}</td>
+                        <td>${item.sendpageItem.iName}</td>
+                        <td>${item.iAmount}</td>
+                        <td>${item.sendpageItem.iPrice}</td>
+                        <td>${item.iPriceTotal}</td>
+                        <td>${item.iComment}</td>
                     </tr>
                 </c:forEach>
             </table>
         </td>
     </tr>
-    </tr>
     <!-- 开票信息 -->
     <tr class="kaipiao">
         <td colspan="8" align="center">
             <ul style="list-style: none">
-                <li class="kaipiao_content">开票日期:${sendpage.sKp.kDate} 开票金额:${sendpage.sKp.kAmount}</li>
-                <li class="kaipiao_content">收款日期:${sendpage.sKp.kSkDate} 收款方式:${sendpage.sKp.kSkTypeName}</li>
+                <li>开票日期:${sendpage.sKp.kDate} 开票金额:${sendpage.sKp.kAmount}</li>
+                <li>收款日期:${sendpage.sKp.kSkDate} 收款方式:${sendpage.sKp.kSkTypeName}</li>
             </ul>
         </td>
     </tr>
@@ -137,12 +135,12 @@
     <tr class="company">
         <td colspan="8" align="center">
             <ul style="list-style: none">
-                <li class="kaipiao_content">统一社会信用代码:${sendpage.sCompany.tXy}</li>
-                <li class="kaipiao_content">开户行:${sendpage.sCompany.tKhBank}</li>
-                <li class="kaipiao_content">账号:${sendpage.sCompany.tBaccount}</li>
-                <li class="kaipiao_content">地址:${sendpage.sCompany.tBaccount}</li>
-                <li class="kaipiao_content">电话:${sendpage.sCompany.tPhone} 传真:${sendpage.sCompany.tFaxPhone}</li>
-                <li class="kaipiao_content">邮编:${sendpage.sCompany.tMail}</li>
+                <li>统一社会信用代码:${sendpage.sCompany.tXy}</li>
+                <li>开户行:${sendpage.sCompany.tKhBank}</li>
+                <li>账号:${sendpage.sCompany.tBaccount}</li>
+                <li>地址:${sendpage.sCompany.tBaccount}</li>
+                <li>电话:${sendpage.sCompany.tPhone} 传真:${sendpage.sCompany.tFaxPhone}</li>
+                <li>邮编:${sendpage.sCompany.tMail}</li>
             </ul>
         </td>
     </tr>
@@ -150,8 +148,8 @@
     <tr class="express">
         <td colspan="8" align="center">
             <ul style="list-style: none">
-                <li class="express_content">快递信息:${sendpage.sExpress.eAddress}</li>
-                <li class="express_content">联系人:${sendpage.sExpress.ePerson} ${sendpage.sExpress.ePhone}</li>
+                <li>快递信息:${sendpage.sExpress.eAddress}</li>
+                <li>联系人:${sendpage.sExpress.ePerson} ${sendpage.sExpress.ePhone}</li>
             </ul>
         </td>
     </tr>
@@ -159,14 +157,14 @@
     <tr class="producer">
         <td colspan="8" align="center">
             <ul style="list-style: none">
-                <li class="producer_content">生产制作单位信息</li>
-                <li class="producer_content">单位:${sendpage.sProducer.pCompany}</li>
-                <li class="producer_content">地址:${sendpage.sProducer.pAddress}</li>
-                <li class="producer_content">税号:${sendpage.sProducer.pTaxNumber}</li>
-                <li class="producer_content">开户行:${sendpage.sProducer.pKhBank}</li>
-                <li class="producer_content">账号:${sendpage.sProducer.pBankCard}</li>
-                <li class="producer_content">联系电话:${sendpage.sProducer.pContactPhone}</li>
-                <li class="producer_content">业务联系人:${sendpage.sProducer.pContactPerson}</li>
+                <li >生产制作单位信息</li>
+                <li >单位:${sendpage.sProducer.pCompany}</li>
+                <li >地址:${sendpage.sProducer.pAddress}</li>
+                <li >税号:${sendpage.sProducer.pTaxNumber}</li>
+                <li >开户行:${sendpage.sProducer.pKhBank}</li>
+                <li >账号:${sendpage.sProducer.pBankCard}</li>
+                <li >联系电话:${sendpage.sProducer.pContactPhone}</li>
+                <li >业务联系人:${sendpage.sProducer.pContactPerson}</li>
             </ul>
         </td>
     </tr>

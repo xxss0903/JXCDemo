@@ -62,21 +62,19 @@
 <body bgcolor="transparent" style='background:transparent'>
 <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
     <tr>
-        <td colspan="6" align="left"><strong>送货单管理</strong></td>
-    </tr>
-    <tr>
-        <td colspan="6" align="right"><a href="sendpage_add.jsp">新增送货单</a></td>
+        <td colspan="5" align="left"><strong>送货单管理</strong></td>
+        <td colspan="3" align="right"><a href="sendpage_add.jsp">新增送货单</a></td>
     </tr>
     <%--送货单列表，显示单号，标题，公司，生产商。简略的送货单消息，点击这一栏就进入详细的送货单信息界面--%>
     <tr align="center">
-        <td align="center">标题</td>
-        <td align="center">编号</td>
-        <td align="center">类别</td>
-        <td align="center">公司</td>
-        <td align="center">生产商</td>
-        <td align="center">日期</td>
-        <td align="center">修改</td>
-        <td align="center">删除</td>
+        <td align="center" width="50">标题</td>
+        <td align="center" width="50">编号</td>
+        <td align="center" width="50">类别</td>
+        <td align="center" width="50">公司</td>
+        <td align="center" width="50">生产商</td>
+        <td align="center" width="50">日期</td>
+        <td align="center" width="50">修改</td>
+        <td align="center" width="50">删除</td>
     </tr>
     <c:forEach items="${result}" var="sendpage">
         <tr>
